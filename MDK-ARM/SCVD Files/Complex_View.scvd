@@ -1,0 +1,96 @@
+<component_viewer schemaVersion="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="Component_Viewer.xsd">
+  <component name="MyView2" version="0.0.1"/>    <!-- name and version of the component  -->
+ 
+  <typedefs>
+    <typedef name="XML_TypeA"  size="12">
+      <member name="Nummer"    type="uint32_t"          offset="0" />
+      <member name="Status"    type="uint32_t"          offset="4" />
+      <member name="Size"      type="uint32_t"          offset="8" />
+    </typedef>
+ 
+    <typedef name="XML_TypeG"  size="16">
+      <member name="Nummer"      type="uint32_t"        offset="0" />
+      <member name="Cluster"     type="uint32_t"        offset="4" />
+      <member name="ClusterSize" type="uint32_t"        offset="8" />
+      <member name="Status"      type="uint32_t"        offset="12" />
+      <var    name="TotalSize"   type="uint64_t"        info="calculated as: Cluster*ClusterSize"/>
+    </typedef>
+    
+    <typedef name="XML_TypeArray" size="8">  
+      <member name="type_ref"  type="uint32_t"          offset="0"  info="Pointer to TypeA or TypeG" />
+      <member name="id0"       type="uint8_t"  size="2" offset="4"  info="Type ID" />
+      <member name="id1"       type="uint8_t"           offset="5"  info="Type ID" />  
+      <member name="attr"      type="uint8_t"           offset="6"  info="Type Attribute"/>
+      <var    name="idx"       type="uint32_t"                      info="calculated index in TypeX array" />
+    </typedef>
+  </typedefs>
+ 
+  <objects>
+    <object name="ListOfArrayTypes">
+      <var name="i" type="int32_t" value="0" />               <!-- variable for loops -->
+      <var name="j" type="int32_t" value="0" />               <!-- variable for loops -->
+  
+      <readlist name="TypeA"  type="XML_TypeA" />
+      <readlist name="TypeG"  type="XML_TypeG" />  
+      <readlist name="TArray" type="XML_TypeArray" symbol="type_array" count="5" />
+ 
+      <list name="i" start="0" limit="TArray._count">         <!-- for(i=0;i<TArray._count;i++)  -->
+        <calc cond="TArray[i].attr==1">   
+            TArray[i].idx=TypeA._count;                       
+        </calc>
+        <readlist cond="TArray[i].attr==1"  name="TypeA"   type="XML_TypeA"  offset="TArray[i].type_ref" />
+        
+        <calc cond="TArray[i].attr==2">   
+           TArray[i].idx=TypeG._count;   
+        </calc>
+        <readlist cond="TArray[i].attr==2"  name="TypeG"   type="XML_TypeG"  offset="TArray[i].type_ref" />
+      </list>
+           
+      <list name="i" start="0" limit="TypeG._count">          <!-- for(;;)  -->
+        <calc>   
+           TypeG[i].TotalSize = TypeG[i].Cluster * TypeG[i].ClusterSize;   
+        </calc>
+            <calc>
+                j=TArray._count;
+            </calc>
+      </list>
+           
+	<out name="Complex Viewer: Array and Structure Types">                    <!-- name of window and menu entry -->
+        <!-- create output with two hierarchies -->
+        <item property="Array Identifiers">                     <!-- the 'header' with sub entries -->
+           <list name="i" start="0" limit="TArray._count">      <!-- for(;;) -->
+             <item property="Data in TArray[%d[i]].id is:" value="%t[TArray[i].id0]" />
+           </list>
+        </item>
+ 
+        <item property="" value="" />                            <!-- output empty line -->
+ 
+        <!-- create output with two and three hierarchies -->
+        <list name="i" start="0" limit="TArray._count">          <!-- for(;;)  -->
+           <!-- two hierarchies for TypeA structure -->
+           <item cond="TArray[i].attr==1" property="Type A%d[TArray[i].id1-0x30]:" value="Memory address (type_ref) = %x[TArray[i].type_ref]        idx=%d[TArray[i].idx]" > 
+             <item property="Type A, size=%d[TypeA[TArray[i].idx].Size]" value="Num=%x[TypeA[TArray[i].idx].Nummer]      Status=%x[TypeA[TArray[i].idx].Status]" />
+           </item>
+           
+           <!-- three hierarchies for TypeG structure -->
+           <item cond="TArray[i].attr==2" property="Type G%d[TArray[i].id1-0x30]:" value="Memory address (type_ref) = %x[TArray[i].type_ref]        idx=%d[TArray[i].idx]" > 
+             <item property="Type G, Total size=%d[TypeG[TArray[i].idx].TotalSize]" value="Num=%x[TypeG[TArray[i].idx].Nummer]      Status=%x[TypeG[TArray[i].idx].Status]" >
+               <item property="Cluster" value="n=%x[TypeG[TArray[i].idx].Cluster]             Size=%x[TypeG[TArray[i].idx].ClusterSize]" />
+             </item>
+           </item>
+        </list>
+  
+        <item property="" value="------ Types ------" />         <!-- output line with empty property but text in 'Value' column -->
+                 
+        <list name="i" start="0" limit="TypeA._count">         <!-- for(i=0;i<_count;i++)  -->
+          <item property="Type A%d[i]" value="Num=%x[TypeA[i].Nummer], Size=%x[TypeA[i].Size]" />
+        </list>
+  
+        <list name="i" start="0" limit="TypeG._count">  
+          <item property="Type G%d[i]" value="Num=%x[TypeG[i].Nummer], Total size=%x[TypeG[i].TotalSize]" />
+        </list>
+  
+      </out>
+    </object>
+  </objects>
+</component_viewer>

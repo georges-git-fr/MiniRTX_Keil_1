@@ -1,0 +1,27 @@
+<component_viewer schemaVersion="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="Component_Viewer.xsd">
+  <component name="MyFirstComponent" version="0.0.1"/>    <!-- name and version of the component  -->
+ 
+  <typedefs>
+    <typedef  name="MyGeneralType" info="This is MyType with 2 members" size="12">
+      <member name="hi"   type="uint32_t"  offset="0"  info="member 'mysymbol.hi'"/>
+      <member name="low"  type="uint32_t"  offset="4"  info="member 'mysymbol.low'"/>
+    </typedef>
+  </typedefs>
+ 
+  <objects>
+    <object name="MyFirstObject">
+      <read name="MyFirstSymbol" type="MyGeneralType" symbol="mysymbol" const="0"/>
+      
+      <out name="Simple Viewer">                                                        <!-- Window name -->
+        <item property="Square of numbers [0..30]">                                       <!-- Property entry -->
+                                                                                          <!-- These items extend the entry above -->
+          <item property="hi  (dec)"   value="%d[MyFirstSymbol.hi]"  info="Show decimal value of 'mysymbol.hi'"/>
+          <item property="low (dec)"   value="%d[MyFirstSymbol.low]" info="Show decimal value of 'mysymbol.low'"/>
+          <item property="hi  (hex)"   value="%x[MyFirstSymbol.hi]"  info="Show HEX value of 'mysymbol.hi'"/>
+          <item property="low (hex)"   value="%x[MyFirstSymbol.low]" info="Show HEX value of 'mysymbol.low'"/>
+        </item>
+      </out>
+    </object>   
+  </objects>
+ 
+</component_viewer>

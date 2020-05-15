@@ -1,0 +1,16 @@
+# Specify filepatterns you want git to ignore.
+*.log
+*.axf
+*.crf
+*.d
+*.dep
+*.iex
+*.lnp
+*.o
+*.map
+*.lst
+*.sct
+*.hex
+*.htm
+*.Utilisateur
+
