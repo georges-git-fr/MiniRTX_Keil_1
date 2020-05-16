@@ -1286,6 +1286,7 @@ int main(void)
 //	T_turnstile_task3 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x03);
 
 //	// ---------- Flashing LED threads with parameters
+// Petit commentaire au passage
 	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01);
 //	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
 //	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
