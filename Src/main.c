@@ -1277,21 +1277,22 @@ int main(void)
 //	T_rendez_vous2 = osThreadCreate(osThread(rendez_vous_Thread2), NULL);
 
 //	// ---------- Algorithme "Barrier"
-//	semTurnstile_ID = osSemaphoreCreate(osSemaphore(semTurnstile), 0);
-//	semTurnstile2_ID = osSemaphoreCreate(osSemaphore(semTurnstile2), 1);
-//	mutexTurnstile_ID = osSemaphoreCreate(osSemaphore(mutexTurnstile), 1);	
-//	T_turnstile_task0 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x00);
-//	T_turnstile_task1 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x01); 
-//	T_turnstile_task2 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x02);
-//	T_turnstile_task3 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x03);
+	semTurnstile_ID = osSemaphoreCreate(osSemaphore(semTurnstile), 0);
+	semTurnstile2_ID = osSemaphoreCreate(osSemaphore(semTurnstile2), 1);
+	mutexTurnstile_ID = osSemaphoreCreate(osSemaphore(mutexTurnstile), 1);	
+	T_turnstile_task0 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x00);
+	T_turnstile_task1 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x01); 
+	T_turnstile_task2 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x02);
+	T_turnstile_task3 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x03);
 
 //	// ---------- Flashing LED threads with parameters
 // Petit commentaire au passage
 // Second commentaire
-	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01);
-	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
-	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
-	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x01);
+// Troisième commentaire : on change de démo, on va brancher l'algo "Barrier"
+//	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01);
+//	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
+//	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
+//	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x01);
 
   osKernelStart();
 	osDelay(osWaitForever);
