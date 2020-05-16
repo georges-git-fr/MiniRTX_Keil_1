@@ -1,0 +1,67 @@
+﻿Comment implémenter RTX depuis un projet issu de cubeMX
+-------------------------------------------------------------------------------
+
+Ouvrir µVison Keil suite à la compilation de cubeMX
+
+Ouvrir la fenêtre "Manage Run-Time Environment"
+
+Sélectionner tous les items nécessaires à RTX + debug (voir document  "Comment implémenter CMSIS RTX dans Keil µVision from scratch.txt")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cocher "Device->STM32Cube Framework (API)->Classic"
+Cocher (version minimale) :
+- "Device/STM32Cube HAL/Common"
+- "Device/STM32Cube HAL/Cortex"
+- "Device/STM32Cube HAL/GPIO"
+- "Device/STM32Cube HAL/PWR"
+- "Device/STM32Cube HAL/RCC"
+- "Device/STM32Cube HAL/TIM"
+
+En toute logique, on doit  configurer CMSIS pour avoir les mêmes périphériques que pour la sélection CubeMX.
+Par exemple, si dans cubeMX on a sélectionné USART avec DMA, IC2 et SPI, il faudra ajouter les éléments suivants :
+- "Device/STM32Cube HAL/DMA"
+- "Device/STM32Cube HAL/UART"
+- "Device/STM32Cube HAL/USART"
+- "Device/STM32Cube HAL/I2C"
+- "Device/STM32Cube HAL/SPI"
+
+Dans le group "Drivers/STM32F4xx_HAL_Driver" créé par cubeMX, effacer tous les fichiers présents qui doivent être
+maintenant dans le group "Device" créé suite à la configuration effectuée dans le "Manage Run-Time Environment".
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dans le group "Driver/CMSIS", effacer "system_stm32f4xx.c" qui se trouve maintenant dans la group "Device" (Startup)
+
+Dans le group "Application/MDK_ARM", effacer "startup_stm32f407xx.s" qui se trouve maintenant dans la group "Device" (Startup)
+
+Effacer tous les groupes vides
+
+Il ne reste que le groupe "Application/User"
+
+Ouvrir le fichier "stm32f4xx_it.c" situé dans le group "Application/User" et commenter les lignes de code liées aux fonctions suivantes :
+- void SVC_Handler(void)
+- void PendSV_Handler(void)
+- void SysTick_Handler(void)
+
+Modifier le main pour qu'il ressemble au template ci-dessous (incluant HAL (avec USART2) et CMSIS RTX)
+
+int main(void)
+{
+	HAL_Init();
+	SystemClock_Config();
+	SystemCoreClockUpdate();
+	MX_GPIO_Init();
+	MX_DMA_Init();
+	MX_USART2_UART_Init();
+	LED_Initialize();
+	osKernelInitialize();
+		// code utilisateur ici...
+	osKernelStart();
+	osDelay(osWaitForever);
+	while (1)
+ 	{
+	}
+}
+
+Faire un build complet du projet pour vérification
+
+

@@ -1,0 +1,129 @@
+Comment mesurer précisement la durée d'un processus avec le registre CYCCNT :
+-----------------------------------------------------------------------------------------------------------------
+x =  DWT->CYCCNT; // On lit le compteur avant le processus
+	processus...
+y = DWT->CYCCNT; // On lit le compteur après le processus
+dt = (y - x) * 6; // en ns, le 6 représente le tick atomique liée à la fréquence de base (1/168000000Hz)=0.000000006s => 6ns
+
+
+Ou bien utiliser en debug (avec breakpoints) la valeur du paramètre "Internal->States" dans la fenêtre "Registers"
+
+
+Comment utiliser "vTaskDelayUntil" sous FreeRTos :
+-----------------------------------------------------------------------
+Voir projet "7-Discovery_F4_2_Keil"
+
+
+Comment utiliser "vTaskDelay" sous FreeRTos :
+-----------------------------------------------------------------------
+Voir projet "7-Discovery_F4_2_Keil"
+
+
+Comment afficher le status des taches en temps réel sous FreeRTos :
+----------------------------------------------------------------------------------------------
+Voir projet "7-Discovery_F4_2_Keil"
+
+
+Comment utiliser "vTaskSuspend", "vTaskResume" et "vTaskDelete" sous FreeRTos :
+-------------------------------------------------------------------------------------------------------------------
+Voir projet "7-Discovery_F4_2_Keil"
+
+
+Comment implémenter des fenêtres de debug watch personnalisées (SCVD Files) avec Keil :
+--------------------------------------------------------------------------------------------------------------------------------
+voir projet "CMSIS RTX From Scratch4"
++
+Voir le fichier HTML "SCVD Simple Example"
++
+Voir le fichier HTML "SCVD Complex Example"
+
+Penser à ajouter les fichiers SCVD dans le debugger à l'aide du bouton [Manage Component Viewer Description Files...]
+dans la fenêtre "Options for Target..."
+
+
+Passage de paramètre (void const * argument)  à une fonction sous FreeRTos :
+-----------------------------------------------------------------------------------------------------------
+Voir projet "7-Discovery_F4_2_Keil"
+
+
+Passage de paramètre (void const * argument) à une fonction sous RTX :
+---------------------------------------------------------------------------------------------------
+Voir projet "MiniRTX"
+
+
+Configurer correctement le fichier "RTX_Conf_CM.c" sous Keil :
+---------------------------------------------------------------------------------------
+Voir le fichier HTML "Configure RTX - RTX_Conf_CM.c Settings"
+
+
+Utilisation de "Event Recorder" sous Keil en debug :
+------------------------------------------------------------------------
+SDU
+
+
+Comment utiliser la fonction "Stack Usage" sous Keil avec RTX :
+---------------------------------------------------------------------------------------
+Voir le fichier HTML "Keil debug Stack Usage Watermark"
+
+
+Comprendre et utiliser les classes de stockage et les qualificateurs en C :
+-----------------------------------------------------------------------------------------------------
+Voir le fichier HTML "Programmation C_Classe de stockage — Wikilivres"
+
+
+Comment ajouter un source template RTX sous Keil :
+------------------------------------------------------------------------
+Le nouveau template doit être copié dans le répertoire :
+"C:\Users\Utilisateur\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\UserCodeTemplates"
+
+
+Le projet "7-Discovery_F4_2_Keil"  (FreeRTos) contient les fonctionnalités suivantes :
+---------------------------------------------------------------------------------------------------------------------------
+SDU
+
+
+Le projet "Discovery_F4_2_Keil"  (FreeRTos) contient les fonctionnalités suivantes :
+---------------------------------------------------------------------------------------------------------------------------
+SDU
+
+
+Le projet ""MiniRTX" contient les fonctionnalités suivantes :
+-------------------------------------------------------------------------------
+* Event Recorder
+* User code templates
+* printf ITM + source "fputc_debug.c"
+* USART + DMA + Callbacks (transmit + receive)
+* USART minimaliste (putchar)
+* Delay_us
+* Delay_NOP
+* Moi_D_abord + Toi_ensuite (semaphore)
+* Benchmark "Symmetry" (performance RTX vs FreeRTos)
+* Flashing Leds
+* Turnstile
+* Rendez-vous
+* Signal
+* Memory pool
+* Mail
+* Message Queue
+* Timer virtuel + callback
+* Semaphore signalling
+* Multiplex (plusieurs instances d'un même thread avec passage de paramètre)
+* Mutex avec send USART simple
+* librairie "tm_stm32f4_rng" pour nombres aléatoires
+* Simple View Thread
+* Complex View Thread
+
+
+Documentation pertninente (HTML, PDF, Vidéos, etc..) :
+----------------------------------------------------------------------------
+Voir le sous-répertoire "Docs"
+
+
+
+
+
+
+
+
+
+

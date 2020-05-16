@@ -1,0 +1,114 @@
+﻿Ouvrir µVison Keil
+Fermer le projet en cours
+Créer un nouveau projet (Project->New µVision Project...)
+Créer un sous-répertoire qui contiendra tous les éléments du projet (nouveau dossier) puis entrer dans le sous répertoire nouvellement créé
+Enter le nom du projet puis enregistrer (vérifier avec Explorer que le projet a bien été créé et au bon endroit)
+La fenêtre de sélection du matériel "Select Device for Target..." apparaît automatiquement
+Sélectionner le matériel (device) puis valider à l'aide du bouton [OK]
+-------------------------------------------------------------------------------------------------------------
+La fenêtre "Manage Run-Time Environment" apparaît automatiquement
+Sélectionner STM32F4-Discovery pour "Board Support", puis cocher "LED" dans la rubrique "LED (API)"
+(à ce stade certaines cases dans la colonne "Sel." deviennent oranges, ne pas en tenir compte tant que la configuration n'est pas terminée)
+Cocher "CMSIS->CORE"
+Cocher "CMSIS->RTOS (API)/Keil RTX
+Cocher "Compiler->Event Recorder"
+Cocher "Compiler->I/O->STDOUT" puis sélectionner le type "EVR" dans la listbox au lieu de "Breakpoint"
+Cocher "Device->Startup"
+Cocher "Device->STM32Cube Framework (API)->Classic"
+Cocher :
+- "Device/STM32Cube HAL/Common"
+- "Device/STM32Cube HAL/Cortex"
+- "Device/STM32Cube HAL/GPIO"
+- "Device/STM32Cube HAL/PWR"
+- "Device/STM32Cube HAL/RCC"
+(à ce stade toutes les cases validées dans la colonne "Sel." doivent être vertes, indiquant que la configuration est correcte)
+Valider la configuration en pressant le bouton [OK]
+-------------------------------------------------------------------------------------------------------------
+A ce stade, l'arborescence complète du projet a été créée et est visible dans la fenêtre "Project" sous forme "collapsed"
+Il est possible de développer cette arborescence (expand) pour visualiser le contenu des différents groupes
+-------------------------------------------------------------------------------------------------------------
+Ouvrir la fenêtre "Options for Target" (bouton baguette magique)
+Dans l'onglet "Device", s'assurer du choix du matériel
+Dans l'onglet "Target" :
+- modifer la fréquence d'horloge (168MHz)
+- Cocher "Use Micro Lib" (option)
+Dans l'onglet "Output" :
+- Cocher "Create HEX File" (option)
+- Sélectionner le sous répertoire de sortie via le bouton "Select Forder for objects..." (sous répertoire "Objects" par défaut)
+Dans l'onglet "C/C++" :
+- enter la ligne "HSE_VALUE=8000000" dans la zobe d'édition "Define" de "Preprocessor Symbols"
+- Cocher l'option "C99"
+- Sélectionner l'optimisation
+Dans l'onglet "Debug" :
+- Sélectionner "ST-Link Debugger"
+Presser le bouton "Settings", la fenêtre "Cortex-M Target Driver Setup" apparaît
+Dans l'onglet "Debug" :
+- Cocher "Verify Code Download"
+Dans l'onglet "Trace" :
+- Modifer la fréquence d'horloge (168MHz)
+- Cocher "Trace Enable"
+- A la rubrique "Timestamps" sélectionner un prescaler de 4 au lieu de 1
+- A la rubrique "PC Sampling" sélectionner un prescaler de 1024*16
+- Décocher "EXCTRC: Exception Tracing" (option)
+- Vérifier que les ports 0 et 31 sont cochés
+- Décocher les cases "Privilege" (option)
+Dans l'onglet "Flash Download" :
+- Cocher "Reset and Run"
+- Vérifier la description du matériel dans "Programming Algorithm" (modifier si nécessaire à l'aide des boutons [Add] et [Remove])
+- Valider les modifications en pressant "OK" pour chaque fenêtre ouverte
+-------------------------------------------------------------------------------------------------------------
+Configurer RTX :
+- Dans la fenêtre "Project", développer le groupe "CMSIS" puis ouvrir le fichier "CMSIS/RTX_Conf_CM.c (RTOS:Keil RTX)"
+- Le contenu du fichier apparaît dans le fenêtre d'édition
+- Cliquer sur l'onglet "Configuration Wizard" (en bas de la fenêtre d'édition)
+- Visualiser l'ensemble des paramètres en pressant le bouton [Expand All]
+- Modifier la fréquence d'horloge "RTX Kernel Timer Tick Configuration->RTOS Kernel Timer input clock frquency [Hz]" (168000000Hz)
+- Vérifier les autres paramètres, en particulier "Processor mode for thread execution" qui doit être en mode "Privileged mode" (défaut)
+- Enregistrer le fichier puis fermer la fenêtre (bouton droit + Close)
+-------------------------------------------------------------------------------------------------------------
+Gestion du projet :
+A ce stade, le projet ne contient aucun source c dans le groupe "Source Group 1"
+Il est possible d'utiliser des fichiers existants provenant d'autres projets en utilisant la fonction "Add Existing Files to..."
+Il est possible de créer des fichiers sources en utilisant la fonction "Add New Item to..."
+Dans ce cas, deux posssibilités :
+- Création d'un fichier vide
+- Utilisation de templates (User Code Template). Choisir  " 'main' module for STM32Cube HAL"
+-------------------------------------------------------------------------------------------------------------
+Fonction "SystemClock_Config()" :
+- Faire attention aux paramètres PLLM (4) et PLLN (168)
+- Ci-dessous le template pour STM32F4-Discovery à 168MHz
+
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 7;
+  HAL_RCC_OscConfig(&RCC_OscInitStruct);
+
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK|RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+
+  HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
+}
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
