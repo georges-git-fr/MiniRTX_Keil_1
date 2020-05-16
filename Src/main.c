@@ -478,13 +478,13 @@ void flashing_LED_0(void const *argument)
 		x = DWT->CYCCNT; // On lit le compteur avant le processus
 		//Delay_us(1);
     //Delay_us_TIM(65000);
-		osDelay(45);
+		osDelay(500);
 		y = DWT->CYCCNT; // On lit le compteur après le processus
 		dt = (y - x) * 6; // en ns, le 6 représente le tick atomique liée à la fréquence de base (1/168000000Hz)=0.000000006s => 6ns
 		LED_Off(0);
 		//Delay_us(1);
     //Delay_us_TIM(65000);
-	  osDelay(45);
+	  osDelay(500);
 	}
 }
 
@@ -1286,9 +1286,9 @@ int main(void)
 //	T_turnstile_task3 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x03);
 
 //	// ---------- Flashing LED threads with parameters
-//	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01);
-	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
-	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
+	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01);
+//	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
+//	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
 //	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x01);
 
   osKernelStart();
