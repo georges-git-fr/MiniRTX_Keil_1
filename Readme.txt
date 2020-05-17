@@ -72,5 +72,14 @@ N'hésitez pas à aller sur le web pour rechercher des infos, on y trouve absolume
 - les algos liés au sémaphore + mutex
 - etc…
 
+Utilisation du projet :
+---------------------------
+Ouvrir le projet avec l'éditeur Keil.
+A la fin du fichier main, on trouve toutes les taches en commentaire, sauf les 4 dernières qui permettent de faire clignoter les 4 leds de la carte d'évaluation avec des tempos fixes ou aléatoires.
+Il suffit de commenter/décommenter les lignes de code pour "jongler" avec les différentes fonctions à tester.
+
+Amusez vous bien !
+
+
 
 

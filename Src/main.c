@@ -462,58 +462,50 @@ void Task2_Symmetry(void const *argument)
 }
 
 /*----------------------------------------------------------------------------
-  Flashing LED 0 (verte à 9h)
+  Flashing LED 0 (verte)
  *---------------------------------------------------------------------------*/
 void flashing_LED_0(void const *argument)
 {
-//	uint32_t r = 500; // par défaut sans random
-//	uint32_t min = 100;
-//	uint32_t max = 1000;
-//	uint32_t random = (uint32_t) argument;
-//	if (random == 0x01U)
-//		r = (TM_RNG_Get() % (max + 1 - min)) + min;
+	uint32_t r = 500; // par défaut sans random
+	uint32_t min = 100;
+	uint32_t max = 1000;
+	uint32_t random = (uint32_t) argument;
+	if (random == 0x01U)
+		r = (TM_RNG_Get() % (max + 1 - min)) + min;
 	for (;;) 
 	{
 		LED_On(0);
-		x = DWT->CYCCNT; // On lit le compteur avant le processus
-		//Delay_us(1);
-    //Delay_us_TIM(65000);
-		osDelay(500);
-		y = DWT->CYCCNT; // On lit le compteur après le processus
-		dt = (y - x) * 6; // en ns, le 6 représente le tick atomique liée à la fréquence de base (1/168000000Hz)=0.000000006s => 6ns
+//		x = DWT->CYCCNT; // On lit le compteur avant le processus
+		osDelay(r);
+//		y = DWT->CYCCNT; // On lit le compteur après le processus
+//		dt = (y - x) * 6; // en ns, le 6 représente le tick atomique liée à la fréquence de base (1/168000000Hz)=0.000000006s => 6ns
 		LED_Off(0);
-		//Delay_us(1);
-    //Delay_us_TIM(65000);
-	  osDelay(500);
+	  osDelay(r);
 	}
 }
 
 /*----------------------------------------------------------------------------
-  Flashing LED 1 (orange à 12h)
+  Flashing LED 1 (orange)
  *---------------------------------------------------------------------------*/
 void flashing_LED_1(void const *argument)
 {
-//	uint32_t r = 500; // par défaut sans random
-//	uint32_t min = 100;
-//	uint32_t max = 1000;
-//	uint32_t random = (uint32_t) argument;
-//	if (random == 0x01U)
-//		r = (TM_RNG_Get() % (max + 1 - min)) + min;
+	uint32_t r = 500; // par défaut sans random
+	uint32_t min = 100;
+	uint32_t max = 1000;
+	uint32_t random = (uint32_t) argument;
+	if (random == 0x01U)
+		r = (TM_RNG_Get() % (max + 1 - min)) + min;
 	for (;;) 
 	{
 		LED_On(1);                
-		//Delay_us(65000);
-    //Delay_us_TIM(65000);
-		osDelay(65);
+		osDelay(r);
 		LED_Off(1);
-		//Delay_us(65000);
-    //Delay_us_TIM(65000);
-		osDelay(65);
+		osDelay(r);
 	}
 }
 
 /*----------------------------------------------------------------------------
-  Flashing LED 2 (rouge à 3h)
+  Flashing LED 2 (rouge)
  *---------------------------------------------------------------------------*/
 void flashing_LED_2(void const *argument)
 {
@@ -533,7 +525,7 @@ void flashing_LED_2(void const *argument)
 }
 
 /*----------------------------------------------------------------------------
-  Flashing LED 3 (bleue à 6h)
+  Flashing LED 3 (bleue)
  *---------------------------------------------------------------------------*/
 void flashing_LED_3(void const *argument)
 {
@@ -1196,7 +1188,7 @@ int main(void)
 		EventRecorderInitialize(EventRecordAll, 1);
 #endif
 	
-	printf("C'est parti !\n");
+	printf("MiniRTX, c'est parti !\n");
 	
   /* Initialize CMSIS-RTOS */
   osKernelInitialize ();
@@ -1277,22 +1269,19 @@ int main(void)
 //	T_rendez_vous2 = osThreadCreate(osThread(rendez_vous_Thread2), NULL);
 
 //	// ---------- Algorithme "Barrier"
-	semTurnstile_ID = osSemaphoreCreate(osSemaphore(semTurnstile), 0);
-	semTurnstile2_ID = osSemaphoreCreate(osSemaphore(semTurnstile2), 1);
-	mutexTurnstile_ID = osSemaphoreCreate(osSemaphore(mutexTurnstile), 1);	
-	T_turnstile_task0 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x00);
-	T_turnstile_task1 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x01); 
-	T_turnstile_task2 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x02);
-	T_turnstile_task3 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x03);
+//	semTurnstile_ID = osSemaphoreCreate(osSemaphore(semTurnstile), 0);
+//	semTurnstile2_ID = osSemaphoreCreate(osSemaphore(semTurnstile2), 1);
+//	mutexTurnstile_ID = osSemaphoreCreate(osSemaphore(mutexTurnstile), 1);	
+//	T_turnstile_task0 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x00);
+//	T_turnstile_task1 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x01); 
+//	T_turnstile_task2 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x02);
+//	T_turnstile_task3 = osThreadCreate(osThread(turnstile_threadBaseCode),(void *) 0x03);
 
 //	// ---------- Flashing LED threads with parameters
-// Petit commentaire au passage
-// Second commentaire
-// Troisième commentaire : on change de démo, on va brancher l'algo "Barrier"
-//	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01);
-//	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
-//	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
-//	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x01);
+	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01); // 0x00 => clignotement fixe, 0x01 => aléatoire
+	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
+	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
+	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x01);
 
   osKernelStart();
 	osDelay(osWaitForever);
