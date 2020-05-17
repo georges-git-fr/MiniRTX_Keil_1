@@ -1,0 +1,47 @@
+window.$zopim || (function (d, s) { var z = $zopim = function (c) { z._.push(c) }, $ = z.s = d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o) { z.set._.push(o) }; z._ = []; z.set._ = []; $.async = !0; $.setAttribute("charset", "utf-8"); $.src = "https://v2.zopim.com/?58crBwjpXFSYXv6eloiat27G1SqQOJvC"; z.t = +new Date; $.type = "text/javascript"; e.parentNode.insertBefore($, e) })(document, "script");
+
+$zopim(function () {
+    //change 'developer.arm.com' to the correct department for this page and specify the title of the chat dialog box.
+    var department = "Keil Support Team";
+    var title = "Arm Keil Support";
+    $zopim.livechat.setOnConnected(function () {
+        var department_status = $zopim.livechat.departments.getDepartment(department);
+
+        //If the department_status is undefined then it doesn't exist in ZenDesk and we don't want to show the chat dialog box as it will appear uncustomised with the Keir settings
+        if (typeof (department_status) == 'undefined') {
+
+            // 1 - Set the account status to ?offline?
+            $zopim.livechat.setStatus('offline');
+
+            // 2 - hide the widget
+            $zopim.livechat.hideAll();
+            //The department is not defined in the system so exit
+            return false;
+        }
+
+        if (department_status.status == 'offline') {
+
+            // 1 - Set the account status to &lsquo;offline&rsquo;
+            $zopim.livechat.setStatus('offline');
+
+            // 2 - hide the widget
+            $zopim.livechat.hideAll();
+        }
+
+        else {
+
+            // The department is Online (At least one agent is Online)
+            // 3 - Hide the Drop-down list option in the Pre-Chat Form to select the department
+
+            $zopim.livechat.window.setTitle(title);
+            $zopim.livechat.theme.setColor('#FF6B00');
+            //Reload puts the title and colour change into effect
+            $zopim.livechat.theme.reload();
+            $zopim.livechat.addTags(department);
+            $zopim.livechat.departments.filter('');
+            $zopim.livechat.prechatForm.setGreetings("Enter your question in the message box below. Please note that Live Chat is only available to customers who have valid Support & Maintenance on Keil or Arm products. We will be unable to answer technical questions outside of the Keil and Arm portfolio of products.");
+            // 4 - Automatically set the department
+            $zopim.livechat.departments.setVisitorDepartment(department);
+        }
+    });
+});

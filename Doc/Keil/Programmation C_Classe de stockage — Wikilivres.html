@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Classe_'extern' -->
+<html class="client-js ve-available" lang="fr" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Programmation C/Classe de stockage — Wikilivres</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgRequestId":"XpHD6wpAMNcAAWY5HX4AAADN","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Programmation_C/Classe_de_stockage","wgTitle":"Programmation C/Classe de stockage","wgCurRevisionId":626200,"wgRevisionId":626200,"wgArticleId":684,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages avec des erreurs de coloration syntaxique","À faire","Programmation C (livre)"],"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgRelevantPageName":"Programmation_C/Classe_de_stockage","wgRelevantArticleId":684,"wgIsProbablyEditable":!0,
+"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgVisualEditor":{"pageLanguageCode":"fr","pageLanguageDir":"ltr","pageVariantFallbacks":"fr"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"français","wgNoticeProject":"wikibooks","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","mediawiki.toc.styles":"ready","skins.vector.styles.legacy":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup",
+"skins.vector.js","mediawiki.page.ready","mediawiki.toc","ext.gadget.extlinks","ext.gadget.EditIndex","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.centralNotice.geoIP","ext.centralNotice.startUp"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"fr"});
+});});</script>
+<link rel="stylesheet" href="./Programmation C_Classe de stockage — Wikilivres_files/load.php">
+<script async="" src="./Programmation C_Classe de stockage — Wikilivres_files/load(1).php"></script>
+<style>
+.mw-editfont-monospace{font-family:monospace,monospace}.mw-editfont-sans-serif{font-family:sans-serif}.mw-editfont-serif{font-family:serif} .mw-editfont-monospace,.mw-editfont-sans-serif,.mw-editfont-serif{font-size:13px; }.mw-editfont-monospace.oo-ui-textInputWidget,.mw-editfont-sans-serif.oo-ui-textInputWidget,.mw-editfont-serif.oo-ui-textInputWidget{font-size:inherit}.mw-editfont-monospace.oo-ui-textInputWidget > .oo-ui-inputWidget-input,.mw-editfont-sans-serif.oo-ui-textInputWidget > .oo-ui-inputWidget-input,.mw-editfont-serif.oo-ui-textInputWidget > .oo-ui-inputWidget-input{font-size:13px}
+.mw-ui-button{background-color:#f8f9fa;color:#222222;display:inline-block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;min-width:4em;max-width:28.75em;margin:0;padding:6px 12px;border:1px solid #a2a9b1;border-radius:2px;cursor:pointer;vertical-align:middle;font-family:inherit;font-size:1em;font-weight:bold;line-height:1.28571429em;text-align:center;-webkit-appearance:none}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:active,.mw-ui-button.is-on{background-color:#c8ccd1;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#ffffff;border-color:#c8ccd1;cursor:default}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#ffffff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:not(:disabled){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button.mw-ui-quiet,.mw-ui-button.mw-ui-quiet.mw-ui-progressive,.mw-ui-button.mw-ui-quiet.mw-ui-destructive{background-color:transparent;color:#222222;border-color:transparent}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:hover{background-color:transparent;color:#444444;border-color:transparent;box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:active{background-color:transparent;color:#000000;border-color:transparent}.mw-ui-button.mw-ui-quiet:focus,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:focus,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:focus{background-color:transparent;color:#222222;border-color:transparent;box-shadow:none}.mw-ui-button.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled,.mw-ui-button.mw-ui-quiet:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-quiet:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:active{background-color:transparent;color:#72777d;border-color:transparent}.mw-ui-button.mw-ui-progressive{background-color:#3366cc;color:#fff;border:1px solid #3366cc}.mw-ui-button.mw-ui-progressive:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-progressive.is-on{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet{color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-destructive{background-color:#dd3333;color:#fff;border:1px solid #dd3333}.mw-ui-button.mw-ui-destructive:hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#dd3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#ff4242}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active{color:#b32424}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#dd3333}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}input.mw-ui-button::-moz-focus-inner,button.mw-ui-button::-moz-focus-inner{margin-top:-1px;margin-bottom:-1px}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not(:first-child){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}span.mw-ui-icon{display:inline-block}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large{width:4.625em;min-width:4.625em;max-width:4.625em;line-height:4.625em;min-height:4.625em}.mw-ui-icon.mw-ui-icon-element.mw-ui-icon-large:before{min-height:4.625em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+.ve-init-mw-progressBarWidget{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-progressBarWidget-bar{height:1em;width:0} .ve-init-mw-progressBarWidget{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba(0,0,0,0.15)}.ve-init-mw-progressBarWidget-bar{height:0.75em;background:#36c}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	.toc.tochidden,.toctoggle{display:none}}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.uls-menu{border-radius:2px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:2px;border-top-left-radius:2px}.uls-language-list{border-bottom-right-radius:2px;border-bottom-left-radius:2px}.uls-menu.callout:before,.uls-menu.callout:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.uls-menu.callout.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.uls-menu.callout.selector-right:after{ border-left:10px solid #fff; right:-10px}.uls-menu.callout.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.uls-menu.callout.selector-left:after{ border-right:10px solid #fff; left:-10px}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?e226b);background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c8ccd1;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}.uls-menu .uls-no-results-view .uls-no-found-more{background-color:#fff}.uls-menu .uls-no-results-view h3{padding:0 28px;margin:0;color:#54595d;font-size:1em;font-weight:normal}  .skin-vector .uls-menu{border-color:#c8ccd1;-webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);font-size:0.875em}.skin-vector .uls-search{border-bottom-color:#c8ccd1}.skin-vector .uls-search-label{opacity:0.51;-webkit-transition:opacity 250ms;-moz-transition:opacity 250ms;transition:opacity 250ms}.skin-vector .uls-search-wrapper:hover .uls-search-label{opacity:0.87}.skin-vector .uls-filtersuggestion{color:#72777d}.skin-vector .uls-lcd-region-title{color:#54595d}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAElBMVEUAAAAQEBDPz88AAABAQEDv7+9oe1vvAAAABnRSTlMA3rLe3rJS22KzAAAARElEQVQI12PAAUIUQCSTK5BwFgIxFU1AhKECUFAYKAAioXwwBeZChMGCEGGQIFQYJohgIhQgtCEMQ7ECYTHCOciOxA4AADgJTXIb9s8AAAAASUVORK5CYII=) no-repeat;width:20px;height:20px;text-indent:20px;white-space:nowrap;overflow:hidden}</style><style>
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M851.2 71.6L690.7 232.1l-40.1-40.3-9.6 164.8 164.8-9.3-40.3-40.4L926 146.4l58.5 58.5L997.6 0 792.7 13.1%22/%3E %3Cpath d=%22M769.6 89.3H611.9l70.9 70.8 7.9 7.5m-47.1 234.6l-51.2 3 3-51.2 9.4-164.4 5.8-100.3H26.4V768h883.1V387l-100.9 5.8-165 9.4zM813.9 678H113.6l207.2-270.2 31.5-12.9L548 599.8l105.9-63.2 159.8 140.8.2.6zm95.6-291.9V228l-79.1 78.9 7.8 7.9%22/%3E %3C/svg%3E")}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M897 454.6V313.4L810.4 299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4 50.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427 85.6c-23.3 6.4-45.7 16-65.8 27.3l-71.4-50.5-100.3 99.5 50.5 71.4c-11.2 20.9-20.9 42.5-27.3 66.6L127 313.4v141.2l85.8 14.4c6.4 23.3 16 45.7 27.3 66.6L189.6 607l99.5 99.5 71.4-50.5c20.9 11.2 42.5 20.9 66.6 27.3l14.4 85.8h141.2l14.4-86.6c23.3-6.4 45.7-16 65.8-27.3l71.4 50.5 99.5-99.5-50.5-71.4c11.2-20.9 20.9-42.5 27.3-66.6l86.4-13.6zm-385 77c-81.8 0-147.6-66.6-147.6-147.6 0-81.8 66.6-147.6 147.6-147.6S659.6 302.2 659.6 384 593.8 531.6 512 531.6z%22/%3E %3C/svg%3E");opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}.mw-mmv-button{background-color:transparent;min-width:0;border:0;padding:0;overflow-x:hidden;text-indent:-9999em}
+.ve-init-mw-tempWikitextEditorWidget{border:0;padding:0;color:inherit;line-height:1.5em;width:100%;-moz-tab-size:4;tab-size:4; }.ve-init-mw-tempWikitextEditorWidget:focus{outline:0;padding:0}.ve-init-mw-tempWikitextEditorWidget::selection{background:rgba(109,169,247,0.5); }
+#p-lang .body ul .uls-trigger,#p-lang .pBody ul .uls-trigger{background-image:none;padding:0} .mw-interlanguage-selector,.mw-interlanguage-selector:active{cursor:pointer;padding:4px 6px 4px 25px;font-size:13px;font-weight:normal;background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/compact-links-trigger.png?b0c8e);background-image:linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/compact-links-trigger.svg?ebb8e);background-size:18px;background-repeat:no-repeat;background-position:left 4px center;margin:4px 0;text-align:left}.mw-interlanguage-selector:active,.mw-interlanguage-selector.selector-open{background-color:#c8ccd1;color:#54595d}.interlanguage-uls-menu:before,.interlanguage-uls-menu:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.interlanguage-uls-menu.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.interlanguage-uls-menu.selector-right:after{ border-left:10px solid #fff; right:-10px}.interlanguage-uls-menu.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.interlanguage-uls-menu.selector-left:after{ border-right:10px solid #fff; left:-10px}
+#uls-settings-block{background-color:#f8f9fa;border-top:1px solid #c8ccd1;padding-left:10px;line-height:1.2em;border-radius:0 0 2px 2px}#uls-settings-block > button{background:left top transparent no-repeat;background-size:20px auto;color:#54595d;display:inline-block;margin:8px 15px;border:0;padding:0 0 0 26px;font-size:medium;cursor:pointer}#uls-settings-block > button:hover{color:#222}#uls-settings-block > button.display-settings-block{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/display.png?d25f1);background-image:linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/display.svg?a28d5)}#uls-settings-block > button.input-settings-block{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/input.png?aea9e);background-image:linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/input.svg?2ec7d)}</style><style>
+.ve-activated .ve-init-mw-desktopArticleTarget-editableContent #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent,.ve-active .ve-init-mw-tempWikitextEditorWidget{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not(.ve-init-mw-desktopArticleTarget-loading-overlay), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0.5}.ve-activated #firstHeading{ -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;pointer-events:auto;cursor:text}.ve-activated #firstHeading a{ pointer-events:none}.ve-activated #catlinks{cursor:pointer}.ve-activated #catlinks a{opacity:1}.ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;top:1.25em;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{transition:height 250ms ease;height:0; } .oo-ui-element-hidden{display:none !important; } .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#54595d} .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{border-bottom:1px solid #c8ccd1;box-shadow:0 1px 1px 0 rgba(0,0,0,0.1)}.ve-init-mw-desktopArticleTarget-toolbarPlaceholder-open{height:42px} .ve-init-mw-desktopArticleTarget-toolbar,.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{font-size:0.875em; margin:-1.14em -1.14em 1.14em -1.14em; }@media screen and (min-width:982px){.ve-init-mw-desktopArticleTarget-toolbar,.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{ margin:-1.43em -1.71em 1.43em -1.71em}}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Programmation C_Classe de stockage — Wikilivres_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.35.0-wmf.27">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" type="application/x-wiki" title="Modifier" href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit">
+<link rel="edit" title="Modifier" href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit">
+<link rel="shortcut icon" href="https://fr.wikibooks.org/static/favicon/wikibooks.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://fr.wikibooks.org/w/opensearch_desc.php" title="Wikilivres (fr)">
+<link rel="EditURI" type="application/rsd+xml" href="https://fr.wikibooks.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de Wikilivres" href="https://fr.wikibooks.org/w/index.php?title=Sp%C3%A9cial:Modifications_r%C3%A9centes&amp;feed=atom">
+<link rel="canonical" href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Programmation_C_Classe_de_stockage rootpage-Programmation_C skin-vector action-view">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><div id="centralNotice"></div><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+</div>
+
+	<h1 id="firstHeading" class="firstHeading" lang="fr"><div class="icone_de_titre noprint" style="float: right; z-index: 10; position: relative; font-size: 25px; line-height: 25px; display: block; border-width: 1px; border-style: solid; border-color: white;"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Version_imprimable" title="Version imprimable"><img alt="Version imprimable" src="./Programmation C_Classe de stockage — Wikilivres_files/25px-Gnome-dev-printer.svg.png" decoding="async" width="25" height="25" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Gnome-dev-printer.svg/38px-Gnome-dev-printer.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Gnome-dev-printer.svg/50px-Gnome-dev-printer.svg.png 2x" data-file-width="60" data-file-height="60"></a></div>Programmation C/Classe de stockage</h1>
+	
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">Un livre de Wikilivres.</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="https://fr.wikibooks.org/wiki/Programmation_C" title="Programmation C">Programmation C</a></span></div>
+		
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#mw-head">Sauter à la navigation</a>
+		<a class="mw-jump-link" href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#p-search">Sauter à la recherche</a>
+		<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output">
+<div class="noprint">
+<table style="margin: 0 0 1em 1em; border:3px blue solid; border-style: inset; background-color:white;" cellspacing="0" cellpadding="2px" align="right">
+<tbody><tr>
+<td style="text-align:center;background:#EAF5FB;"><b><a href="https://fr.wikibooks.org/wiki/Programmation_C" title="Programmation C">Programmation C</a></b>
+</td></tr>
+<tr>
+<th>Sommaire
+</th></tr>
+<tr>
+<td>
+<p><small>
+</small></p><small>
+<ul><li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Introduction" title="Programmation C/Introduction">Introduction</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Bases_du_langage" title="Programmation C/Bases du langage">Bases du langage</a>
+<ul><li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Types_de_base" title="Programmation C/Types de base">Types de base</a></li>
+<li><a class="mw-selflink selflink">Classe de stockage</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Op%C3%A9rateurs" title="Programmation C/Opérateurs">Opérateurs</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Tests" title="Programmation C/Tests">Tests</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/It%C3%A9rations" title="Programmation C/Itérations">Itérations</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Fonctions_et_proc%C3%A9dures" title="Programmation C/Fonctions et procédures">Fonctions</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Tableaux" title="Programmation C/Tableaux">Tableaux</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Pointeurs" title="Programmation C/Pointeurs">Pointeurs</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Types_avanc%C3%A9s" title="Programmation C/Types avancés">Types avancés</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Pr%C3%A9processeur" title="Programmation C/Préprocesseur">Préprocesseur</a></li></ul></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Biblioth%C3%A8que_standard" title="Programmation C/Bibliothèque standard">Bibliothèque</a>
+<ul><li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Cha%C3%AEnes_de_caract%C3%A8res" title="Programmation C/Chaînes de caractères">Chaînes</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Entr%C3%A9es/sorties" title="Programmation C/Entrées/sorties">Entrées/sorties</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Erreurs" title="Programmation C/Erreurs">Erreurs</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Math%C3%A9matiques" title="Programmation C/Mathématiques">Mathématiques</a>
+<ul><li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Courbe_de_B%C3%A9zier" title="Programmation C/Courbe de Bézier">Courbe de Bézier</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Triangle_de_Sierpi%C5%84ski" title="Programmation C/Triangle de Sierpiński">Triangle de Sierpiński</a></li></ul></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Gestion_de_la_m%C3%A9moire" title="Programmation C/Gestion de la mémoire">Gestion de la mémoire</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Gestion_des_signaux" title="Programmation C/Gestion des signaux">Gestion des signaux</a></li></ul></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Conclusion" title="Programmation C/Conclusion">Conclusion</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/Programmation_C/Bibliographie" title="Programmation C/Bibliographie">Bibliographie</a></li></ul>
+</small><p><small></small>
+</p>
+</td></tr>
+<tr>
+<td align="right" bgcolor="white"><small><a class="external text" href="https://fr.wikibooks.org/w/index.php?title=Mod%C3%A8le:Programmation_C&amp;action=edit">Modifier ce modèle</a></small>
+</td></tr></tbody></table>
+</div>
+<p><br>
+Il est possible de construire des types dérivés des types de base du langage en utilisant plusieurs combinaisons, deux étant illustrées dans ce chapitre: les classes de stockage et les qualificateurs.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="fr" dir="ltr"><h2 id="mw-toc-heading">Sections</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Classe_de_stockage"><span class="tocnumber">1</span> <span class="toctext">Classe de stockage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Classe_&#39;static&#39;"><span class="tocnumber">1.1</span> <span class="toctext">Classe 'static'</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Classe_&#39;extern&#39;"><span class="tocnumber">1.2</span> <span class="toctext">Classe 'extern'</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Classe_&#39;register&#39;"><span class="tocnumber">1.3</span> <span class="toctext">Classe 'register'</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Classe_&#39;auto&#39;"><span class="tocnumber">1.4</span> <span class="toctext">Classe 'auto'</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Qualificateurs"><span class="tocnumber">2</span> <span class="toctext">Qualificateurs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Qualificateur_&#39;const&#39;"><span class="tocnumber">2.1</span> <span class="toctext">Qualificateur 'const'</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Qualificateur_&#39;volatile&#39;"><span class="tocnumber">2.2</span> <span class="toctext">Qualificateur 'volatile'</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage#Qualificateur_&#39;restrict&#39;"><span class="tocnumber">2.3</span> <span class="toctext">Qualificateur 'restrict'</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Classe_de_stockage">Classe de stockage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=1" class="mw-editsection-visualeditor" title="Modifier la section : Classe de stockage">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=1" title="Modifier la section : Classe de stockage">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Le langage C permet de spécifier, avant le type d'une variable, un certain nombre de <i>classes de stockage</i>&nbsp;: 
+</p>
+<ul><li><code>auto</code>&nbsp;: pour les variables locales&nbsp;;</li>
+<li><code>extern</code>&nbsp;: déclare une variable sans la définir&nbsp;;</li>
+<li><code>register</code>&nbsp;: demande au compilateur de faire tout son possible pour utiliser un registre processeur pour cette variable&nbsp;;</li>
+<li><code>static</code>&nbsp;: rend une définition de variable persistante.</li></ul>
+<p>Les classes <code>static</code> et <code>extern</code> sont, de loin, les plus utilisées. <code>register</code> est d'une utilité limitée, et <code>auto</code> est maintenant obsolète.
+</p><p>Une variable, ou un paramètre de fonction, ne peut avoir qu'au plus une classe de stockage.
+</p>
+<h3><span id="Classe_.27static.27"></span><span class="mw-headline" id="Classe_&#39;static&#39;">Classe 'static'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=2" class="mw-editsection-visualeditor" title="Modifier la section : Classe &#39;static&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=2" title="Modifier la section : Classe &#39;static&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>L'effet de la classe 'static' dépend de l'endroit où l'objet est déclaré&nbsp;:
+</p>
+<ul><li><i>Objet local à un bloc</i>&nbsp;: la valeur de la variable sera persistante entre les différents appels de la fonction où se trouve le bloc. La variable ne sera visible que dans la fonction, mais ne sera pas réinitialisée à chaque appel de la fonction. L'intérêt est de garantir une certaine encapsulation, afin d'éviter des usages multiples d'une variable globale. Qui plus est, cela permet d'avoir plusieurs fois le même nom, dans des fonctions différentes.</li></ul>
+<p>Exemple&nbsp;:
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* i sera initialisée à 0 à la compilation seulement */</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* j sera initialisée à chaque appel de f */</span><span class="p">;</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"i vaut %d et j vaut %d.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">f</span><span class="p">();</span>
+    <span class="n">f</span><span class="p">();</span>
+    <span class="n">f</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Résultat d'exécution du code ci dessus&nbsp;:
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="n">i</span> <span class="n">vaut</span> <span class="mi">1</span> <span class="n">et</span> <span class="n">j</span> <span class="n">vaut</span> <span class="mf">1.</span>
+<span class="n">i</span> <span class="n">vaut</span> <span class="mi">2</span> <span class="n">et</span> <span class="n">j</span> <span class="n">vaut</span> <span class="mf">1.</span>
+<span class="n">i</span> <span class="n">vaut</span> <span class="mi">3</span> <span class="n">et</span> <span class="n">j</span> <span class="n">vaut</span> <span class="mf">1.</span>
+</pre></div> 
+<p>Il est déconseillé de redéfinir plusieurs fois la même variable statique dans différents blocs, car le résultat peut être surprenant&nbsp;:
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">toto</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">char</span> <span class="n">toto</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"deb fun: %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">toto</span><span class="p">);</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"deb block: %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">toto</span><span class="p">);</span>
+        <span class="k">static</span> <span class="kt">char</span> <span class="n">toto</span> <span class="o">=</span> <span class="sc">'M'</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"fin block: %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">toto</span><span class="p">);</span>
+        <span class="n">toto</span> <span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">toto</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"fin fun: %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">toto</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">toto</span><span class="p">();</span>
+    <span class="n">toto</span><span class="p">();</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Affiche
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>deb fun: A
+deb bloc: A
+fin bloc: M
+fin fun: B
+deb fun: B
+deb bloc: B
+fin bloc: N
+fin fun: C</pre></div>
+<p>On voit que la durée de vie de la variable de bloc statique ne commence qu'à partir de sa déclaration, même si la déclaration n'est exécutée qu'une fois au cours du programme.
+</p>
+<ul><li><i>Objet global et fonction</i>&nbsp;: comme une variable globale est déjà persistante, le mot-clé <code>static</code> aura pour effet de limiter la portée de la variable ou de la fonction au seul fichier où elle est déclarée, toujours dans le but de garantir un certain niveau d'encapsulation.</li></ul>
+<p>Une variable de classe statique est initialisée au moment de la compilation à zéro par défaut (contrairement aux variables dynamiques qui ont une valeur initiale indéterminée). Elle peut être initialisée explicitement à n'importe quelle valeur <i>constante</i>.
+</p>
+<div class="bandeau noprint bandeaujaune" style="clear:;">
+<div class="bandeautitre">À faire...</div><div class="floatright"><a href="https://fr.wikibooks.org/wiki/Fichier:Nuvola_apps_korganizer.svg" class="image" title="link={{{link}}}"><img alt="link={{{link}}}" src="./Programmation C_Classe de stockage — Wikilivres_files/40px-Nuvola_apps_korganizer.svg.png" decoding="async" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Nuvola_apps_korganizer.svg/60px-Nuvola_apps_korganizer.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Nuvola_apps_korganizer.svg/80px-Nuvola_apps_korganizer.svg.png 2x" data-file-width="128" data-file-height="128"></a></div>
+<div style="padding: 5px; background-color: white;">
+<p>utilisation de <code>static</code> en C99 pour les tableaux en paramètres de fonctions
+</p>
+</div>
+</div>
+<h3><span id="Classe_.27extern.27"></span><span class="mw-headline" id="Classe_&#39;extern&#39;">Classe 'extern'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=3" class="mw-editsection-visualeditor" title="Modifier la section : Classe &#39;extern&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=3" title="Modifier la section : Classe &#39;extern&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><code>extern</code> permet de <i>déclarer</i> une variable sans la <i>définir</i>. C'est utile pour la compilation séparée, pour définir une variable ou une fonction dans un fichier, en permettant à des fonctions contenues dans d'autres fichiers d'y accéder.
+</p><p>Toutes les variables globales et fonctions qui ne sont pas déclarées (ou définies) <code>static</code> sont externes par défaut.
+</p><p><code>static</code> et <code>extern</code> sont employés pour distinguer, dans un fichier C, les objets et fonctions «&nbsp;privés&nbsp;», qui ne doivent être utilisés que depuis l'intérieur du fichier, et ceux qui sont «&nbsp;publics&nbsp;», et pourront être accessibles depuis d'autres fichiers.
+</p>
+<h3><span id="Classe_.27register.27"></span><span class="mw-headline" id="Classe_&#39;register&#39;">Classe 'register'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=4" class="mw-editsection-visualeditor" title="Modifier la section : Classe &#39;register&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=4" title="Modifier la section : Classe &#39;register&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>L'usage de ce mot clé est utile dans un contexte de logiciel embarqué.
+Indique que la variable devrait être stockée dans un registre du processeur. Cela permet de gagner en performance par rapport à des variables qui seraient stockées dans un espace mémoire beaucoup moins rapide, comme une pile placée en mémoire vive.
+</p><p>Ce mot-clé a deux limitations principales&nbsp;:
+</p>
+<ul><li>Les registres du processeur sont limités. Leur nombre peut varier en fonction du processeur. Sur un PC (d'architecture AMD64?), ils sont au nombre de 13, dont seulement 4 servent au stockage (EAX,EBX,ECX,EDX). Il est donc inutile de déclarer une structure entière ou un tableau avec le mot clé <code>register</code>.</li>
+<li>Qui plus est, les variables placées dans des registres sont forcément locales à des fonctions&nbsp;; on ne peut pas définir une variable globale en tant que registre.</li></ul>
+<p>Aujourd'hui, ce mot-clé est déconseillé sauf pour des cas particuliers, les compilateurs modernes sachant généralement mieux que le programmeur comment optimiser et quelles variables placer dans les registres.
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">register</span> <span class="kt">short</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s"> %d %d"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span id="Classe_.27auto.27"></span><span class="mw-headline" id="Classe_&#39;auto&#39;">Classe 'auto'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=5" class="mw-editsection-visualeditor" title="Modifier la section : Classe &#39;auto&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=5" title="Modifier la section : Classe &#39;auto&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Cette classe est un héritage du langage B. En C, ce mot-clé sert pour les variables locales à une fonction non-statiques, dites aussi <i>automatiques</i>. Mais une variable déclarée localement à une fonction sans qualificateur <code>static</code> étant implicitement automatique, ce mot-clé est inutile en C.
+</p>
+<h2><span class="mw-headline" id="Qualificateurs">Qualificateurs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=6" class="mw-editsection-visualeditor" title="Modifier la section : Qualificateurs">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=6" title="Modifier la section : Qualificateurs">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Le C définit trois qualificateurs pouvant influer sur une variable&nbsp;: 
+</p>
+<ul><li><code>const</code>&nbsp;: pour définir une variable dont la valeur ne devrait jamais changer&nbsp;;</li>
+<li><code>restrict</code>&nbsp;: permet une optimisation pour la gestion des pointeurs&nbsp;;</li>
+<li><code>volatile</code>&nbsp;: désigne une variable pouvant être modifiée notamment par une source externe indépendante du programme.</li></ul>
+<p>Une variable, ou un paramètre de fonction, peut avoir aucun, un, deux, ou les trois qualificateurs (certaines combinaisons n'auraient que peu de sens, mais sont autorisées).
+</p>
+<h3><span id="Qualificateur_.27const.27"></span><span class="mw-headline" id="Qualificateur_&#39;const&#39;">Qualificateur 'const'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=7" class="mw-editsection-visualeditor" title="Modifier la section : Qualificateur &#39;const&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=7" title="Modifier la section : Qualificateur &#39;const&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>La classe <code>const</code> ne déclare pas une vraie constante, mais indique au compilateur que la valeur de la variable ne doit pas changer. Il est donc impératif d'assigner une valeur à la déclaration de la variable, sans quoi toute tentative de modification ultérieure entrainera une erreur de la part du compilateur&nbsp;:
+</p>
+<div style="width:auto; float:none; clear:; margin:.5em 0em; padding:.5em; border:1px solid #A0A0A0; background-color:auto;"><a href="https://fr.wikibooks.org/wiki/Fichier:Achtung.svg" class="image" title="Avertissement"><img alt="Avertissement" src="./Programmation C_Classe de stockage — Wikilivres_files/20px-Achtung.svg.png" decoding="async" width="20" height="18" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Achtung.svg/30px-Achtung.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Achtung.svg/40px-Achtung.svg.png 2x" data-file-width="628" data-file-height="550"></a> Ce code contient <b>une erreur volontaire</b>&nbsp;!
+</div>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/* erreur*/</span>
+</pre></div>
+<p>En fait, le mot-clé <code>const</code> est beaucoup plus utilisé avec des pointeurs. Pour indiquer qu'on ne modifie pas l'objet pointé, il est bon de spécificier le mot-clé <code>const</code>&nbsp;:
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">void</span> <span class="nf">fonction</span><span class="p">(</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">pointeur</span> <span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">pointeur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>     <span class="cm">/* erreur*/</span>
+        <span class="n">pointeur</span>    <span class="o">=</span> <span class="s">"Nouvelle chaine de caractères"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Dans cet exemple, on indique que l'objet pointé ne sera pas modifié. Pour indiquer que la valeur elle-même du pointeur est constante, il faut déclarer la variable de la sorte&nbsp;:
+</p>
+<div style="width:auto; float:none; clear:; margin:.5em 0em; padding:.5em; border:1px solid #A0A0A0; background-color:auto;"><a href="https://fr.wikibooks.org/wiki/Fichier:Achtung.svg" class="image" title="Avertissement"><img alt="Avertissement" src="./Programmation C_Classe de stockage — Wikilivres_files/20px-Achtung.svg.png" decoding="async" width="20" height="18" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Achtung.svg/30px-Achtung.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Achtung.svg/40px-Achtung.svg.png 2x" data-file-width="628" data-file-height="550"></a> Ce code contient <b>une erreur volontaire</b>&nbsp;!
+</div>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pointeur</span> <span class="o">=</span> <span class="s">"Salut tout le monde !"</span><span class="p">;</span>
+<span class="n">pointeur</span> <span class="o">=</span> <span class="s">"Hello world !"</span><span class="p">;</span> <span class="cm">/* erreur*/</span>
+</pre></div>
+<p>Encore plus subtil, on peut mélanger les deux&nbsp;:
+</p>
+<div style="width:auto; float:none; clear:; margin:.5em 0em; padding:.5em; border:1px solid #A0A0A0; background-color:auto;"><a href="https://fr.wikibooks.org/wiki/Fichier:Achtung.svg" class="image" title="Avertissement"><img alt="Avertissement" src="./Programmation C_Classe de stockage — Wikilivres_files/20px-Achtung.svg.png" decoding="async" width="20" height="18" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Achtung.svg/30px-Achtung.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Achtung.svg/40px-Achtung.svg.png 2x" data-file-width="628" data-file-height="550"></a> Ce code contient <b>plusieurs erreurs volontaires</b>&nbsp;!
+</div>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pointeur</span> <span class="o">=</span> <span class="s">"Salut tout le monde !"</span><span class="p">;</span>
+<span class="n">pointeur</span> <span class="o">=</span> <span class="s">"Hello world !"</span><span class="p">;</span> <span class="cm">/* erreur*/</span>
+<span class="n">pointeur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* erreur*/</span>
+</pre></div>
+<p>Cette dernière forme est néanmoins rarement usitée. En outre ce dernier exemple présente un autre problème qui est la modification d'une chaine de caractères «&nbsp;en dur&nbsp;», qui sont la plupart du temps placées dans la section lecture seule du programme et donc inaltérables.
+</p><p>Attention <code>const</code> n'est pas une protection réelle contre les changements de valeur, qu'elles proviennent d'un comportement indéfini, ou de constructions valides du C telle que
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="k">const</span> <span class="kt">char</span> <span class="n">lettre</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lettre</span><span class="p">,</span> <span class="sc">'B'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">putchar</span><span class="p">(</span><span class="n">lettre</span><span class="p">);</span> <span class="cm">/* affiche B */</span>
+</pre></div>
+<p>En outre certaines constructions du C même si elles n'indiquent pas être <code>const</code> le sont effectiement.
+</p>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">int</span> <span class="n">nombres</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kt">int</span> <span class="o">*</span> <span class="n">autres_nombres</span><span class="p">;</span>
+<span class="n">nombres</span> <span class="o">=</span> <span class="n">autres_nombres</span><span class="p">;</span>  <span class="cm">/* erreur à la compilation, l'addresse d'un tableau ne peut pas être modifié */</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="n">phrase</span> <span class="o">=</span> <span class="s">"Salut tout le monde !"</span><span class="p">;</span>
+<span class="n">phrase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'s'</span><span class="p">;</span>  <span class="cm">/* erreur probable à l'exécution, une chaine de caractères littérale ne peut pas être modifiée */</span>
+</pre></div>
+<h3><span id="Qualificateur_.27volatile.27"></span><span class="mw-headline" id="Qualificateur_&#39;volatile&#39;">Qualificateur 'volatile'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=8" class="mw-editsection-visualeditor" title="Modifier la section : Qualificateur &#39;volatile&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=8" title="Modifier la section : Qualificateur &#39;volatile&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Ce mot-clé sert à spécifier au compilateur que la variable peut être modifiée à son insu. Cela annule toute optimisation que le compilateur pourrait faire, et l'oblige à procéder à chaque lecture ou écriture dans une telle variable tel que le programmeur l'a écrit dans le code. Ceci a de multiples utilisations&nbsp;:
+</p>
+<ul><li>pour les coordonnées d'un pointeur de souris qui seraient modifiées par un autre programme&nbsp;;</li>
+<li>pour la gestion des signaux (voir <a href="https://fr.wikibooks.org/wiki/Programmation_C/Gestion_des_signaux" title="Programmation C/Gestion des signaux">Gestion des signaux</a>)&nbsp;;</li>
+<li>pour de la programmation avec de multiples fils d'exécution qui doivent communiquer entre eux&nbsp;;</li>
+<li>pour désigner des registres matériels qui peuvent être accédés depuis un programme C (une horloge, par exemple), mais dont la valeur peut changer indépendamment du programme&nbsp;;</li>
+<li>etc.</li></ul>
+<p>On peut combiner <code>const</code> et <code>volatile</code> dans certaines situations. Par exemple&nbsp;:
+</p>
+<pre>extern const volatile int horloge_temps_reel;</pre>
+<p>déclare une variable entière, qu'on ne peut modifier à partir du programme, mais dont la valeur peut changer quand même. Elle pourrait désigner une valeur incrémentée régulièrement par une horloge interne.
+</p>
+<h3><span id="Qualificateur_.27restrict.27"></span><span class="mw-headline" id="Qualificateur_&#39;restrict&#39;">Qualificateur 'restrict'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit&amp;section=9" class="mw-editsection-visualeditor" title="Modifier la section : Qualificateur &#39;restrict&#39;">modifier</a><span class="mw-editsection-divider"> | </span><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit&amp;section=9" title="Modifier la section : Qualificateur &#39;restrict&#39;">modifier le wikicode</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Introduit par C99, ce mot-clé s'applique aux déclarations de pointeurs uniquement. Avec <i>restrict</i>, le programmeur certifie au compilateur que le pointeur déclaré sera le seul à pointer sur une zone mémoire. Cela permettra au compilateur d'effectuer des optimisations qu'il n'aurait pas pu <i>deviner</i> autrement. Le programmeur ne doit pas <i>mentir</i> sous peine de problèmes...
+</p><p>Par exemple&nbsp;:
+</p>
+<pre>int* restrict pZone;</pre>
+
+<!-- 
+NewPP limit report
+Parsed by mw1239
+Cached time: 20200317014419
+Cache expiry: 2592000
+Dynamic content: false
+Complications: []
+CPU time usage: 0.076 seconds
+Real time usage: 0.277 seconds
+Preprocessor visited node count: 295/1000000
+Post‐expand include size: 5001/2097152 bytes
+Template argument size: 715/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 11494/5000000 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   25.976      1 -total
+ 38.71%   10.056      1 Modèle:Programmation_C
+ 24.70%    6.416      1 Modèle:Icône_version_imprimable
+ 24.54%    6.375      3 Modèle:Erreur_volontaire
+ 21.91%    5.690      1 Modèle:À_faire
+ 15.35%    3.986      2 Modèle:Cadre
+ 10.97%    2.850      1 Modèle:Méta-bandeau
+ 10.54%    2.738      1 Modèle:Icône_de_titre
+-->
+
+<!-- Saved in parser cache with key frwikibooks:pcache:idhash:684-0!canonical and timestamp 20200317014418 and revision id 626200
+ -->
+</div><noscript><img src="//fr.wikibooks.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>
+		<div class="printfooter">Récupérée de «&nbsp;<a dir="ltr" href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;oldid=626200">https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;oldid=626200</a>&nbsp;»</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Cat%C3%A9gories" title="Spécial:Catégories">Catégorie</a>&nbsp;: <ul><li><a href="https://fr.wikibooks.org/wiki/Cat%C3%A9gorie:Programmation_C_(livre)" title="Catégorie:Programmation C (livre)">Programmation C (livre)</a></li></ul> | <a id="mw-hidden-cats-link" title="Cette page contient des catégories cachées" style="cursor: pointer; color: black;">[+]</a></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Catégories cachées&nbsp;: <ul><li><a href="https://fr.wikibooks.org/wiki/Cat%C3%A9gorie:Pages_avec_des_erreurs_de_coloration_syntaxique" title="Catégorie:Pages avec des erreurs de coloration syntaxique">Pages avec des erreurs de coloration syntaxique</a></li><li><a href="https://fr.wikibooks.org/wiki/Cat%C3%A9gorie:%C3%80_faire" title="Catégorie:À faire">À faire</a></li></ul></div></div>
+		<div class="visualClear"></div>
+		
+	</div>
+</div>
+
+<div id="mw-navigation">
+    <h2>Menu de navigation</h2>
+    <div id="mw-head">
+        
+        <div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+        	<h3 id="p-personal-label">Outils personnels</h3>
+        	<ul>
+        		
+        		<li id="pt-anonuserpage">Non connecté</li>
+        		<li id="pt-anontalk"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Mes_discussions" title="La page de discussion pour les contributions depuis cette adresse IP [alt-shift-n]" accesskey="n">Discussion</a></li><li id="pt-anoncontribs"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Mes_contributions" title="Une liste des modifications effectuées depuis cette adresse IP [alt-shift-y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://fr.wikibooks.org/w/index.php?title=Sp%C3%A9cial:Cr%C3%A9er_un_compte&amp;returnto=Programmation+C%2FClasse+de+stockage" title="Nous vous encourageons à créer un compte utilisateur et vous connecter ; ce n’est cependant pas obligatoire.">Créer un compte</a></li><li id="pt-login"><a href="https://fr.wikibooks.org/w/index.php?title=Sp%C3%A9cial:Connexion&amp;returnto=Programmation+C%2FClasse+de+stockage" title="Nous vous encourageons à vous connecter ; ce n’est cependant pas obligatoire. [alt-shift-o]" accesskey="o">Se connecter</a></li>
+        	</ul>
+        </div>
+        <div id="left-navigation">
+            <div id="p-namespaces" role="navigation" class="vectorTabs " aria-labelledby="p-namespaces-label">
+            	<h3 id="p-namespaces-label">Espaces de noms</h3>
+            	<ul>
+            		<li id="ca-nstab-main" class="selected"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage" title="Voir le contenu de la page [alt-shift-c]" accesskey="c">Page</a></li><li id="ca-talk"><a href="https://fr.wikibooks.org/wiki/Discussion:Programmation_C/Classe_de_stockage" rel="discussion" title="Discussion au sujet de cette page de contenu [alt-shift-t]" accesskey="t">Discussion</a></li>
+            	</ul>
+            </div>
+            <div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+            	<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label">
+            	<h3 id="p-variants-label">
+            		<span>Variantes</span>
+            	</h3>
+            	<ul class="menu">
+            		
+            	</ul>
+            </div>
+        </div>
+        <div id="right-navigation">
+            <div id="p-views" role="navigation" class="vectorTabs " aria-labelledby="p-views-label">
+            	<h3 id="p-views-label">Affichages</h3>
+            	<ul>
+            		<li id="ca-view" class="collapsible selected"><a href="https://fr.wikibooks.org/wiki/Programmation_C/Classe_de_stockage">Lire</a></li><li id="ca-ve-edit" class="collapsible"><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;veaction=edit" title="Modifier cette page [alt-shift-v]" accesskey="v">Modifier</a></li><li id="ca-edit" class="collapsible"><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=edit" title="Modifier le wikicode [alt-shift-e]" accesskey="e">Modifier le wikicode</a></li><li id="ca-history" class="collapsible"><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=history" title="Historique des versions de cette page [alt-shift-h]" accesskey="h">Voir l’historique</a></li>
+            	</ul>
+            </div>
+            <div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+            	<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label">
+            	<h3 id="p-cactions-label">
+            		<span>Plus</span>
+            	</h3>
+            	<ul class="menu">
+            		
+            	</ul>
+            </div>
+            <div id="p-search" role="search">
+            	<h3>
+            		<label for="searchInput">Rechercher</label>
+            	</h3>
+            	<form action="https://fr.wikibooks.org/w/index.php" id="searchform">
+            		<div id="simpleSearch">
+            			<input type="search" name="search" placeholder="Rechercher dans Wikilivres" title="Rechercher dans Wikilivres [alt-shift-f]" accesskey="f" id="searchInput">
+            			<input type="hidden" value="Spécial:Recherche" name="title">
+            			<input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton">
+            			<input type="submit" name="go" value="Continuer" title="Accédez à une page du même nom si elle existe" id="searchButton" class="searchButton">
+            		</div>
+            	</form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="mw-panel">
+    	<div id="p-logo" role="banner">
+    		<a title="Visiter la page d’accueil" class="mw-wiki-logo" href="https://fr.wikibooks.org/wiki/Accueil"></a>
+    	</div>
+    	<div class="portal" role="navigation" id="p-Bibliothèque" aria-labelledby="p-Bibliothèque-label">
+    		<h3 id="p-Bibliothèque-label">
+    			Bibliothèque
+    		</h3>
+    		<div class="body">
+    			<ul><li id="n-mainpage"><a href="https://fr.wikibooks.org/wiki/Accueil" title="Visiter la page d’accueil du site [alt-shift-z]" accesskey="z">Accueil</a></li><li id="n-La-vitrine"><a href="https://fr.wikibooks.org/wiki/Wikilivres:Vitrine">La vitrine</a></li><li id="n-Tous-les-livres"><a href="https://fr.wikibooks.org/wiki/Wikilivres:Tous_les_livres">Tous les livres</a></li><li id="n-Rechercher-un-livre"><a href="https://fr.wikibooks.org/wiki/Wikilivres:Rechercher_un_livre">Rechercher un livre</a></li><li id="n-Wikijunior"><a href="https://fr.wikibooks.org/wiki/Wikijunior">Wikijunior</a></li></ul>
+    			
+    		</div>
+    	</div>
+    	
+    	<div class="portal" role="navigation" id="p-Navigation" aria-labelledby="p-Navigation-label">
+    		<h3 id="p-Navigation-label">
+    			Navigation
+    		</h3>
+    		<div class="body">
+    			<ul><li id="n-recentchanges"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Modifications_r%C3%A9centes" title="Liste des modifications récentes sur le wiki [alt-shift-r]" accesskey="r">Modifications récentes</a></li><li id="n-Communauté"><a href="https://fr.wikibooks.org/wiki/Wikilivres:Portail_communautaire">Communauté</a></li><li id="n-Le-Bistro"><a href="https://fr.wikibooks.org/wiki/Wikilivres:Le_Bistro/2020">Le Bistro</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_fr.wikibooks.org&amp;uselang=fr" title="Soutenez-nous">Faire un don</a></li><li id="n-Livre-au-hasard"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:RandomRootpage">Livre au hasard</a></li></ul>
+    			
+    		</div>
+    	</div>
+    	
+    	<div class="portal" role="navigation" id="p-Aide" aria-labelledby="p-Aide-label">
+    		<h3 id="p-Aide-label">
+    			Aide
+    		</h3>
+    		<div class="body">
+    			<ul><li id="n-help"><a href="https://fr.wikibooks.org/wiki/Aide:Accueil" title="Accès à l’aide">Aide</a></li><li id="n-Wikilivre-d&#39;aide"><a href="https://fr.wikibooks.org/wiki/Wikilivres">Wikilivre d'aide</a></li></ul>
+    			
+    		</div>
+    	</div>
+    	
+    	<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+    		<h3 id="p-coll-print_export-label">
+    			Imprimer&nbsp;/&nbsp;exporter
+    		</h3>
+    		<div class="body">
+    			<ul><li id="coll-create_a_book"><a href="https://fr.wikibooks.org/w/index.php?title=Sp%C3%A9cial:Livre&amp;bookcmd=book_creator&amp;referer=Programmation+C%2FClasse+de+stockage">Créer une compilation</a></li><li id="coll-download-as-rl"><a href="https://fr.wikibooks.org/w/index.php?title=Sp%C3%A9cial:ElectronPdf&amp;page=Programmation+C%2FClasse+de+stockage&amp;action=show-download-screen">Télécharger la compilation au format PDF</a></li><li id="t-print"><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;printable=yes" title="Version imprimable de cette page [alt-shift-p]" accesskey="p">Version imprimable</a></li></ul>
+    			
+    		</div>
+    	</div>
+    	
+    	<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+    		<h3 id="p-tb-label">
+    			Outils
+    		</h3>
+    		<div class="body">
+    			<ul><li id="google-trick-search"><a href="http://www.google.com/custom?sa=Google+Search&amp;domains=fr.wikibooks.org/wiki/Programmation%20C&amp;sitesearch=fr.wikibooks.org/wiki/Programmation%20C">Recherche dans livre</a></li><li id="t-whatlinkshere"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Pages_li%C3%A9es/Programmation_C/Classe_de_stockage" title="Liste des pages liées qui pointent sur celle-ci [alt-shift-j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Suivi_des_liens/Programmation_C/Classe_de_stockage" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [alt-shift-k]" accesskey="k">Suivi des pages liées</a></li><li id="t-upload"><a href="https://commons.wikimedia.org/wiki/Special:UploadWizard?uselang=fr" title="Importer des fichiers [alt-shift-u]" accesskey="u">Téléverser un fichier</a></li><li id="t-specialpages"><a href="https://fr.wikibooks.org/wiki/Sp%C3%A9cial:Pages_sp%C3%A9ciales" title="Liste de toutes les pages spéciales [alt-shift-q]" accesskey="q">Pages spéciales</a></li><li id="t-permalink"><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;oldid=626200" title="Adresse permanente de cette version de la page">Lien permanent</a></li><li id="t-info"><a href="https://fr.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;action=info" title="Plus d’informations sur cette page">Informations sur la page</a></li><li id="t-cite"><a href="https://fr.wikibooks.org/w/index.php?title=Sp%C3%A9cial:Citer&amp;page=Programmation_C%2FClasse_de_stockage&amp;id=626200&amp;wpFormIdentifier=titleform" title="Informations sur la manière de citer cette page">Citer cette page</a></li><li><span id="t-upload2" title="//fr.wikibooks.org/wiki/Aide:Importer_un_fichier"><a href="https://fr.wikibooks.org/wiki/Aide:Importer_un_fichier">Importer image ou son</a></span></li></ul>
+    			
+    		</div>
+    	</div>
+    	
+    	<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><button class="uls-settings-trigger" title="Paramètres de langue"></button>
+    		<h3 id="p-lang-label">
+    			Dans d’autres langues
+    		</h3>
+    		<div class="body">
+    			<ul><li class="interlanguage-link interwiki-en"><a href="https://en.wikibooks.org/wiki/C_Programming/Variables" title="C Programming/Variables — anglais" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li></ul>
+    			<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:NewItem?site=frwikibooks&amp;page=Programmation+C%2FClasse+de+stockage" title="Ajouter des liens interlangues" class="wbc-editpage">Ajouter des liens</a></span></div>
+    		</div>
+    	</div>
+    	
+    </div>
+</div>
+
+<div id="footer" role="contentinfo">
+	<ul id="footer-info" class="">
+		<li id="footer-info-lastmod"> La dernière modification de cette page a été faite le 11 décembre 2019 à 10:38.</li>
+		<li id="footer-info-copyright">Les textes sont disponibles sous <a href="https://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons attribution partage à l’identique</a> ; d’autres termes peuvent s’appliquer.<br>
+Voyez les <a href="https://wikimediafoundation.org/wiki/Conditions_d&#39;utilisation">termes d’utilisation</a> pour plus de détails.<br></li>
+	</ul>
+	<ul id="footer-places" class="">
+		<li id="footer-places-privacy"><a href="https://meta.wikimedia.org/wiki/Privacy_policy/fr" class="extiw" title="m:Privacy policy/fr">Politique de confidentialité</a></li>
+		<li id="footer-places-about"><a href="https://fr.wikibooks.org/wiki/Wikilivres:%C3%80_propos_de" class="mw-redirect" title="Wikilivres:À propos de">À propos de Wikilivres</a></li>
+		<li id="footer-places-disclaimer"><a href="https://fr.wikibooks.org/wiki/Wikilivres:Avertissements_g%C3%A9n%C3%A9raux" title="Wikilivres:Avertissements généraux">Avertissements</a></li>
+		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Développeurs</a></li>
+		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/fr.wikibooks.org">Statistiques</a></li>
+		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Déclaration sur les témoins (cookies)</a></li>
+		<li id="footer-places-mobileview"><a href="https://fr.m.wikibooks.org/w/index.php?title=Programmation_C/Classe_de_stockage&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Version mobile</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="./Programmation C_Classe de stockage — Wikilivres_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="./Programmation C_Classe de stockage — Wikilivres_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</div>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.076","walltime":"0.277","ppvisitednodes":{"value":295,"limit":1000000},"postexpandincludesize":{"value":5001,"limit":2097152},"templateargumentsize":{"value":715,"limit":2097152},"expansiondepth":{"value":7,"limit":40},"expensivefunctioncount":{"value":0,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":11494,"limit":5000000},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%   25.976      1 -total"," 38.71%   10.056      1 Modèle:Programmation_C"," 24.70%    6.416      1 Modèle:Icône_version_imprimable"," 24.54%    6.375      3 Modèle:Erreur_volontaire"," 21.91%    5.690      1 Modèle:À_faire"," 15.35%    3.986      2 Modèle:Cadre"," 10.97%    2.850      1 Modèle:Méta-bandeau"," 10.54%    2.738      1 Modèle:Icône_de_titre"]},"cachereport":{"origin":"mw1239","timestamp":"20200317014419","ttl":2592000,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":97,"wgHostname":"mw1373"});});</script>
+</body></html>

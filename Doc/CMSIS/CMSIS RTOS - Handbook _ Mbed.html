@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://os.mbed.com/handbook/CMSIS-RTOS -->
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="en" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>
+CMSIS RTOS - Handbook
+ | Mbed</title>
+    
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="user-scalable=yes,width=device-width,initial-scale=0.9">
+
+    
+
+
+<!-- Google Analytics -->
+<script type="text/javascript" async="" src="./CMSIS RTOS - Handbook _ Mbed_files/analytics.js.téléchargement"></script><script type="text/javascript" async="" src="./CMSIS RTOS - Handbook _ Mbed_files/js"></script><script async="" src="./CMSIS RTOS - Handbook _ Mbed_files/gtm.js.téléchargement"></script><script async="" src="./CMSIS RTOS - Handbook _ Mbed_files/analytics.js.téléchargement"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1447836-8');
+ga('require', 'GTM-WXMLD4S')
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=SMYNPwM0ICsV00c1ZHETqQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FZ495');</script>
+
+
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:971746,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script async="" src="./CMSIS RTOS - Handbook _ Mbed_files/hotjar-971746.js.téléchargement"></script>
+
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="https://os.mbed.com/static/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://os.mbed.com/static/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://os.mbed.com/static/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://os.mbed.com/static/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://os.mbed.com/static/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://os.mbed.com/static/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://os.mbed.com/static/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://os.mbed.com/static/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://os.mbed.com/static/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://os.mbed.com/static/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://os.mbed.com/static/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://os.mbed.com/static/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://os.mbed.com/static/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://os.mbed.com/static/img/favicons/manifest.json">
+<link rel="shortcut icon" href="https://os.mbed.com/static/img/favicon.ico?">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/static/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="./CMSIS RTOS - Handbook _ Mbed_files/css">
+<link rel="stylesheet" href="./CMSIS RTOS - Handbook _ Mbed_files/all.css">
+
+<link rel="stylesheet" href="./CMSIS RTOS - Handbook _ Mbed_files/output.4fd0af708193.css" type="text/css">
+
+
+    
+    
+
+    <link rel="stylesheet" type="text/css" href="./CMSIS RTOS - Handbook _ Mbed_files/legacy-main.c7788ee02d50.css">
+    <script type="text/javascript" src="./CMSIS RTOS - Handbook _ Mbed_files/legacy-bundle.a419d65c64ff.js.téléchargement"></script>
+
+    <script src="./CMSIS RTOS - Handbook _ Mbed_files/output.e54b4acb9b7d.js.téléchargement"></script>
+    <script type="text/javascript">
+        var MTIProjectId='531df303-da6d-4e1e-934d-ec3ecdc164a9';
+        (function() {
+            var mtiTracking = document.createElement('script');
+            mtiTracking.type='text/javascript';
+            mtiTracking.async='true';
+            mtiTracking.src="/static/js/mtiFontTrackingCode.js";
+            (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+        })();
+    </script><script type="text/javascript" async="" src="./CMSIS RTOS - Handbook _ Mbed_files/mtiFontTrackingCode.js.téléchargement"></script>
+
+    
+    
+    
+	
+	
+
+    
+<script async="" src="./CMSIS RTOS - Handbook _ Mbed_files/modules.a3d983311a7a43f86303.js.téléchargement" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><script charset="utf-8" src="./CMSIS RTOS - Handbook _ Mbed_files/bundle.js.téléchargement"></script><link type="text/css" rel="stylesheet" href="./CMSIS RTOS - Handbook _ Mbed_files/1.css"><style type="text/css">.ub-emb-iframe-wrapper{display:none;position:relative;vertical-align:middle}.ub-emb-iframe-wrapper.ub-emb-visible{display:inline-block}.ub-emb-iframe-wrapper .ub-emb-close{background-color:hsla(0,0%,100%,.6);border:0;border-radius:50%;color:#525151;cursor:pointer;font-family:Arial,sans-serif;font-size:20px;font-weight:400;height:20px;line-height:1;outline:none;padding:0;position:absolute;right:10px;text-align:center;top:10px;transition:transform .2s ease-in-out,background-color .2s ease-in-out;width:20px;z-index:1}.ub-emb-iframe-wrapper.ub-emb-mobile .ub-emb-close{transition:none}.ub-emb-iframe-wrapper .ub-emb-close:before{content:"";height:40px;position:absolute;right:-10px;top:-10px;width:40px}.ub-emb-iframe-wrapper .ub-emb-close:hover{-ms-transform:scale(1.2);background-color:#fff;transform:scale(1.2)}.ub-emb-iframe-wrapper .ub-emb-close:active,.ub-emb-iframe-wrapper .ub-emb-close:focus{background:hsla(0,0%,100%,.35);color:#444;outline:none}.ub-emb-iframe-wrapper .ub-emb-iframe{border:0;max-height:100%;max-width:100%}.ub-emb-overlay .ub-emb-iframe-wrapper .ub-emb-iframe{box-shadow:0 0 12px rgba(0,0,0,.3),0 1px 5px rgba(0,0,0,.2)}.ub-emb-overlay .ub-emb-iframe-wrapper.ub-emb-mobile{max-width:100vw}</style><style type="text/css">.ub-emb-overlay{transition:visibility .3s step-end;visibility:hidden}.ub-emb-overlay.ub-emb-visible{transition:none;visibility:visible}.ub-emb-overlay .ub-emb-backdrop,.ub-emb-overlay .ub-emb-scroll-wrapper{opacity:0;position:fixed;transition:opacity .3s ease,z-index .3s step-end;z-index:-1}.ub-emb-overlay .ub-emb-backdrop{background:rgba(0,0,0,.6);bottom:-1000px;left:-1000px;right:-1000px;top:-1000px}.ub-emb-overlay .ub-emb-scroll-wrapper{-webkit-overflow-scrolling:touch;bottom:0;box-sizing:border-box;left:0;overflow:auto;padding:30px;right:0;text-align:center;top:0;white-space:nowrap;width:100%}.ub-emb-overlay .ub-emb-scroll-wrapper:before{content:"";display:inline-block;height:100%;vertical-align:middle}.ub-emb-overlay.ub-emb-mobile .ub-emb-scroll-wrapper{padding:30px 0}.ub-emb-overlay.ub-emb-visible .ub-emb-backdrop,.ub-emb-overlay.ub-emb-visible .ub-emb-scroll-wrapper{opacity:1;transition:opacity .4s ease;z-index:2147483647}</style><style type="text/css">.ub-emb-bar{transition:visibility .2s step-end;visibility:hidden}.ub-emb-bar.ub-emb-visible{transition:none;visibility:visible}.ub-emb-bar .ub-emb-bar-frame{left:0;position:fixed;right:0;text-align:center;transition:bottom .2s ease-in-out,top .2s ease-in-out,z-index .2s step-end;z-index:-1}.ub-emb-bar.ub-emb-ios .ub-emb-bar-frame{right:auto;width:100%}.ub-emb-bar.ub-emb-visible .ub-emb-bar-frame{transition:bottom .3s ease-in-out,top .3s ease-in-out;z-index:2147483646}.ub-emb-bar .ub-emb-close{bottom:0;margin:auto 0;top:0}.ub-emb-bar:not(.ub-emb-mobile) .ub-emb-close{right:20px}</style></head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6FZ495&gtm_auth=3a8Vwkp5SsDiYq6tYR1ObQ&gtm_preview=env-6&gtm_cookies_win=x"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+
+
+
+
+
+
+
+<div class="mbed-nav">
+    <div class="mbed-nav__mobile-menu-control">
+        <i class="mbed-nav__mobile-menu-control-open fas fa-bars fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-close fas fa-times is-hidden fa-fw"></i>
+        <i class="mbed-nav__mobile-menu-control-back fas fa-angle-left is-hidden fa-fw"></i>
+    </div>
+    <div class="mbed-nav__logo">
+        <a href="https://os.mbed.com/">
+            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#logo"></use></svg>
+        </a>
+    </div>
+    <div class="mbed-nav__menu">
+
+        <!-- Main menu -->
+        <nav class="mbed-nav__main-menu">
+            <ul class="mbed-nav__dropdown-menu">
+                <li class="has-dropdown">
+                    Overview
+
+                    <div class="mbed-nav__dropdown-menu-content">
+
+                        <!-- Overview dropdown menu -->
+                        <div class="mbed-nav__overview-menu">
+                            <section>
+                                <p>Operating systems</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/platform/mbed-os/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_os"></use></svg>
+                                            <div>
+                                                <p>Mbed OS</p>
+                                                <p>The open source OS for Cortex-M devices</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_studio"></use></svg>
+                                            <div>
+                                                <p>Mbed Studio</p>
+                                                <p>Download the desktop IDE for Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_online_compiler"></use></svg>
+                                            <div>
+                                                <p>Mbed Online Compiler</p>
+                                                <p>Start coding immediately in the browser IDE</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_cli"></use></svg>
+                                            <div>
+                                                <p>Mbed CLI</p>
+                                                <p>Command line access to Mbed tools and services</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Security and Connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/technologies/security/mbed-tls/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_tls_crypto"></use></svg>
+                                            <div>
+                                                <p>Mbed TLS and Mbed Crypto</p>
+                                                <p>Industry standard TLS stack and crypto library</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/technologies/connectivity" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#connectivity"></use></svg>
+                                            <div>
+                                                <p>Connectivity</p>
+                                                <p>BLE, WiFi, Cellular, LoRaWAN and more</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <p>Ecosystem</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/partners/our-partners" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#our_partners"></use></svg>
+                                            <div>
+                                                <p>Our partners</p>
+                                                <p>Dozens of leading companies trust Mbed OS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/partners/become-partner/" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#become_a_partner"></use></svg>
+                                            <div>
+                                                <p>Become a partner</p>
+                                                <p>Bring your services to over 450,000 developers</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Hardware
+
+                    <!-- Hardware dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__hardware-dropdown">
+                            <ul class="mbed-nav__hardware-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/platforms" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#boards"></use></svg>
+                                        <div>
+                                            <p>Boards</p>
+                                            <p>Build your Mbed projects with development boards for Arm Cortex processors and MCUs</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/modules" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#modules"></use></svg>
+                                        <div>
+                                            <p>Modules</p>
+                                            <p>Modules include a MCU, connectivity and onboard memory, making them ideal for designing IoT products for mass production</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/components" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#components"></use></svg>
+                                        <div>
+                                            <p>Components</p>
+                                            <p>The component database hosts libraries for different sensors, actuators, radios, inputs, middleware and IoT services</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/hardware" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#hardware_overview"></use></svg>
+                                        <div>
+                                            <p>Hardware overview &amp; Mbed Enabled</p>
+                                            <p>Learn about hardware support for Mbed, as well as the Mbed Enabled program, which identifies Mbed compatible products</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link-detail">
+                                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_hdk"></use></svg>
+                                        <div>
+                                            <p>Mbed HDK</p>
+                                            <p>Reference designs, schematics and board layouts to develop production hardware and Mbed-compatible development boards</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="https://os.mbed.com/code">Code</a></li>
+                <li class="has-dropdown">
+                    Documentation
+
+                    <!-- Documentation dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__documentation-dropdown">
+                            <ul class="mbed-nav__documentation-menu">
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/docs/mbed-cordio/">Mbed Cordio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Case studies
+
+                    <!-- Case studies dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__case-studies-dropdown">
+                            <ul class="mbed-nav__case-studies-menu">
+                                <li>
+                                    <a href="https://www.mbed.com/built-with-mbed">Products built with Mbed</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/register_design">Submit a product</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-dropdown">
+                    Support
+
+                    <!-- Support dropdown menu -->
+                    <div class="mbed-nav__dropdown-menu-content">
+                        <div class="mbed-nav__support-dropdown">
+                            <ul class="mbed-nav__support-menu">
+                                <li>
+                                    <a href="https://forums.mbed.com/">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/support">Report a problem</a>
+                                </li>
+                                <li>
+                                    <a href="https://os.mbed.com/commercial-support-pricing">Commercial support and pricing</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.mbed.com/contact">Contact sales</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://os.mbed.com/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="https://www.mbed.com/en/about-mbed/events">Events</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mbed-nav__user-controls">
+        <div class="mbed-nav__user-controls-top">
+            <div class="mbed-nav__search">
+                <form id="mbed-nav__search-box" class="is-hidden" action="https://os.mbed.com/search" method="GET">
+                    <div class="mbed-nav__search-box">
+                        <input type="search" name="q" placeholder="Search...">
+                        <button type="submit">
+                            <svg class="stroke-white"><use xlink:href="/static/img/mbed_nav_spritesheet.svg#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <i class="mbed-nav__search-close fas fa-times is-hidden"></i>
+                <svg class="mbed-nav__search-open stroke-white"><use xlink:href="/static/img/mbed_nav_spritesheet.svg#search"></use></svg>
+            </div>
+            <a class="mbed-nav__button" href="https://os.mbed.com/ide/" target="_blank">
+                Compiler
+            </a>
+
+            
+                
+                <nav class="mbed-nav__logged-out-nav">
+                    <ul class="mbed-nav__dropdown-menu">
+                        <li>
+                            <svg class="stroke-white"><use xlink:href="/static/img/mbed_nav_spritesheet.svg#profile"></use></svg>
+
+                            <!-- Logged out dropdown menu -->
+                            <div class="mbed-nav__dropdown-menu-content">
+                                <div class="mbed-nav__logged-out-dropdown">
+                                    <ul class="mbed-nav__logged-out-menu">
+                                        <li><a href="https://os.mbed.com/account/login/?next=/handbook/CMSIS-RTOS">Log in or Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            
+        </div>
+        <div class="mbed-nav__user-controls-bottom">
+
+            <!-- Mbed and Pelion menu -->
+            <nav class="mbed-nav__pelion-nav">
+                <ul class="mbed-nav__dropdown-menu">
+                    <li class="has-dropdown">
+                        <div class="mbed-nav__pelion-icon-link">
+                            <svg class="stroke-white"><use xlink:href="/static/img/mbed_nav_spritesheet.svg#cloud"></use></svg>
+                            Mbed + Pelion IoT Platform
+                        </div>
+
+                        <!-- Mbed and Pelion dropdown -->
+                        <div class="mbed-nav__dropdown-menu-content">
+                            <div class="mbed-nav__pelion-menu">
+
+                                <!-- Left column -->
+                                <ul class="mbed-nav__pelion-menu-left">
+                                    <li>
+                                        <a href="https://os.mbed.com/pelion-free-tier" class="mbed-nav__icon-link-detail">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_pelion_overview"></use></svg>
+                                            <div>
+                                                <p>Mbed + Pelion Overview</p>
+                                                <p>Your IoT project starts here</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="mbed-nav__icon-menu">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#resources"></use></svg>
+                                            <div>
+                                                <p>Resources</p>
+                                                <ul>
+                                                    <li><a href="https://www.pelion.com/">Pelion official website</a></li>
+                                                    <li><a href="https://www.pelion.com/docs">Documentation</a></li>
+                                                    <li><a href="https://forums.mbed.com/c/pelion">Pelion forum</a></li>
+                                                    <li><a href="https://www.arm.com/support/contact-support/pelion-iot-support">Pelion support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!-- Right column -->
+                                <ul class="mbed-nav__pelion-menu-right">
+                                    <li>
+                                        <div class="mbed-nav__icon-menu">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#connectivity_management"></use></svg>
+                                            <div>
+                                                <p>Connectivity Management (Stream IoTx)</p>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://stream.iot-x.com/" target="_blank">
+                                                            Connectivity Management Console
+                                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#external_link"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mbed-nav__icon-menu">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#data_management"></use></svg>
+                                            <div>
+                                                <p>Data Management (Treasure Data)</p>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://console.treasuredata.com/" target="_blank">
+                                                            Data Management Console
+                                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#external_link"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="https://support.treasuredata.com/hc/en-us/articles/360012567313-Data-Ingestion-from-Mbed-OS-HTTP-over-Wi-Fi-">Send device data to Treasure Data</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mbed-nav__icon-menu">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#device_management"></use></svg>
+                                            <div>
+                                                <p>Device Management</p>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://portal.mbedcloud.com/" target="_blank">
+                                                            Device Management Console
+                                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#external_link"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="https://os.mbed.com/guides/connect-device-to-pelion">Connect a device</a></li>
+                                                    <li><a href="https://os.mbed.com/guides/pelion-firmware-update">Update a device</a></li>
+                                                    
+                                                    <li><a href="https://os.mbed.com/pelion-free-tier">Get free access</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="mbed-nav__spacer"></div>
+</div>
+<div class="mbed-nav__mobile-menu-cover is-hidden">
+    <div class="mbed-nav__mobile-menu">
+
+        <div id="mbed-nav__main-menu-mobile">
+            <div class="mbed-nav__user-controls-mobile">
+                <div class="mbed-nav__user-controls-top-mobile">
+                    <form action="https://os.mbed.com/search" method="GET">
+                        <div class="mbed-nav__search-box mbed-nav__search-box--light">
+                            <input type="search" name="q" placeholder="Search...">
+                            <button type="submit">
+                                <svg class="stroke-dark-grey"><use xlink:href="/static/img/mbed_nav_spritesheet.svg#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                        
+                        <a href="https://os.mbed.com/account/login/?next=/handbook/CMSIS-RTOS">Log in or Sign up</a>
+                        
+                    
+                </div>
+                <div class="mbed-nav__user-controls-bottom-mobile">
+                    <a class="mbed-nav__pelion-menu-mobile-open mbed-nav__icon-link fill-dark-grey">
+                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#cloud_large"></use></svg>
+                        <p>Mbed + Pelion IoT Platform</p>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="overview-accordion">
+                    <label for="overview-accordion">Overview</label>
+                    <div class="accordion_content">
+                        <ul class="overview-menu-mobile">
+                            <li>
+                                <p>Operating systems</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/platform/mbed-os/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_os"></use></svg>
+                                            <p>Mbed OS</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Development tools</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://os.mbed.com/studio" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_studio"></use></svg>
+                                            <p>Mbed Studio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_online_compiler"></use></svg>
+                                            <p>Mbed Online Compiler</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_cli"></use></svg>
+                                            <p>Mbed CLI</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Security and connectivity</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/technologies/security/mbed-tls/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_tls_crypto"></use></svg>
+                                            <p>Mbed TLS and Mbed Crypto</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/technologies/connectivity" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#connectivity"></use></svg>
+                                            <p>Connectivity</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Ecosystem</p>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/partners/our-partners" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#our_partners"></use></svg>
+                                            <p>Our partners</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.mbed.com/en/partners/become-partner/" class="mbed-nav__icon-link">
+                                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#become_a_partner"></use></svg>
+                                            <p>Become a partner</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="hardware-accordion">
+                    <label for="hardware-accordion">Hardware</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li>
+                                <a href="https://os.mbed.com/platforms" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#boards"></use></svg>
+                                    <p>Boards</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/modules" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#modules"></use></svg>
+                                    <p>Modules</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/components" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#components"></use></svg>
+                                    <p>Components</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/hardware" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#hardware_overview"></use></svg>
+                                    <p>Hardware overview &amp; Mbed Enabled</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://os.mbed.com/docs/mbed-os/latest/porting/arm-mbed-hdk.html" class="mbed-nav__icon-link">
+                                    <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_hdk"></use></svg>
+                                    <p>Mbed HDK</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/code">Code</a></li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="documentation-accordion">
+                    <label for="documentation-accordion">Documentation</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://os.mbed.com/docs/mbed-os/">Mbed OS</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-studio/">Mbed Studio</a></li>
+                            <li><a href="https://os.mbed.com/docs/mbed-cordio/">Mbed Cordio</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="case-studies-accordion">
+                    <label for="case-studies-accordion">Case studies</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://www.mbed.com/built-with-mbed">Products built with Mbed</a></li>
+                            <li><a href="https://os.mbed.com/register_design">Submit a product</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="support-accordion">
+                    <label for="support-accordion">Support</label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://forums.mbed.com/">Forum</a></li>
+                            <li><a href="https://os.mbed.com/support">Report a problem</a></li>
+                            <li><a href="https://os.mbed.com/commercial-support-pricing">Commercial support and pricing</a></li>
+                            <li><a href="https://www.mbed.com/contact">Contact sales</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="https://os.mbed.com/blog">Blog</a></li>
+                <li><a href="https://www.mbed.com/en/about-mbed/events">Events</a></li>
+            </ul>
+        </div>
+
+        <div id="mbed-nav__pelion-menu-mobile" class="mbed-nav__sub-menu is-hidden">
+            <p>Mbed + Pelion IoT Platform</p>
+            <ul class="mbed-nav__side-menu">
+                <li>
+                    <a href="https://os.mbed.com/pelion-free-tier" class="mbed-nav__icon-link">
+                        <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#mbed_pelion_overview"></use></svg>
+                        <p>Mbed + Pelion Overview</p>
+                    </a>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="resources-accordion">
+                    <label for="resources-accordion">
+                        <div class="mbed-nav__icon-link">
+                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#resources"></use></svg>
+                            <p>Resources</p>
+                        </div>
+                    </label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://www.pelion.com/">Pelion official website</a></li>
+                            <li><a href="https://www.pelion.com/docs">Documentation</a></li>
+                            <li><a href="https://forums.mbed.com/c/pelion">Pelion forum</a></li>
+                            <li><a href="https://www.arm.com/support/contact-support/pelion-iot-support">Pelion support</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="connectivity-management-accordion">
+                    <label for="connectivity-management-accordion">
+                        <div class="mbed-nav__icon-link">
+                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#connectivity_management"></use></svg>
+                            <p>Connectivity Management (Stream IoTx)</p>
+                        </div>
+                    </label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://stream.iot-x.com/">Connectivity Management Console</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="data-management-accordion">
+                    <label for="data-management-accordion">
+                        <div class="mbed-nav__icon-link">
+                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#data_management"></use></svg>
+                            <p>Data Management (Treasure&nbsp;Data)</p>
+                        </div>
+                    </label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://console.treasuredata.com/">Data Management Console</a></li>
+                            <li><a href="https://support.treasuredata.com/hc/en-us/articles/360012567313-Data-Ingestion-from-Mbed-OS-HTTP-over-Wi-Fi-">Send device data to Treasure Data</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion-toggle" id="device-management-accordion">
+                    <label for="device-management-accordion">
+                        <div class="mbed-nav__icon-link">
+                            <svg><use xlink:href="/static/img/mbed_nav_spritesheet.svg#device_management"></use></svg>
+                            <p>Device Management</p>
+                        </div>
+                    </label>
+                    <div class="accordion_content">
+                        <ul>
+                            <li><a href="https://portal.mbedcloud.com/">Device Management Console</a></li>
+                            <li><a href="https://www.pelion.com/guides/connect-device-to-pelion">Connect a device</a></li>
+                            <li><a href="https://www.pelion.com/guides/pelion-firmware-update">Update a device</a></li>
+                            <li><a href="https://os.mbed.com/pelion-free-tier">Get free access</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+<script src="./CMSIS RTOS - Handbook _ Mbed_files/mbed-nav-vertical-menu.js.téléchargement"></script>
+
+
+
+
+    <div id="main-content">
+        
+            <div class="row">
+                
+
+            </div>
+        
+
+        
+
+        
+
+        
+        <div>
+            <div class="row" id="top">
+                <div class="six columns">
+                    <div class="breadcrumbs">
+                        
+    
+    
+<a href="https://os.mbed.com/handbook/">Handbook</a>
+
+
+    » <a href="https://os.mbed.com/handbook/CMSIS-RTOS">CMSIS RTOS</a>
+
+
+
+                    </div>
+                </div>
+                <div class="six columns header search-block">
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+
+        
+<div class="row">
+    <div class="nine columns main-content" id="mbed-content">
+        
+    
+    
+
+    <link href="./CMSIS RTOS - Handbook _ Mbed_files/doxygen.css" rel="stylesheet" type="text/css">
+	
+    <style type="text/css">
+    .linenumber {display: none;}
+    </style>
+
+	
+
+    
+    <div class="content-actions hide-on-print">
+
+         
+    </div>
+    
+
+    <h2><a href="https://os.mbed.com/handbook/CMSIS-RTOS">CMSIS RTOS</a></h2>
+
+    
+
+    <div class="wiki-content">
+        <div class="flashbox finfo action-bar"><h4>Table of Contents</h4><ol><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#thread">Thread</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#osdelay">osDelay</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#mutex">Mutex</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#semaphore">Semaphore</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#signals">Signals</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#message-queue">Message Queue</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#memory-pool">Memory Pool</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#mail-queue">Mail Queue</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#timer">Timer</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#interrupt-service-routines">Interrupt Service Routines</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#status-and-error-codes">Status and Error Codes</a></li><li><a href="https://os.mbed.com/handbook/CMSIS-RTOS#osevent">osEvent</a></li></ol></div><div class="flashbox fwarning"><h4 class="ftitle">Mbed OS 2 and Mbed OS 5</h4><p>This is the handbook for Mbed OS 2. If you’re working with Mbed OS 5, please see the <a href="https://os.mbed.com/docs/latest" rel="nofollow">new handbook</a>. </p>
+</div><p>The <a href="http://www.onarm.com/cmsis/download/21/version-3-0-of-the-cortex-microcontroller-software-interface-standard-cmsis/" rel="nofollow">CMSIS-RTOS</a> is a common API for Real-Time operating systems. It provides a standardized programming interface that is portable to many RTOS and enables therefore software templates, middleware, libraries, and other components that can work across supported the RTOS systems.</p>
+<p>CMSIS-RTOS is the fundation of the offical <a href="https://os.mbed.com/handbook/RTOS">mbed RTOS</a>:</p>
+<div class="flashbox flibrary"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/mbed-rtos/;mode:lib">Import library</a><a href="https://os.mbed.com/users/mbed_official/code/mbed-rtos/">mbed-rtos</a></h4><p>Official mbed Real Time Operating System based on the RTX implementation of the CMSIS-RTOS API open standard.</p><p class="wiki-api-footer">Last commit <abbr class="timeago" title="04 Jul 2017">04 Jul 2017</abbr> by <span><span class="authortext"><a href="https://os.mbed.com/users/mbed_official/"><img alt="" class="icon" width="16px" height="16px" src="./CMSIS RTOS - Handbook _ Mbed_files/af7fc8485f40dc495bc626d6dbe7faf1.16x16_q85_crop-center.png"></a> <a href="https://os.mbed.com/users/mbed_official/"> mbed official </a></span></span></p></div>
+<h2 id="thread">Thread<a href="https://os.mbed.com/handbook/CMSIS-RTOS#thread" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Thread Management function group allow defining, creating, and controlling thread functions in the system. The function main is a special thread function that is started at system initialization and has the initial priority osPriorityNormal.</p>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_basic/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_basic/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_basic/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_basic/docs/067f3686b245/main_8cpp_source.html">cmsis_rtos_basic - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+DigitalOut&nbsp;led1(LED1);
+DigitalOut&nbsp;led2(LED2);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;led2_thread(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;led2&nbsp;=&nbsp;!led2;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+osThreadDef(led2_thread,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(led2_thread),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;led1&nbsp;=&nbsp;!led1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">500</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<div class="flashbox finfo"><h4 class="ftitle">main</h4><p>The <strong><code>main</code></strong> function is already the first thread scheduled by the rtos.</p>
+</div><p>[Repository '/users/mbed_official/code/rtx/docs/tip/structos__thread__def.html' not found]</p>
+<p>A <code>Thread</code> can be in the following states:</p>
+<ul><li><strong>RUNNING</strong>: The thread that is currently running is in the RUNNING state. Only one thread at a time can be in this state.
+</li><li><strong>READY</strong>: Threads which are ready to run are in the READY state. Once the RUNNING thread has terminated or is WAITING the next READY thread with the highest priority becomes the RUNNING thread.
+</li><li><strong>WAITING</strong>: Threads that are waiting for an event to occur are in the WAITING state.
+</li><li><strong>INACTIVE</strong>: Threads that are not created or terminated are in the INACTIVE state. These threads typically consume no system resources.
+</li></ul>
+<p><img src="./CMSIS RTOS - Handbook _ Mbed_files/threadstatus.png" alt="/media/uploads/emilmont/threadstatus.png" title="/media/uploads/emilmont/threadstatus.png"></p>
+<h2 id="osdelay">osDelay<a href="https://os.mbed.com/handbook/CMSIS-RTOS#osdelay" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>A call to <strong><code>osDelay</code></strong> will put the calling thread in the <strong><code>WAITING</code></strong> state for the specified amount of milliseconds. During this time, the RTOS scheduler will run other threads in the <strong><code>READY</code></strong> state.</p>
+<h2 id="mutex">Mutex<a href="https://os.mbed.com/handbook/CMSIS-RTOS#mutex" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Mutex Management function group is used to synchronize the execution of threads. This is for example used to protect access to a shared resource, for example a shared memory image.</p>
+<div class="flashbox fwarning"><h4 class="ftitle">ISR</h4><p>Mutex Management functions cannot be called from interrupt service routines (ISR).</p>
+</div><p><img src="./CMSIS RTOS - Handbook _ Mbed_files/mutex.png" alt="/media/uploads/emilmont/mutex.png" title="/media/uploads/emilmont/mutex.png"> </p>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_mutex/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_mutex/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_mutex/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_mutex/docs/1e00d038091b/main_8cpp_source.html">cmsis_rtos_mutex - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+osMutexId&nbsp;stdio_mutex;
+osMutexDef(stdio_mutex);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;notify(<span class="SH_RESERVED">const</span>&nbsp;<span class="SH_RESERVED">char</span>*&nbsp;name,&nbsp;<span class="SH_RESERVED">int</span>&nbsp;state)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;osMutexWait(stdio_mutex,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"%s:&nbsp;%d\n\r"</span>,&nbsp;name,&nbsp;state);
+&nbsp;&nbsp;&nbsp;&nbsp;osMutexRelease(stdio_mutex);
+}
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;test_thread(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notify((<span class="SH_RESERVED">const</span>&nbsp;<span class="SH_RESERVED">char</span>*)args,&nbsp;<span class="SH_NUMBER">0</span>);&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notify((<span class="SH_RESERVED">const</span>&nbsp;<span class="SH_RESERVED">char</span>*)args,&nbsp;<span class="SH_NUMBER">1</span>);&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;t2(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*argument)&nbsp;{test_thread(<span class="SH_STRING">"Th&nbsp;2"</span>);}
+osThreadDef(t2,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;t3(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*argument)&nbsp;{test_thread(<span class="SH_STRING">"Th&nbsp;3"</span>);}
+osThreadDef(t3,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;stdio_mutex&nbsp;=&nbsp;osMutexCreate(osMutex(stdio_mutex));
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(t2),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(t3),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;test_thread((<span class="SH_RESERVED">void</span>&nbsp;*)<span class="SH_STRING">"Th&nbsp;1"</span>);
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<div class="flashbox finfo"><h4 class="ftitle">C standard library mutexes</h4><p>The ARM C standard library has already mutexes in place to protect the access to stdio, therefore on the M3 mbed the above example is not necessary. On the contrary, ARM microlib (used on the M0 mbed) does not provide default stdio mutexes making the above example a necessity.</p>
+</div><div class="flashbox fwarning"><h4 class="ftitle">printf in ISR</h4><p>Because of the mutexes in the ARM C standard library you can not use <strong><code>printf</code></strong> in ISR!</p>
+</div><h2 id="semaphore">Semaphore<a href="https://os.mbed.com/handbook/CMSIS-RTOS#semaphore" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Semaphore Management function group is used to manage and protect access to shared resources. For example, with a Semaphore the access to a group of identical peripherals can be managed. The number of available resources is specified as parameter of the osSemaphoreCreate function.</p>
+<p><img src="./CMSIS RTOS - Handbook _ Mbed_files/semaphore.png" alt="/media/uploads/emilmont/semaphore.png" title="/media/uploads/emilmont/semaphore.png"></p>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_semaphore/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_semaphore/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_semaphore/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_semaphore/docs/66f36aff7050/main_8cpp_source.html">cmsis_rtos_semaphore - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+osSemaphoreId&nbsp;two_slots;
+osSemaphoreDef(two_slots);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;test_thread(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*name)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osSemaphoreWait(two_slots,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"%s\n\r"</span>,&nbsp;(<span class="SH_RESERVED">const</span>&nbsp;<span class="SH_RESERVED">char</span>*)name);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osSemaphoreRelease(two_slots);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;t2(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*argument)&nbsp;{test_thread(<span class="SH_STRING">"Th&nbsp;2"</span>);}
+osThreadDef(t2,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;t3(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*argument)&nbsp;{test_thread(<span class="SH_STRING">"Th&nbsp;3"</span>);}
+osThreadDef(t3,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main&nbsp;(<span class="SH_RESERVED">void</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;two_slots&nbsp;=&nbsp;osSemaphoreCreate(osSemaphore(two_slots),&nbsp;<span class="SH_NUMBER">2</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(t2),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(t3),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;test_thread((<span class="SH_RESERVED">void</span>&nbsp;*)<span class="SH_STRING">"Th&nbsp;1"</span>);
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<h2 id="signals">Signals<a href="https://os.mbed.com/handbook/CMSIS-RTOS#signals" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Signal Management function group allow to control or wait signal flags. Each thread has assigned signal flags.</p>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_signals/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_signals/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_signals/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_signals/docs/7dc6330b7848/main_8cpp_source.html">cmsis_rtos_signals - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+DigitalOut&nbsp;led(LED1);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;led_thread(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_COMMENT">//&nbsp;Signal&nbsp;flags&nbsp;that&nbsp;are&nbsp;reported&nbsp;as&nbsp;event&nbsp;are&nbsp;automatically&nbsp;cleared.</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osSignalWait(<span class="SH_NUMBER">0x1</span>,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;led&nbsp;=&nbsp;!led;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+osThreadDef(led_thread,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main&nbsp;(<span class="SH_RESERVED">void</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadId&nbsp;tid&nbsp;=&nbsp;osThreadCreate(osThread(led_thread),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osSignalSet(tid,&nbsp;<span class="SH_NUMBER">0x1</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<h2 id="message-queue">Message Queue<a href="https://os.mbed.com/handbook/CMSIS-RTOS#message-queue" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Message Queue Management function group allow to control, send, receive, or wait for messages. A message can be a integer or pointer value that is send to a thread or interrupt service routine.</p>
+<p><img src="./CMSIS RTOS - Handbook _ Mbed_files/messagequeue.png" alt="/media/uploads/emilmont/messagequeue.png" title="/media/uploads/emilmont/messagequeue.png"> </p>
+<p>[Repository '/users/mbed_official/code/rtx/docs/tip/structos__messageQ__def.html' not found]</p>
+<h2 id="memory-pool">Memory Pool<a href="https://os.mbed.com/handbook/CMSIS-RTOS#memory-pool" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_queue/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_queue/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_queue/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_queue/docs/54e171ca91a6/main_8cpp_source.html">cmsis_rtos_queue - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+<span class="SH_RESERVED">typedef</span>&nbsp;<span class="SH_RESERVED">struct</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">float</span>&nbsp;&nbsp;&nbsp;&nbsp;voltage;&nbsp;&nbsp;&nbsp;<span class="SH_COMMENT">/*&nbsp;AD&nbsp;result&nbsp;of&nbsp;measured&nbsp;voltage&nbsp;*/</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">float</span>&nbsp;&nbsp;&nbsp;&nbsp;current;&nbsp;&nbsp;&nbsp;<span class="SH_COMMENT">/*&nbsp;AD&nbsp;result&nbsp;of&nbsp;measured&nbsp;current&nbsp;*/</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">uint32_t</span>&nbsp;counter;&nbsp;&nbsp;&nbsp;<span class="SH_COMMENT">/*&nbsp;A&nbsp;counter&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+}&nbsp;message_t;
+&nbsp;
+osPoolDef(mpool,&nbsp;<span class="SH_NUMBER">16</span>,&nbsp;message_t);
+osPoolId&nbsp;&nbsp;mpool;
+&nbsp;
+osMessageQDef(queue,&nbsp;<span class="SH_NUMBER">16</span>,&nbsp;message_t);
+osMessageQId&nbsp;&nbsp;queue;
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;send_thread&nbsp;(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">uint32_t</span>&nbsp;i&nbsp;=&nbsp;<span class="SH_NUMBER">0</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;<span class="SH_COMMENT">//&nbsp;fake&nbsp;data&nbsp;update</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message_t&nbsp;*message&nbsp;=&nbsp;(message_t*)osPoolAlloc(mpool);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message-&gt;voltage&nbsp;=&nbsp;(i&nbsp;*&nbsp;<span class="SH_NUMBER">0.1</span>)&nbsp;*&nbsp;<span class="SH_NUMBER">33</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message-&gt;current&nbsp;=&nbsp;(i&nbsp;*&nbsp;<span class="SH_NUMBER">0.1</span>)&nbsp;*&nbsp;<span class="SH_NUMBER">11</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message-&gt;counter&nbsp;=&nbsp;i;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osMessagePut(queue,&nbsp;(<span class="SH_RESERVED">uint32_t</span>)message,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+&nbsp;
+osThreadDef(send_thread,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main&nbsp;(<span class="SH_RESERVED">void</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;mpool&nbsp;=&nbsp;osPoolCreate(osPool(mpool));
+&nbsp;&nbsp;&nbsp;&nbsp;queue&nbsp;=&nbsp;osMessageCreate(osMessageQ(queue),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(send_thread),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osEvent&nbsp;evt&nbsp;=&nbsp;osMessageGet(queue,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">if</span>&nbsp;(evt.status&nbsp;==&nbsp;osEventMessage)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message_t&nbsp;*message&nbsp;=&nbsp;(message_t*)evt.value.p;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"\nVoltage:&nbsp;%.2f&nbsp;V\n\r"</span>&nbsp;&nbsp;&nbsp;,&nbsp;message-&gt;voltage);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"Current:&nbsp;%.2f&nbsp;A\n\r"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;message-&gt;current);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"Number&nbsp;of&nbsp;cycles:&nbsp;%u\n\r"</span>,&nbsp;message-&gt;counter);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osPoolFree(mpool,&nbsp;message);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<p>[Repository '/users/mbed_official/code/rtx/docs/tip/structos__pool__def.html' not found]</p>
+<h2 id="mail-queue">Mail Queue<a href="https://os.mbed.com/handbook/CMSIS-RTOS#mail-queue" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Mail Queue Management function group allow to control, send, receive, or wait for mail. A mail is a memory block that is send to a thread or interrupt service routine.</p>
+<p><img src="./CMSIS RTOS - Handbook _ Mbed_files/mailqueue.png" alt="/media/uploads/emilmont/mailqueue.png" title="/media/uploads/emilmont/mailqueue.png"></p>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_mail/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_mail/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_mail/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_mail/docs/e9f14106068c/main_8cpp_source.html">cmsis_rtos_mail - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+<span class="SH_RESERVED">typedef</span>&nbsp;<span class="SH_RESERVED">struct</span>&nbsp;{
+&nbsp;&nbsp;<span class="SH_RESERVED">float</span>&nbsp;&nbsp;&nbsp;&nbsp;voltage;&nbsp;<span class="SH_COMMENT">/*&nbsp;AD&nbsp;result&nbsp;of&nbsp;measured&nbsp;voltage&nbsp;*/</span>
+&nbsp;&nbsp;<span class="SH_RESERVED">float</span>&nbsp;&nbsp;&nbsp;&nbsp;current;&nbsp;<span class="SH_COMMENT">/*&nbsp;AD&nbsp;result&nbsp;of&nbsp;measured&nbsp;current&nbsp;*/</span>
+&nbsp;&nbsp;<span class="SH_RESERVED">uint32_t</span>&nbsp;counter;&nbsp;<span class="SH_COMMENT">/*&nbsp;A&nbsp;counter&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+}&nbsp;mail_t;
+&nbsp;
+osMailQDef(mail_box,&nbsp;<span class="SH_NUMBER">16</span>,&nbsp;mail_t);
+osMailQId&nbsp;&nbsp;mail_box;
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;send_thread&nbsp;(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">uint32_t</span>&nbsp;i&nbsp;=&nbsp;<span class="SH_NUMBER">0</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;<span class="SH_COMMENT">//&nbsp;fake&nbsp;data&nbsp;update</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail_t&nbsp;*mail&nbsp;=&nbsp;(mail_t*)osMailAlloc(mail_box,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail-&gt;voltage&nbsp;=&nbsp;(i&nbsp;*&nbsp;<span class="SH_NUMBER">0.1</span>)&nbsp;*&nbsp;<span class="SH_NUMBER">33</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail-&gt;current&nbsp;=&nbsp;(i&nbsp;*&nbsp;<span class="SH_NUMBER">0.1</span>)&nbsp;*&nbsp;<span class="SH_NUMBER">11</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail-&gt;counter&nbsp;=&nbsp;i;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osMailPut(mail_box,&nbsp;mail);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+&nbsp;
+osThreadDef(send_thread,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main&nbsp;(<span class="SH_RESERVED">void</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;mail_box&nbsp;=&nbsp;osMailCreate(osMailQ(mail_box),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(send_thread),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osEvent&nbsp;evt&nbsp;=&nbsp;osMailGet(mail_box,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">if</span>&nbsp;(evt.status&nbsp;==&nbsp;osEventMail)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail_t&nbsp;*mail&nbsp;=&nbsp;(mail_t*)evt.value.p;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"\nVoltage:&nbsp;%.2f&nbsp;V\n\r"</span>&nbsp;&nbsp;&nbsp;,&nbsp;mail-&gt;voltage);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"Current:&nbsp;%.2f&nbsp;A\n\r"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;mail-&gt;current);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"Number&nbsp;of&nbsp;cycles:&nbsp;%u\n\r"</span>,&nbsp;mail-&gt;counter);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osMailFree(mail_box,&nbsp;mail);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<p>[Repository '/users/mbed_official/code/rtx/docs/tip/structos__mailQ__def.html' not found]</p>
+<h2 id="timer">Timer<a href="https://os.mbed.com/handbook/CMSIS-RTOS#timer" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Timer Management function group allow creating and and controlling of timer functions in the system. A timer function is called when a time period expires whereby both on-shot and periodic timers are possible. A timer can be started, restarted, or stopped.</p>
+<p>Timers are handled in the thread osTimerThread. Callback functions run under control of this thread and may use CMSIS-RTOS API calls.</p>
+<p><img src="./CMSIS RTOS - Handbook _ Mbed_files/timer.png" alt="/media/uploads/emilmont/timer.png" title="/media/uploads/emilmont/timer.png"> </p>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_timer/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_timer/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_timer/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_timer/docs/2ced6669ccc4/main_8cpp_source.html">cmsis_rtos_timer - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+DigitalOut&nbsp;LEDs[<span class="SH_NUMBER">4</span>]&nbsp;=&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;DigitalOut(LED1),&nbsp;DigitalOut(LED2),&nbsp;DigitalOut(LED3),&nbsp;DigitalOut(LED4)
+};
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;blink(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*n)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;LEDs[(<span class="SH_RESERVED">int</span>)n]&nbsp;=&nbsp;!LEDs[(<span class="SH_RESERVED">int</span>)n];
+}
+&nbsp;
+osTimerDef(blink_0,&nbsp;blink);
+osTimerDef(blink_1,&nbsp;blink);
+osTimerDef(blink_2,&nbsp;blink);
+osTimerDef(blink_3,&nbsp;blink);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main(<span class="SH_RESERVED">void</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerId&nbsp;timer_0&nbsp;=&nbsp;osTimerCreate(osTimer(blink_0),&nbsp;osTimerPeriodic,&nbsp;(<span class="SH_RESERVED">void</span>&nbsp;*)<span class="SH_NUMBER">0</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerId&nbsp;timer_1&nbsp;=&nbsp;osTimerCreate(osTimer(blink_1),&nbsp;osTimerPeriodic,&nbsp;(<span class="SH_RESERVED">void</span>&nbsp;*)<span class="SH_NUMBER">1</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerId&nbsp;timer_2&nbsp;=&nbsp;osTimerCreate(osTimer(blink_2),&nbsp;osTimerPeriodic,&nbsp;(<span class="SH_RESERVED">void</span>&nbsp;*)<span class="SH_NUMBER">2</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerId&nbsp;timer_3&nbsp;=&nbsp;osTimerCreate(osTimer(blink_3),&nbsp;osTimerPeriodic,&nbsp;(<span class="SH_RESERVED">void</span>&nbsp;*)<span class="SH_NUMBER">3</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerStart(timer_0,&nbsp;<span class="SH_NUMBER">2000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerStart(timer_1,&nbsp;<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerStart(timer_2,&nbsp;&nbsp;<span class="SH_NUMBER">500</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;osTimerStart(timer_3,&nbsp;&nbsp;<span class="SH_NUMBER">250</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;osDelay(osWaitForever);
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<h2 id="interrupt-service-routines">Interrupt Service Routines<a href="https://os.mbed.com/handbook/CMSIS-RTOS#interrupt-service-routines" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The same CMSIS-RTOS can be used in ISR. The only two warnings are:</p>
+<ul><li>Mutexes can not be used.
+</li><li>Wait in ISR is not allowed: all the timeouts in method parameters have to be set to 0 (no wait).
+</li></ul>
+<div class="flashbox fprogram"><h4 class="ftitle"><a style="font-weight: bold; position: relative; float: right;" class="button small radius" target="compiler" href="https://os.mbed.com/ide/import-program//users/mbed_official/code/cmsis_rtos_isr/">Import program</a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_isr/docs/tip/main_8cpp_source.html"><span></span></a><div class="wiki-api-header"><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_isr/docs/tip/main_8cpp_source.html"></a><a href="https://os.mbed.com/users/mbed_official/code/cmsis_rtos_isr/docs/39180377e223/main_8cpp_source.html">cmsis_rtos_isr - main.cpp</a></div></h4><div><div class="wiki-api-snippet"><div class="contents">
+<div class="fragment"><pre class="fragment"><table cellpadding="0" cellspacing="0" border="0" class="codify_table"><tbody><tr><td class="codify_numcol"><div class="codify_numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br></div></td><td class="codify_screen"><pre><span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"mbed.h"</span>
+<span class="SH_BUILTIN">#include&nbsp;</span><span class="SH_STRING">"cmsis_os.h"</span>
+&nbsp;
+osMessageQDef(queue,&nbsp;<span class="SH_NUMBER">5</span>,&nbsp;message_t);
+osMessageQId&nbsp;&nbsp;queue;
+&nbsp;
+DigitalOut&nbsp;myled(LED1);
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;queue_isr()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;osMessagePut(queue,&nbsp;(<span class="SH_RESERVED">uint32_t</span>)<span class="SH_NUMBER">2</span>,&nbsp;<span class="SH_NUMBER">0</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;myled&nbsp;=&nbsp;!myled;
+}
+&nbsp;
+<span class="SH_RESERVED">void</span>&nbsp;queue_thread(<span class="SH_RESERVED">void</span>&nbsp;<span class="SH_RESERVED">const</span>&nbsp;*args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osMessagePut(queue,&nbsp;<span class="SH_NUMBER">1</span>,&nbsp;<span class="SH_NUMBER">0</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osDelay(<span class="SH_NUMBER">1000</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+&nbsp;
+osThreadDef(queue_thread,&nbsp;osPriorityNormal,&nbsp;DEFAULT_STACK_SIZE);
+&nbsp;
+<span class="SH_RESERVED">int</span>&nbsp;main&nbsp;(<span class="SH_RESERVED">void</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue&nbsp;=&nbsp;osMessageCreate(osMessageQ(queue),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;osThreadCreate(osThread(queue_thread),&nbsp;<span class="SH_NUMBER">NULL</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Ticker&nbsp;ticker;
+&nbsp;&nbsp;&nbsp;&nbsp;ticker.attach(queue_isr,&nbsp;<span class="SH_NUMBER">1.0</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">while</span>&nbsp;(<span class="SH_RESERVED">true</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;osEvent&nbsp;evt&nbsp;=&nbsp;osMessageGet(queue,&nbsp;osWaitForever);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_RESERVED">if</span>&nbsp;(evt.status&nbsp;!=&nbsp;osEventMessage)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"queue-&gt;get()&nbsp;returned&nbsp;%02x&nbsp;status\n\r"</span>,&nbsp;evt.status);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="SH_RESERVED">else</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="SH_STDIO">printf</span>(<span class="SH_STRING">"queue-&gt;get()&nbsp;returned&nbsp;%d\n\r"</span>,&nbsp;evt.value.v);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</pre></td></tr></tbody></table></pre></div></div></div></div></div>
+<div class="flashbox fwarning"><h4 class="ftitle">No wait in ISR</h4><p>When calling an rtos object method in an ISR all the timeout parameters have to be set to 0 (no wait): waiting in ISR is not allowed.</p>
+</div><h2 id="status-and-error-codes">Status and Error Codes<a href="https://os.mbed.com/handbook/CMSIS-RTOS#status-and-error-codes" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The Status and Error Codes section lists all the return values that the CMSIS-RTOS functions will return:</p>
+<ul><li><strong><code>osOK</code></strong>: function completed; no event occurred.
+</li><li><strong><code>osEventSignal</code></strong>: function completed; signal event occurred.
+</li><li><strong><code>osEventMessage</code></strong>: function completed; message event occurred.
+</li><li><strong><code>osEventMail</code></strong>: function completed; mail event occurred.
+</li><li><strong><code>osEventTimeout</code></strong>: function completed; timeout occurred.
+</li><li><strong><code>osErrorParameter</code></strong>: parameter error: a mandatory parameter was missing or specified an incorrect object.
+</li><li><strong><code>osErrorResource</code></strong>: resource not available: a specified resource was not available.
+</li><li><strong><code>osErrorTimeoutResource</code></strong>: resource not available within given time: a specified resource was not available within the timeout period.
+</li><li><strong><code>osErrorISR</code></strong>: not allowed in ISR context: the function cannot be called from interrupt service routines.
+</li><li><strong><code>osErrorISRRecursive</code></strong>: function called multiple times from ISR with same object.
+</li><li><strong><code>osErrorPriority</code></strong>: system cannot determine priority or thread has illegal priority.
+</li><li><strong><code>osErrorNoMemory</code></strong>: system is out of memory: it was impossible to allocate or reserve memory for the operation.
+</li><li><strong><code>osErrorValue</code></strong>: value of a parameter is out of range.
+</li><li><strong><code>osErrorOS</code></strong>: unspecified RTOS error: run-time error but no other error message fits.
+</li></ul>
+<h2 id="osevent">osEvent<a href="https://os.mbed.com/handbook/CMSIS-RTOS#osevent" class="wiki_permalink" title="Permalink to this heading">¶</a></h2>
+<p>The <strong><code>osEvent</code></strong> data structure is returned by <code>get</code> methods of <strong><code>Queue</code></strong> and <strong><code>Mail</code></strong> objects.
+This data structure contains both an error code and a pointer to the actual data:
+</p><p>[Repository '/users/mbed_official/code/rtx/docs/tip/structosEvent.html' not found]</p>
+
+    </div>
+
+    <hr>
+
+    <div style="text-align: right; padding-bottom: 10px;">
+
+        
+
+        <a class="button small secondary" href="https://os.mbed.com/handbook/Special:Allpages">
+            <span><i class="far fa-list-alt" aria-hidden="true"></i> All wikipages</span>
+        </a>
+
+    </div>
+
+
+    </div>
+
+    <div class="three columns sidebar ">
+        
+    
+    
+
+<div class="panel radius">
+<h5 class="subheader"><a href="https://os.mbed.com/handbook/Special:RecentChanges"><b>Recent changes</b></a></h5>
+
+
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Mounting-with-sync">Mounting with sync</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/USBDevice">USBDevice</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Collaboration/Introduction">Collaboration/Introduction</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Collaboration/Pull-requests">Collaboration/Pull requests</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+                    <i class="fas fa-tag" aria-hidden="true"></i>
+                    
+                        <a href="https://os.mbed.com/search/?q=collaboration&amp;type=">collaboration</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=dvcs&amp;type=">dvcs</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=pull&amp;type=">pull</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=Repository&amp;type=">Repository</a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Collaboration/Migration">Collaboration/Migration</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Collaboration/Rollout">Collaboration/Rollout</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Help">Help</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Jobs/Front-End-Web-Application-Developer">Jobs/Front End Web Application Developer</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/TCP-IP-protocols-and-APIs">TCP IP protocols and APIs</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/Memory-Model">Memory Model</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+                    <i class="fas fa-tag" aria-hidden="true"></i>
+                    
+                        <a href="https://os.mbed.com/search/?q=flash&amp;type=">flash</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=heap&amp;type=">heap</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=malloc&amp;type=">malloc</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=new&amp;type=">new</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=RAM&amp;type=">RAM</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=stack&amp;type=">stack</a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+        
+
+
+<div class="contentitem">
+
+    
+
+    <div class="contentitem-left" style=" vertical-align: top;">
+        
+
+        <div class="textwrapper" style=" margin-left: 0; ">
+            <div style="font-size: 1.1em; padding-bottom: 4px;">
+                
+
+                
+
+                <b><a href="https://os.mbed.com/handbook/promo/avnet-lpc11u24-plus-baseboard">promo/avnet lpc11u24 plus baseboard</a></b>
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="margin-top: 0px;">
+                
+
+                
+                    <i class="fas fa-tag" aria-hidden="true"></i>
+                    
+                        <a href="https://os.mbed.com/search/?q=avnet&amp;type=">avnet</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=LPC11U24&amp;type=">LPC11U24</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=mX&amp;type=">mX</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=NGX&amp;type=">NGX</a>, 
+                    
+                        <a href="https://os.mbed.com/search/?q=promotion&amp;type=">promotion</a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</div>
+
+
+
+    </div>
+</div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            mbed.initDismissableBanners($('[data-dismissable]'));
+        });
+    </script>
+
+    
+
+<footer class="global-footer">
+    <ul class="global-footer-media global-footer-row">
+        <li>
+            <a class="footer-media-icon" title="Linkedin" href="https://www.linkedin.com/groups/mbed-2667234">
+                <span class="fab fa-linkedin fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Linkedin</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Twitter" href="http://twitter.com/armmbed">
+                <span class="fab fa-twitter-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Facebook" href="http://facebook.com/armmbed">
+                <span class="fab fa-facebook-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="YouTube" href="https://www.youtube.com/channel/UCNcxd73dSceKtU77XWMOg8A">
+                <span class="fab fa-youtube-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">YouTube</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Events" href="https://www.mbed.com/about-mbed/events/">
+                <span class="fas fa-calendar-alt fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Events</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Forum" href="http://forums.mbed.com/">
+                <span class="fas fa-comments fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Forum</span>
+            </a>
+        </li>
+        <li>
+            <a class="footer-media-icon" title="Blog" href="http://blog.mbed.com/">
+                <span class="fas fa-pen-square fa-2x"></span>
+                <span class="global-footer-show-on-large-screens">Blog</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="global-footer-copyright global-footer-row">
+        <div class="copyright-statement">Copyright © <script>document.write(new Date().getFullYear());</script>2020 Arm Limited (or its affiliates).</div>
+        <ul class="copyright-links">
+            <li><a href="https://www.mbed.com/">Home</a></li>
+            <li><a href="https://os.mbed.com/research-opportunities/">UX Research</a></li>
+            <li><a href="https://www.mbed.com/about-mbed/terms-use/">Website Terms</a></li>
+            <li><a href="https://cloud.mbed.com/terms">Pelion Device Management Terms</a></li>
+            <li><a href="https://www.mbed.com/about-mbed/privacy/">Privacy</a></li>
+            <li><a href="https://www.mbed.com/about-mbed/cookie-policy/">Cookies</a></li>
+            <li><a href="http://www.arm.com/company/policies/trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+    <div id="cookiemodule">
+    <h5>Important Information for this Arm website</h5>
+    <div id="cookiecontent">
+        <p>
+            This site uses cookies to store information on your computer.
+            By continuing to use our site, you consent to our cookies.
+            If you are not happy with the use of these cookies, please review our
+            <a href="https://www.arm.com/company/policies/cookies">Cookie Policy</a>
+            to learn how they can be disabled.
+            By disabling cookies, some features of the site will not work.
+        </p>
+        <button id="acceptcookie">Accept and hide this message</button>
+    </div>
+</div>
+<script src="./CMSIS RTOS - Handbook _ Mbed_files/cookie_law.js.téléchargement"></script>
+
+
+
+<div id="access-warning-modal" class="reveal-modal">
+    <h2>Access Warning</h2>
+    <p>You do not have the correct permissions to perform this operation. Please, contact us at support@mbed.com to gain full access.</p>
+    <a class="close-reveal-modal">×</a>
+</div>
+
+
+
+
+
+<script type="text/javascript" id="" src="./CMSIS RTOS - Handbook _ Mbed_files/saved_resource"></script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./CMSIS RTOS - Handbook _ Mbed_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div class="ub-emb-container"><div></div></div></body></html>

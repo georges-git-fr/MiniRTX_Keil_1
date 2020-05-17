@@ -72,6 +72,8 @@ N'hésitez pas à aller sur le web pour rechercher des infos, on y trouve absolume
 - les algos liés au sémaphore + mutex
 - etc…
 
+Le projet contient un sous-répertoire "Doc" dans lequel vous trouverez l'essentiel concernant les fonctionnalités du présent projet.
+
 Utilisation du projet :
 ---------------------------
 Ouvrir le projet avec l'éditeur Keil.

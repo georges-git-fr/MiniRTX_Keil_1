@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=8" /><link href="/WebResource.axd?d=g9VUc6wDaDqrtIhrZWO6ilopt-5JgJ7weA5_EP3ewsikjPRkMwqj1hpfTT0F9-mQBP192ib7gijp8SUIcuLcbD5_x0tXbCi5GdHY6GvxA8XuvoLBjdOJFAr5DgqW_NtNFOcTxczEIaWwUNjySvBDsgmZUb45q8CRRbXvwuogOl5xG_CDux2_3yOGHbkWscxl0&amp;t=635372650280000000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=rrc6ygYVKo6hXp26kfgD2y5gSiRSIR9y86fr_3KzFmdZZ6mWoQhANu_BLeZhbEPwZ2G_wNI6jPE7UvTj119pq3d0KEMcnloGJ0ezEaZCM_j68HucQpIKeQ-j8UfhhC895KHixevAIYxEBok_Y2UDf8KswOYLu7TEKtXYhfTMbe96_4pX8S3aHj0dfhZmG_eUa3LK_Un-DWRxLw8gQSrg1w2&amp;t=635372650280000000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=9qmsS3XAISLDWIh2_-TjKfsGo8unt218PP_EL_obTyRfEMo8ETKQ4kaN96oby91giWzSoyZODN5GNf8cXnrCeMlz8AG6Nw2a6TwQa8so5RHyswVVnTe8lCCexK5M3lILCLAx0NbqA8ZC2j2rxEvxPubrZPItntINb46_L6liLCjlvmfU3XTZAaX4attYqr382gKiY_TKNPdob2kEvHVyyA2&amp;t=635372650280000000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=ZzbGSXdUQ0Ngo3ZMN4mQp8I8FNJ_6e1WaJOZhBtNNTI3V-SnBtsKDacxR_JKhSnWAAe4fGFwII1bU2XqAavCQeHpC6bRLsabfLDfsqAcIq3boqW4yY9siNEVM5g16gdvjrhfgne1ff0Uh_SveLh3lXaEtmS1_brG3pDQJeg25tAX49qcX7o0210BtUEJMAZMPCvUkx6H5mqCPJIoICVN0Q2&amp;t=635372650280000000" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=SlRM9w2fpN92c6edM9ZPhOvUtetkRh4ThrM2FEQD0ermz3kspgP7Jp7qmsHaKHJig2r6Jj5s2dQqnJWSJh6YuF3C2ytKMGMPWiG1QY6KIzdFrEa0eeadPSthxnJb69g2lcR_zao6pIQugOM3ILz7IEiW0le7KIYWpryMFCuz_vHVmQgXsutb5LbZ17qoynYyQ9lGtdC3PLtcY_4njN9tsQ2&amp;t=635372650280000000" type="text/css" rel="stylesheet" /><title>
+	Login
+</title><meta name="description" content="Login form for the backend." /></head>
+<body xmlns:dataview="javascript:Sys.UI.DataView" sys:activate="*" xmlns:code="http://schemas.microsoft.com/aspnet/code">
+    <form method="post" action="SWT?realm=http%3a%2f%2fwww2.keil.com%2f&amp;redirect_uri=%2fSitefinity%2fPlugins%2fsfPlaceholderLabels%2fstyle.css&amp;deflate=true" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl05_TSM" id="ctl05_TSM" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTg5MDc4MzIyMWRkFKAsAKYT1Ij72EkSzVwKN/6k1ipRkaipV0a3o/xyhQE=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=C5r4CQ4xL6UCIMqaTUMq0IgT_fwVIIEAqD01lyil6PCOu94zcEPMdHmqdbzAmWJdRD5meIspDVA7oQfNx6UTHaZWDV_nOczj6NJwkdXRQLQ1&amp;t=635586452020000000" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl05_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-GB%3a88fd0407-24cf-4abd-9df5-22f81b2bc835%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=T1fd1IceVHom_fp0tZzzsC6QoMwD4d--yATrg3noR8scSiLGOlZy252bQVQIM8-Yk-XEWAs3IAyFnthuu8Kk7cVe-tlwWIfKJhlmRJdAInTQNB77lMle0pz2xoBga2hvCLHhbfWJ61KcYYOPIXt-8fWJ2CWvIEJAc0BRhRG2GryJjqgHotg9xRVFknGRlBDT0&amp;t=15929a0b" type="text/javascript"></script>
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl05_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%3aen-GB%3a30c67b5a-b8cd-4dd5-8715-843d20404812%3a7ee0bb1f%3a83eb063b" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=g-pdNx8pm2x5sNUYHMoKY6WKHI5DQqnFBJU9FaTQsMjJE5SbqQyxxIdB3ECgbmKchLUtWZYFIbAJRTNOGyZaAh6lg6OG46D9Kdv4p81xvZWDeTAuMXtAFhPSvmfIsKpXbx9st4aJtjobRdkvHOJjS7xU2qpfZ1yWsYSQbrVMQtHh21whpbITeLMfrRw10_cZ0&amp;t=15929a0b" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=LCOHdHv2ZMH0I8QK21YKY6t1lVSw7Alvj6fTZ694Ljs2TZbG28qJy2PULb-9EvaBo_sGm3nPlct82kLZWGbhMRSSSplSjaFj4qBu4igmsaZpIkKctrWZxhaaYScyFoDT5irBHIFGD4lNf8oGCKkqu3nnUdhSTHeymobqHcuJyfc3ShX_77gLRjpWcaAcgqpnXPTdTCYfYJeO75EKm7zUeQ2&amp;t=15929a0b" type="text/javascript"></script>
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl05_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity%3aen-GB%3a60e66b1e-51b7-4a33-b384-31bde1ab0850%3a993d8e92%3a5b182b17%3a721addc%3a41f6c3a7" type="text/javascript"></script>
+<script src="/WebResource.axd?d=PIPZqVuvrGc_GYCDdI63FakYLsdT87_c_9wuzX_qwjE9MwMsGRgo7U-m9kPGvG_rC6axGI2xRR6LtmHRNs8yFeGG1EjW6NVvwNPRuCIJufk1&amp;t=635586452020000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="DC5799FC" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAANz1CteaqaWSzFELxsDEAZ1F6yFMeyQyrPsVJyTHIZIAdaHGy+IVMJSyLSOlwgxWgE+gcZHKkYzB+OgQ+KtRERjm7Yv5LkqchXBz4Zcoo69Gw==" />
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl05', 'aspnetForm', [], [], [], 90, '');
+//]]>
+</script>
+
+
+        
+        <a href="#sfToMainContent" id="sfSkip">
+            Skip To The Main Content
+        </a>
+        
+        <div class="sfWrapper">
+            <div class="sfHeader sfClearfix">
+                
+
+            </div>
+            
+
+<h1 class="sfBreadCrumb" id="sfToMainContent">
+    Sitefinity<span class="sfBreadCrumbBack"></span>
+</h1>
+<div class="sfMain sfClearfix">
+    <div class="sfContent">
+        <div>
+	
+
+<fieldset class="sfLoginForm">
+    <div class="sfForm" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl04_ctl00_ctl00_ctl00_ctl00_ctl00_hiddenSubmitButton&#39;)">
+		
+	    <div class="sfFormIn" id="LoginFormControl">
+            <div class="sfLoginShadowTopRight"></div>
+			<div class="sfLoginShadowBottomLeft"></div>
+			<h2>
+				Login to manage the site
+			</h2>
+            <div id="ctl04_ctl00_ctl00_ctl00_ctl00_ctl00_errorLabel" class="sfFailure" style="display:none;">
+			
+		</div>
+            <ol>
+                
+                <li>
+                    <label for="wrap_name" class="sfTxtLbl">
+                        Username
+                    </label>
+                    <input type="text" id="wrap_name" name="wrap_name" class="sfTxt" />
+                </li>
+                <li>
+                    <label for="wrap_password" class="sfTxtLbl">
+                        Password
+                    </label>
+                    <input type="password" id="wrap_password" name="wrap_password" class="sfTxt" />
+                </li>
+
+                <li class="sfCheckBoxWrapper">
+                    <input type="checkbox" id="sf_persistent" name="sf_persistent" value="true" checked="checked" />
+                    <label for="sf_persistent">
+                        Remember me on this computer
+                    </label>
+                </li>
+                
+                
+            </ol>
+            <div class="sfSubmitBtn sfMainFormBtns">
+                <a class="sfLinkBtn sfSave" href="javascript:__doPostBack(&#39;ctl04$ctl00$ctl00$ctl00$ctl00$ctl00$ctl04&#39;,&#39;&#39;)">
+                    <strong class="sfLinkBtnIn">
+						Login
+					</strong>
+                </a>
+            </div>
+            <!-- do not remove this button. It is used for the default form submit (pressing enter) -->
+		    <div style="display: none;">
+                <input type="hidden" id="isFormRequest" name="isFormRequest" value="true" />
+			    <input type="submit" name="ctl04$ctl00$ctl00$ctl00$ctl00$ctl00$hiddenSubmitButton" value="" id="ctl04_ctl00_ctl00_ctl00_ctl00_ctl00_hiddenSubmitButton" />
+		    </div>
+        </div>
+    
+	</div>
+</fieldset>
+
+<script type="text/javascript">
+    var providersList;
+    var sf_domain;
+
+    function pageLoad() {
+        $("body").addClass("sfLogin sfNoSidebar");
+        sf_domain = $get("sf_domain");
+        providersList = $get("ctl04_ctl00_ctl00_ctl00_ctl00_ctl00_ProvidersList");
+        if (providersList && sf_domain)
+            sf_domain.value = getProvidersListValue();
+    }
+
+    function getProvidersListValue() {
+        var index = providersList.selectedIndex;
+        if (index > -1 && providersList.options.length > index) {
+            return providersList.options[index].value;
+        }
+        return "";
+    }
+
+    function startupHintClick() {
+        $("#startupHint").toggle();
+    }
+
+    function providersListChange() {
+        sf_domain.value = getProvidersListValue();
+
+        return true;
+    }
+</script><span></span>
+</div>
+    </div>
+    
+</div><span></span>
+
+        </div>
+        <div class="sfFooter">
+            
+
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('wrap_name');Sys.Application.add_init(function() {
+    $create(Telerik.Sitefinity.Web.UI.UserPreferences, {"_timeOffset":"3600000","_userBrowserSettingsForCalculatingDates":true,"timeZoneDisplayName":"(UTC+00:00) Dublin, Edinburgh, Lisbon, London","timeZoneId":"GMT Standard Time"}, null, null);
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/*-----------------------------------------------------------
+Side Bar Stuff
+-----------------------------------------------------------*/
+#vm span.toc           { font: normal 11px "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif; width: 224px; display: block; }
+
+#vm span.toc1          { padding-left: 13px;  width: 211px; }
+#vm span.toc2          { padding-left: 26px;  width: 198px; }
+#vm span.toc3          { padding-left: 39px;  width: 185px; }
+#vm span.toc4          { padding-left: 52px;  width: 172px; }
+#vm span.toc5          { padding-left: 65px;  width: 159px; }
+#vm span.toc6          { padding-left: 78px;  width: 146px; }
+#vm span.toc7          { padding-left: 91px;  width: 133px; }
+#vm span.toc8          { padding-left: 104px; width: 120px; }
+#vm span.toc9          { padding-left: 117px; width: 107px; }
+
+#vm span.toc img       { position: relative; top: 2px; }
+
+
+#vm span.toc b         { font-weight: bold; }
+
+#vm span.toc a         { text-decoration: none; border: none; display: inline; color: #000; background: #EEE; padding: 0; width: auto; }
+#vm span.toc a:hover   { text-decoration: underline; }
+#vm span.toc a:visited { }
+
+/*-----------------------------------------------------------
+-----------------------------------------------------------*/

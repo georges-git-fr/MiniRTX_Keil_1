@@ -1,0 +1,123 @@
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const verticalMenuCover = document.querySelector('.mbed-nav__mobile-menu-cover');
+
+        const verticalMenuControlOpen = document.querySelector('.mbed-nav__mobile-menu-control-open');
+        const verticalMenuControlClose = document.querySelector('.mbed-nav__mobile-menu-control-close');
+        const verticalMenuControlBack = document.querySelector('.mbed-nav__mobile-menu-control-back');
+
+        const mainMenu = document.querySelector('#mbed-nav__main-menu-mobile');
+        const pelionMenu = document.querySelector('#mbed-nav__pelion-menu-mobile');
+        const userMenu = document.querySelector('#mbed-nav__user-menu-mobile');
+
+        const pelionMenuButton = document.querySelector('.mbed-nav__pelion-menu-mobile-open');
+        const userMenuButton = document.querySelector('.mbed-nav__user-menu-mobile-open');
+
+        const searchControlOpen = document.querySelector('.mbed-nav__search-open');
+        const searchControlClose = document.querySelector('.mbed-nav__search-close');
+        const searchBox = document.querySelector('#mbed-nav__search-box');
+
+        const hiddenClassName = 'is-hidden';
+
+        function setHidden(el) {
+            el.classList.add(hiddenClassName)
+        }
+
+        function unsetHidden(el) {
+            el.classList.remove(hiddenClassName)
+        }
+
+        function enableBackgroundScrolling() {
+            const body = document.querySelector('body');
+            body.style.overflow = 'auto'
+        }
+
+        function disableBackgroundScrolling() {
+            const body = document.querySelector('body');
+            body.style.overflow = 'hidden'
+        }
+
+        function closeVerticalMenu() {
+            setHidden(verticalMenuControlClose);
+            unsetHidden(verticalMenuControlOpen);
+
+            setHidden(verticalMenuCover);
+
+            enableBackgroundScrolling();
+        }
+
+        function openVerticalMenu() {
+            setHidden(verticalMenuControlOpen);
+            unsetHidden(verticalMenuControlClose);
+
+            unsetHidden(verticalMenuCover);
+
+            disableBackgroundScrolling();
+        }
+
+        function handleCoverClick(e) {
+            if (e.target !== this)
+                return;
+
+            closeVerticalMenu();
+        }
+
+        function getActiveSubMenu() {
+            return document.querySelector('.mbed-nav__sub-menu:not(.is-hidden)');
+        }
+
+        function showUserMenu() {
+            setHidden(verticalMenuControlClose);
+            unsetHidden(verticalMenuControlBack);
+
+            setHidden(mainMenu);
+            unsetHidden(userMenu);
+        }
+
+        function showPelionMenu() {
+            setHidden(verticalMenuControlClose);
+            unsetHidden(verticalMenuControlBack);
+
+            setHidden(mainMenu);
+            unsetHidden(pelionMenu);
+        }
+
+        function closeSubMenu() {
+            setHidden(verticalMenuControlBack);
+            unsetHidden(verticalMenuControlClose);
+
+            unsetHidden(mainMenu);
+            setHidden(getActiveSubMenu());
+        }
+
+        function showSearchBox() {
+            setHidden(searchControlOpen);
+            unsetHidden(searchControlClose);
+            unsetHidden(searchBox);
+        }
+
+        function closeSearchBox() {
+            setHidden(searchControlClose);
+            setHidden(searchBox);
+            unsetHidden(searchControlOpen);
+        }
+
+        searchControlOpen.addEventListener('click', showSearchBox);
+        searchControlClose.addEventListener('click', closeSearchBox);
+
+        verticalMenuControlOpen.addEventListener('click', openVerticalMenu);
+        verticalMenuControlClose.addEventListener('click', closeVerticalMenu);
+        verticalMenuControlBack.addEventListener('click', closeSubMenu);
+
+        verticalMenuCover.addEventListener('click', handleCoverClick);
+
+        pelionMenuButton.addEventListener('click', showPelionMenu);
+
+        // no user button if not logged in
+        if (userMenuButton) {
+            userMenuButton.addEventListener('click', showUserMenu);
+        }
+
+        window.addEventListener('orientationchange', closeVerticalMenu);
+    });
+})();

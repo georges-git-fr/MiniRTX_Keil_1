@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.keil.com/pack/doc/CMSIS/General/html/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=9"><script type="text/javascript" src="./Introduction CMSIS_files/c4afc5d5b0"></script><script src="./Introduction CMSIS_files/nr-1167.min.js.téléchargement"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"c4afc5d5b0","applicationID":"38150566","transactionName":"Y1FVbUUFDBAAU0xeXVobeVZFCQMPCEpdUx0e","queueTime":0,"applicationTime":12,"ttGuid":"C0441876528B86E7","agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c4afc5d5b0",applicationID:"38150566"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<title>Introduction</title>
+<title>CMSIS: Introduction</title>
+<link href="./Introduction CMSIS_files/tabs.css" rel="stylesheet" type="text/css">
+<link href="./Introduction CMSIS_files/cmsis.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./Introduction CMSIS_files/jquery.js.téléchargement"></script>
+<script type="text/javascript" src="./Introduction CMSIS_files/dynsections.js.téléchargement"></script>
+<script type="text/javascript" src="./Introduction CMSIS_files/printComponentTabs.js.téléchargement"></script>
+<link href="./Introduction CMSIS_files/navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./Introduction CMSIS_files/resize.js.téléchargement"></script>
+<script type="text/javascript" src="./Introduction CMSIS_files/navtree.js.téléchargement"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<script id="navtreeindex0" type="text/javascript" src="./Introduction CMSIS_files/navtreeindex0.js.téléchargement"></script></head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 46px;">
+  <td id="projectlogo"><img alt="Logo" src="./Introduction CMSIS_files/CMSIS_Logo_Final.png"></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CMSIS
+   &nbsp;<span id="projectnumber">Version 5.7.0</span>
+   </div>
+   <div id="projectbrief">Software Interface Standard for Arm Cortex-based Microcontrollers</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<div id="CMSISnav" class="tabs1">
+    <ul class="tablist">
+      <script type="text/javascript">
+		<!--
+		writeComponentTabs.call(this);
+		//-->
+      </script><li id="GEN" class="current"> <a href="http://www.keil.com/pack/doc/CMSIS/General/html/index.html"><span>General</span></a></li><li id="CORE_A"> <a href="http://www.keil.com/pack/doc/CMSIS/Core_A/html/index.html"><span>Core(A)</span></a></li><li id="CORE_M"> <a href="http://www.keil.com/pack/doc/CMSIS/Core/html/index.html"><span>Core(M)</span></a></li><li id="DRV"> <a href="http://www.keil.com/pack/doc/CMSIS/Driver/html/index.html"><span>Driver</span></a></li><li id="DSP&amp;ML"> <a href="http://www.keil.com/pack/doc/CMSIS/DSP/html/index.html"><span>DSP</span></a></li><li id="NN"> <a href="http://www.keil.com/pack/doc/CMSIS/NN/html/index.html"><span>NN</span></a></li><li id="RTOSv1"> <a href="http://www.keil.com/pack/doc/CMSIS/RTOS/html/index.html"><span>RTOS v1</span></a></li><li id="RTOSv2"> <a href="http://www.keil.com/pack/doc/CMSIS/RTOS2/html/index.html"><span>RTOS v2</span></a></li><li id="PACK"> <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html"><span>Pack</span></a></li><li id="Build"> <a href="http://www.keil.com/pack/doc/CMSIS/Build/html/index.html"><span>Build</span></a></li><li id="SVD"> <a href="http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html"><span>SVD</span></a></li><li id="DAP"> <a href="http://www.keil.com/pack/doc/CMSIS/DAP/html/index.html"><span>DAP</span></a></li><li id="ZONE"> <a href="http://www.keil.com/pack/doc/CMSIS/Zone/html/index.html"><span>Zone</span></a></li>
+	  </ul>
+</div>
+<!-- Generated by Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="http://www.keil.com/pack/doc/CMSIS/General/html/index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="http://www.keil.com/pack/doc/CMSIS/General/html/pages.html"><span>Usage&nbsp;and&nbsp;Description</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable" style="width: 362px; height: 807px; top: 119px;">
+  <div id="nav-tree" style="height: 807px;">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync" style="top: 5px;"><img src="./Introduction CMSIS_files/sync_on.png" title="click to disable panel synchronisation"></div>
+    <ul style="display: block;"><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./Introduction CMSIS_files/ftv2mlastnode.png" style="padding-left: 0px;"></a><span class="label"><a class="index.html" href="http://www.keil.com/pack/doc/CMSIS/General/html/index.html">CMSIS</a></span></div><ul class="children_ul" style="display: block;"><li><div class="item selected" id="selected"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./Introduction CMSIS_files/ftv2mnode.png" style="padding-left: 16px;"></a><span class="label"><a class="index.html" href="http://www.keil.com/pack/doc/CMSIS/General/html/index.html">Introduction</a></span></div><ul class="children_ul" style=""><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="index.html:CM_Components" href="javascript:void(0)">CMSIS Components</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="index.html:Motivation" href="javascript:void(0)">Motivation</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="index.html:CodingRules" href="javascript:void(0)">Coding Rules</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="index.html:Validation" href="javascript:void(0)">Validation</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="index.html:License" href="javascript:void(0)">License</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="index.html:CM_Pack_Content" href="javascript:void(0)">CMSIS Software Pack</a></span></div></li></ul></li><li><div class="item"><span style="display: inline-block; width: 32px; height: 22px;">&nbsp;</span><span class="label"><a class="cm_revisionHistory.html" href="http://www.keil.com/pack/doc/CMSIS/General/html/cm_revisionHistory.html">Revision History</a></span></div></li></ul></li></ul></div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+  </div>
+<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1001;"></div></div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('index.html','');});
+</script>
+<div id="doc-content" style="margin-left: 368px; height: 807px;">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Introduction </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>The <b>CMSIS</b> is a vendor-independent hardware abstraction layer for microcontrollers that are based on Arm® Cortex® processors. The CMSIS defines generic tool interfaces and enables consistent device support. It provides simple software interfaces to the processor and the peripherals, simplifying software re-use, reducing the learning curve for microcontroller developers, and reducing the time to market for new devices.</p>
+<p>The CMSIS is defined in close cooperation with various silicon and software vendors and provides a common approach to interface to peripherals, real-time operating systems, and middleware components. The CMSIS is intended to enable the combination of software components from multiple middleware vendors.</p>
+<h1><a class="anchor" id="CM_Components"></a>
+CMSIS Components</h1>
+<table class="doxtable">
+<tbody><tr>
+<th align="left">CMSIS-... </th><th align="left">Target Processors </th><th align="left">Description  </th></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Core/html/index.html"><b>Core(M)</b></a></td><td align="left">All Cortex-M, SecurCore </td><td align="left">Standardized API for the Cortex-M processor core and peripherals. Includes intrinsic functions for Cortex-M4/M7/M33/M35P SIMD instructions. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Core_A/html/index.html"><b>Core(A)</b></a></td><td align="left">Cortex-A5/A7/A9 </td><td align="left">Standardized API and basic run-time system for the Cortex-A5/A7/A9 processor core and peripherals. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Driver/html/index.html"><b>Driver</b></a></td><td align="left">All Cortex </td><td align="left">Generic peripheral driver interfaces for middleware. Connects microcontroller peripherals with middleware that implements for example communication stacks, file systems, or graphic user interfaces. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/DSP/html/index.html"><b>DSP</b></a></td><td align="left">All Cortex-M </td><td align="left">DSP library collection with over 60 Functions for various data types: fixed-point (fractional q7, q15, q31) and single precision floating-point (32-bit). Implementations optimized for the SIMD instruction set are available for Cortex-M4/M7/M33/M35P. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/NN/html/index.html"><b>NN</b></a></td><td align="left">All Cortex-M </td><td align="left">Collection of efficient neural network kernels developed to maximize the performance and minimize the memory footprint on Cortex-M processor cores. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/RTOS/html/index.html"><b>RTOS v1</b></a></td><td align="left">Cortex-M0/M0+/M3/M4/M7 </td><td align="left">Common API for real-time operating systems along with a reference implementation based on RTX. It enables software components that can work across multiple RTOS systems. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/RTOS2/html/index.html"><b>RTOS v2</b></a></td><td align="left">All Cortex-M, Cortex-A5/A7/A9 </td><td align="left">Extends CMSIS-RTOS v1 with Armv8-M support, dynamic object creation, provisions for multi-core systems, binary compatible interface. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html"><b>Pack</b></a></td><td align="left">All Cortex-M, SecurCore, Cortex-A5/A7/A9 </td><td align="left">Describes a delivery mechanism for software components, device parameters, and evaluation board support. It simplifies software re-use and product life-cycle management (PLM). </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Build/html/index.html"><b>Build</b></a></td><td align="left">All Cortex-M, SecurCore, Cortex-A5/A7/A9 </td><td align="left">A set of tools, software frameworks, and work flows that improve productivity, for example with Continuous Integration (CI). </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html"><b>SVD</b></a></td><td align="left">All Cortex-M, SecurCore </td><td align="left">Peripheral description of a device that can be used to create peripheral awareness in debuggers or CMSIS-Core header files. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/DAP/html/index.html"><b>DAP</b></a></td><td align="left">All Cortex </td><td align="left">Firmware for a debug unit that interfaces to the CoreSight Debug Access Port. </td></tr>
+<tr>
+<td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Zone/html/index.html"><b>Zone</b></a></td><td align="left">All Cortex-M </td><td align="left">Defines methods to describe system resources and to partition these resources into multiple projects and execution areas. </td></tr>
+</tbody></table>
+<h1><a class="anchor" id="Motivation"></a>
+Motivation</h1>
+<p>CMSIS has been created to help the industry in standardization. It enables consistent software layers and device support across a wide range of development tools and microcontrollers. CMSIS is not a huge software layer that introduces overhead and does not define standard peripherals. The silicon industry can therefore support the wide variations of Cortex-M processor-based devices with this common standard.</p>
+<div class="image">
+<img src="./Introduction CMSIS_files/Overview.png" alt="Overview.png">
+<div class="caption">
+CMSIS Structure</div></div>
+<p> The benefits of the CMSIS are:</p>
+<ul>
+<li>CMSIS reduces the learning curve, development costs, and time-to-market. Developers can write software quicker through a variety of easy-to-use, standardized software interfaces.</li>
+<li>Consistent software interfaces improve the software portability and re-usability. Generic software libraries and interfaces provide consistent software framework.</li>
+<li>It provides interfaces for debug connectivity, debug peripheral views, software delivery, and device support to reduce time-to-market for new microcontroller deployment.</li>
+<li>Being a compiler independent layer, it allows to use the compiler of your choice. Thus, it is supported by mainstream compilers.</li>
+<li>It enhances program debugging with peripheral information for debuggers and ITM channels for printf-style output.</li>
+<li>CMSIS is delivered in CMSIS-Pack format which enables fast software delivery, simplifies updates, and enables consistent integration into development tools.</li>
+<li>CMSIS-Zone will simplify system resource and partitioning as it manages the configuration of multiple processors, memory areas, and peripherals.</li>
+</ul>
+<h1><a class="anchor" id="CodingRules"></a>
+Coding Rules</h1>
+<p>The CMSIS uses the following essential coding rules and conventions:</p>
+<ul>
+<li>Compliant with ANSI C (C99) and C++ (C++03).</li>
+<li>Uses ANSI C standard data types defined in <b>&lt;stdint.h&gt;</b>.</li>
+<li>Variables and parameters have a complete data type.</li>
+<li>Expressions for <em>#define</em> constants are enclosed in parenthesis.</li>
+<li>Conforms to MISRA 2012 (but does not claim MISRA compliance). MISRA rule violations are documented.</li>
+</ul>
+<p>In addition, the CMSIS recommends the following conventions for identifiers:</p>
+<ul>
+<li><b>CAPITAL</b> names to identify Core Registers, Peripheral Registers, and CPU Instructions.</li>
+<li><b>CamelCase</b> names to identify function names and interrupt functions.</li>
+<li><b>Namespace_</b> prefixes avoid clashes with user identifiers and provide functional groups (i.e. for peripherals, RTOS, or DSP Library).</li>
+</ul>
+<p>The CMSIS is documented within the source files with: </p>
+<ul>
+<li>Comments that use the C or C++ style. </li>
+<li><a href="http://www.doxygen.nl/" target="_blank">Doxygen</a> compliant <b>function comments</b> that provide:<ul>
+<li>brief function overview.</li>
+<li>detailed description of the function.</li>
+<li>detailed parameter explanation.</li>
+<li>detailed information about return values.</li>
+</ul>
+</li>
+</ul>
+<p>Doxygen comment example: </p>
+<pre class="fragment">/**
+ * @brief  Enable Interrupt in NVIC Interrupt Controller
+ * @param  IRQn  interrupt number that specifies the interrupt
+ * @return none.
+ * Enable the specified interrupt in the NVIC Interrupt Controller.
+ * Other settings of the interrupt such as priority are not affected.
+ */
+</pre><h1><a class="anchor" id="Validation"></a>
+Validation</h1>
+<p>The various components of CMSIS Version 5 are validated using mainstream compilers. To get a diverse coverage, Arm uses the Arm Compiler v5 (based on EDG front-end), the Arm Compiler v6 (based on LLVM front-end), and the GCC Compiler in the various tests. For each component, the section <b>"Validation"</b> describes the scope of the various verifications.</p>
+<p>CMSIS components are compatible with a range of C and C++ language standards. The CMSIS components comply with the <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0036b/index.html">Application Binary Interface (ABI) for the Arm Architecture</a> (exception CMSIS-RTOS v1). This ensures C API interfaces that support inter-operation between various toolchains.</p>
+<p>As CMSIS defines API interfaces and functions that scale to a wide range of processors and devices, the scope of the run-time test coverage is limited. However, several components are validated using dedicated test suites.</p>
+<p>The CMSIS source code is checked for MISRA C:2012 conformance using PC-Lint. MISRA deviations are documented with reasonable effort, however Arm does not claim MISRA compliance as there is today for example no guideline enforcement plan. The CMSIS source code is not checked for MISRA C++:2008 conformance as there is a risk that it is incompatible with C language standards, specifically warnings that may be generated by the various C compilers.</p>
+<h1><a class="anchor" id="License"></a>
+License</h1>
+<p>The CMSIS is provided free of charge by Arm under the <a href="http://www.keil.com/pack/doc/CMSIS/General/html/LICENSE.txt">Apache 2.0 License</a>.</p>
+<h1><a class="anchor" id="CM_Pack_Content"></a>
+CMSIS Software Pack</h1>
+<p>The CMSIS software components are delivered in CMSIS-Pack format. The <b>ARM::CMSIS</b> Pack contains the following:</p>
+<table class="doxtable">
+<tbody><tr>
+<th align="left">File/Directory </th><th align="left">Content  </th></tr>
+<tr>
+<td align="left"><b>ARM.CMSIS.pdsc</b> </td><td align="left">Package description file in CMSIS-Pack format. </td></tr>
+<tr>
+<td align="left"><b>LICENSE.txt</b> </td><td align="left">CMSIS License Agreement (Apache 2.0) </td></tr>
+<tr>
+<td align="left"><b>CMSIS</b> </td><td align="left"><a class="el" href="http://www.keil.com/pack/doc/CMSIS/General/html/index.html#CM_Components">CMSIS components</a> (see also table below) </td></tr>
+<tr>
+<td align="left"><b>Device</b> </td><td align="left">CMSIS reference implementations of Arm Cortex-M processor based devices </td></tr>
+</tbody></table>
+<h2>CMSIS Directory </h2>
+<table class="doxtable">
+<tbody><tr>
+<th align="left">Directory </th><th align="left">Content  </th></tr>
+<tr>
+<td align="left"><b>Documentation</b> </td><td align="left">This documentation </td></tr>
+<tr>
+<td align="left"><b>Core</b> </td><td align="left">User code templates for <a href="http://www.keil.com/pack/doc/CMSIS/Core/html/index.html"><b>CMSIS-Core (Cortex-M)</b></a> related files, referenced in ARM.CMSIS.pdsc </td></tr>
+<tr>
+<td align="left"><b>Core_A</b> </td><td align="left">User code templates for <a href="http://www.keil.com/pack/doc/CMSIS/Core_A/html/index.html"><b>CMSIS-Core (Cortex-A)</b></a> related files, referenced in ARM.CMSIS.pdsc </td></tr>
+<tr>
+<td align="left"><b>DAP</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/DAP/html/index.html"><b>CMSIS-DAP</b></a> Debug Access Port source code and reference implementations </td></tr>
+<tr>
+<td align="left"><b>Driver</b> </td><td align="left">Header files for the <a href="http://www.keil.com/pack/doc/CMSIS/Driver/html/index.html"><b>CMSIS-Driver</b></a> peripheral interface API </td></tr>
+<tr>
+<td align="left"><b>DSP_Lib</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/DSP/html/index.html"><b>CMSIS-DSP</b></a> software library source code </td></tr>
+<tr>
+<td align="left"><b>NN</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/NN/html/index.html"><b>CMSIS-NN</b></a> software library source code </td></tr>
+<tr>
+<td align="left"><b>Include</b> </td><td align="left">Include files for <a href="http://www.keil.com/pack/doc/CMSIS/Core/html/index.html"><b>CMSIS-Core (Cortex-M)</b></a> and <a href="http://www.keil.com/pack/doc/CMSIS/DSP/html/index.html"><b>CMSIS-DSP</b></a> </td></tr>
+<tr>
+<td align="left"><b>Lib</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/DSP/html/index.html"><b>CMSIS-DSP</b></a> generated libraries for ARMCC and GCC </td></tr>
+<tr>
+<td align="left"><b>Pack</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/pack_Example.html"><b>CMSIS-Pack</b></a> example </td></tr>
+<tr>
+<td align="left"><b>RTOS</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/RTOS/html/index.html"><b>CMSIS-RTOS Version 1</b></a> along with RTX4 reference implementation </td></tr>
+<tr>
+<td align="left"><b>RTOS2</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/RTOS/html/index.html"><b>CMSIS-RTOS Version 2</b></a> along with RTX5 reference implementation </td></tr>
+<tr>
+<td align="left"><b>SVD</b> </td><td align="left"><a href="http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html"><b>CMSIS-SVD</b></a> example </td></tr>
+<tr>
+<td align="left"><b>Utilities</b> </td><td align="left">PACK.xsd (<a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/pack_Example.html"><b>CMSIS-Pack</b></a> schema file), PackChk.exe (checking tool for software packs), <br>
+ CMSIS-SVD.xsd (<a href="http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html"><b>CMSIS-SVD</b></a> schema file), SVDConv.exe (conversion tool for SVD files) </td></tr>
+</tbody></table>
+<hr>
+ </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Thu Apr 9 2020 15:49:35 for CMSIS Version 5.7.0 by Arm Ltd. All rights reserved.
+	<!--
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 
+	-->
+	</li>
+  </ul>
+</div>
+
+
+</body></html>

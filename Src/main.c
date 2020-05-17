@@ -1279,9 +1279,9 @@ int main(void)
 
 //	// ---------- Flashing LED threads with parameters
 	T_flashing_LED_0 = osThreadCreate(osThread(flashing_LED_0), (void *) 0x01); // 0x00 => clignotement fixe, 0x01 => aléatoire
-	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x01);
-	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x01);
-	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x01);
+	T_flashing_LED_1 = osThreadCreate(osThread(flashing_LED_1), (void *) 0x00);
+	T_flashing_LED_2 = osThreadCreate(osThread(flashing_LED_2), (void *) 0x00);
+	T_flashing_LED_3 = osThreadCreate(osThread(flashing_LED_3), (void *) 0x00);
 
   osKernelStart();
 	osDelay(osWaitForever);

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0075)https://www.keil.com/pack/doc/compiler/EventRecorder/html/complex_scvd.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=9"><script type="text/javascript" src="./SCVD Complex Example_files/c4afc5d5b0"></script><script src="./SCVD Complex Example_files/nr-1167.min.js.téléchargement"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"c4afc5d5b0","applicationID":"38150566","transactionName":"Y1FVbUUFDBAAU0xeXVobeVZFCQMPCEpdUx0e","queueTime":0,"applicationTime":6,"ttGuid":"5214B203144641A4","agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c4afc5d5b0",applicationID:"38150566"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<title>SCVD Complex Example</title>
+<title>Event Recorder and Component Viewer: SCVD Complex Example</title>
+<link href="./SCVD Complex Example_files/tabs.css" rel="stylesheet" type="text/css">
+<link href="./SCVD Complex Example_files/drv.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./SCVD Complex Example_files/jquery.js.téléchargement"></script>
+<script type="text/javascript" src="./SCVD Complex Example_files/dynsections.js.téléchargement"></script>
+<script type="text/javascript" src="./SCVD Complex Example_files/printComponentTabs.js.téléchargement"></script>
+<link href="./SCVD Complex Example_files/navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./SCVD Complex Example_files/resize.js.téléchargement"></script>
+<script type="text/javascript" src="./SCVD Complex Example_files/navtree.js.téléchargement"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="./SCVD Complex Example_files/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./SCVD Complex Example_files/search.js.téléchargement"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="./SCVD Complex Example_files/stylsheetf" rel="stylesheet" type="text/css">
+<script id="navtreeindex0" type="text/javascript" src="./SCVD Complex Example_files/navtreeindex0.js.téléchargement"></script><script id="ExampleProjects" type="text/javascript" src="./SCVD Complex Example_files/ExampleProjects.js.téléchargement"></script></head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 46px;">
+  <td id="projectlogo"><img alt="Logo" src="./SCVD Complex Example_files/keilarm.png"></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Event Recorder and Component Viewer
+   &nbsp;<span id="projectnumber">Version 1.4.0</span>
+   </div>
+   <div id="projectbrief">MDK Debugger Views for Status and Event Information</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<div id="DRVnav" class="tabs1">
+    <ul class="tablist">
+      <script type="text/javascript">
+		<!--
+		writeComponentTabs.call(this);
+		//-->
+      </script><li id="GEN"> <a href="https://www.keil.com/pack/doc/compiler/General/html/index.html"><span>General</span></a></li><li id="RIO"> <a href="https://www.keil.com/pack/doc/compiler/RetargetIO/html/index.html"><span>I/O Retargeting</span></a></li><li id="EVREC" class="current"> <a href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/index.html"><span>Event Recorder</span></a></li>
+	  </ul>
+</div>
+<!-- Generated by Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/index.html"><span>Main&nbsp;Page</span></a></li>
+      <li class="current"><a href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/pages.html"><span>Usage&nbsp;and&nbsp;Description</span></a></li>
+      <li><a href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/modules.html"><span>Reference</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="./SCVD Complex Example_files/mag_sel.png" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" alt="">
+          <input type="text" id="MSearchField" value="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event)">
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="./SCVD Complex Example_files/close.png" alt=""></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable" style="width: 362px; height: 807px; top: 119px;">
+  <div id="nav-tree" style="height: 807px;">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync" style="top: 5px;"><img src="./SCVD Complex Example_files/sync_on.png" title="click to disable panel synchronisation"></div>
+    <ul style="display: block;"><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2mlastnode.png" style="padding-left: 0px;"></a><span class="label"><a class="index.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/index.html">Event Recorder and Component Viewer</a></span></div><ul class="children_ul" style="display: block;"><li><div class="item"><span style="display: inline-block; width: 32px; height: 22px;">&nbsp;</span><span class="label"><a class="er_overview.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/er_overview.html">Overview</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 32px; height: 22px;">&nbsp;</span><span class="label"><a class="er_rev_history.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/er_rev_history.html">Revision History</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 16px;"></a><span class="label"><a class="er_theory.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/er_theory.html">Event Recorder: Theory of operation</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 16px;"></a><span class="label"><a class="cv_use.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/cv_use.html">Using Component Viewer</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 16px;"></a><span class="label"><a class="er_use.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/er_use.html">Using Event Recorder</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 16px;"></a><span class="label"><a class="es_use.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/es_use.html">Using Event Statistics</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2mnode.png" style="padding-left: 16px;"></a><span class="label"><a class="ExampleProjects.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/ExampleProjects.html">Examples</a></span></div><ul class="children_ul" style="display: block;"><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="simple_scvd.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/simple_scvd.html">SCVD Simple Example</a></span></div></li><li><div class="item selected" id="selected"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="complex_scvd.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/complex_scvd.html">SCVD Complex Example</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 32px;"></a><span class="label"><a class="MyComponent.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/MyComponent.html">SCVD in MyComponent</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="scvd_evt_stat.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/scvd_evt_stat.html">SCVD Event Statistics</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="scvd_evt_state.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/scvd_evt_state.html">SCVD Event State</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="scvd_CM0_SysTick.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/scvd_CM0_SysTick.html">SCVD Cortex-M0 SysTick</a></span></div></li><li><div class="item"><span style="display: inline-block; width: 48px; height: 22px;">&nbsp;</span><span class="label"><a class="scvd_CM0_RTOS.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/scvd_CM0_RTOS.html">SCVD Cortex-M0 RTOS</a></span></div></li></ul></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 16px;"></a><span class="label"><a class="SCVD_Format.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/SCVD_Format.html">SCVD File Format</a></span></div></li><li><div class="item"><a href="javascript:void(0)"><img width="16" height="22" border="0" src="./SCVD Complex Example_files/ftv2pnode.png" style="padding-left: 16px;"></a><span class="label"><a class="modules.html" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/modules.html">Reference</a></span></div></li></ul></li></ul></div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+  </div>
+<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1001;"></div></div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('complex_scvd.html','');});
+</script>
+<div id="doc-content" style="margin-left: 368px; height: 807px;">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">•</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults" src="./SCVD Complex Example_files/saved_resource.html">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">SCVD Complex Example </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Use the example project <b>Complex</b> <b>SCVD</b> <b>Example</b> for more advanced topics.</p>
+<p>This example is more complex than <a class="el" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/simple_scvd.html">SCVD Simple Example</a> and shows:</p>
+<ul>
+<li>The use of <a class="el" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/scvd_expression.html">Expressions</a> and conditional computing for various XML elements</li>
+<li>The use of the built-in variable <span class="XML-Token">_count</span></li>
+<li>The use of <a class="el" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/elem_readlist.html">readlist</a> and <a class="el" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/elem_listout.html">list</a> for looping through arrays</li>
+</ul>
+<p>The example uses the structures <span class="XML-Token">TypeA</span>, <span class="XML-Token">TypeG</span>, and <span class="XML-Token">TypeArray</span> defined in the project and creates a static output showing initial member values and characteristics.</p>
+<p><b>main.c File</b></p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include "RTE_Components.h"</span>             <span class="comment">// Component selection</span></div>
+<div class="line"><span class="preprocessor">#include CMSIS_device_header</span></div>
+<div class="line"><span class="preprocessor"></span>                         </div>
+<div class="line"><span class="comment">// Type 'A' </span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>TypeA {</div>
+<div class="line">  uint32_t                Nummer;</div>
+<div class="line">  uint32_t                Status;</div>
+<div class="line">  uint32_t                Size;</div>
+<div class="line">} TypeA;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Type 'G' </span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>TypeG {</div>
+<div class="line">  uint32_t                Nummer;</div>
+<div class="line">  uint32_t                Cluster;</div>
+<div class="line">  uint32_t                ClusterSize;</div>
+<div class="line">  uint32_t                Status;</div>
+<div class="line">} TypeG;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Type Array </span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>TypeArray {</div>
+<div class="line">  <span class="keywordtype">void</span>   *type_ref;</div>
+<div class="line">  <span class="keywordtype">char</span>    <span class="keywordtype">id</span>[2];</div>
+<div class="line">  uint16_t attr;</div>
+<div class="line">} TypeArray;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> TypeA  type_a0 = { 0xA01, 0xA02, 0xA03 };</div>
+<div class="line"><span class="keyword">static</span> TypeA  type_a1 = { 0xA11, 0xA12, 0xA13 };</div>
+<div class="line"><span class="keyword">static</span> TypeG  type_g0 = { 0xF01, 0xF02, 0xF03, 0xF04 };</div>
+<div class="line"><span class="keyword">static</span> TypeG  type_g1 = { 0xF11, 0xF12, 0xF13, 0xF14 };</div>
+<div class="line"><span class="keyword">static</span> TypeG  type_g2 = { 0xF21, 0xF22, 0xF23, 0xF24 };</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> int32_t x0;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">extern</span> TypeArray type_array[];</div>
+<div class="line">TypeArray type_array[] =  {</div>
+<div class="line">  { &amp;x0,      <span class="stringliteral">"A0"</span>, 1 },</div>
+<div class="line">  { &amp;type_g0, <span class="stringliteral">"G0"</span>, 2 },</div>
+<div class="line">  { &amp;type_g1, <span class="stringliteral">"G1"</span>, 2 },</div>
+<div class="line">  { &amp;type_a1, <span class="stringliteral">"A1"</span>, 1 },</div>
+<div class="line">  { &amp;type_g2, <span class="stringliteral">"G2"</span>, 2 },</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
+<div class="line">   </div>
+<div class="line">  type_array[0].type_ref =  &amp;type_a0;</div>
+<div class="line">  <span class="keywordflow">while</span> (1) {</div>
+<div class="line">    __NOP();</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><b>Complex_view.scvd File</b></p>
+<div class="fragment"><div class="line">&lt;component_viewer schemaVersion=<span class="stringliteral">"0.1"</span> xmlns:xs=<span class="stringliteral">"http://www.w3.org/2001/XMLSchema-instance"</span> xs:noNamespaceSchemaLocation=<span class="stringliteral">"Component_Viewer.xsd"</span>&gt;</div>
+<div class="line">  &lt;component name=<span class="stringliteral">"MyView2"</span> version=<span class="stringliteral">"0.0.1"</span>/&gt;    &lt;!-- name and version of the component  --&gt;</div>
+<div class="line"> </div>
+<div class="line">  &lt;typedefs&gt;</div>
+<div class="line">    &lt;<span class="keyword">typedef</span> name=<span class="stringliteral">"XML_TypeA"</span>  size=<span class="stringliteral">"12"</span>&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"Nummer"</span>    type=<span class="stringliteral">"uint32_t"</span>          offset=<span class="stringliteral">"0"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"Status"</span>    type=<span class="stringliteral">"uint32_t"</span>          offset=<span class="stringliteral">"4"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"Size"</span>      type=<span class="stringliteral">"uint32_t"</span>          offset=<span class="stringliteral">"8"</span> /&gt;</div>
+<div class="line">    &lt;/<span class="keyword">typedef</span>&gt;</div>
+<div class="line"> </div>
+<div class="line">    &lt;<span class="keyword">typedef</span> name=<span class="stringliteral">"XML_TypeG"</span>  size=<span class="stringliteral">"16"</span>&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"Nummer"</span>      type=<span class="stringliteral">"uint32_t"</span>        offset=<span class="stringliteral">"0"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"Cluster"</span>     type=<span class="stringliteral">"uint32_t"</span>        offset=<span class="stringliteral">"4"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"ClusterSize"</span> type=<span class="stringliteral">"uint32_t"</span>        offset=<span class="stringliteral">"8"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"Status"</span>      type=<span class="stringliteral">"uint32_t"</span>        offset=<span class="stringliteral">"12"</span> /&gt;</div>
+<div class="line">      &lt;var    name=<span class="stringliteral">"TotalSize"</span>   type=<span class="stringliteral">"uint64_t"</span>        info=<span class="stringliteral">"calculated as: Cluster*ClusterSize"</span>/&gt;</div>
+<div class="line">    &lt;/<span class="keyword">typedef</span>&gt;</div>
+<div class="line">    </div>
+<div class="line">    &lt;<span class="keyword">typedef</span> name=<span class="stringliteral">"XML_TypeArray"</span> size=<span class="stringliteral">"8"</span>&gt;  </div>
+<div class="line">      &lt;member name=<span class="stringliteral">"type_ref"</span>  type=<span class="stringliteral">"uint32_t"</span>          offset=<span class="stringliteral">"0"</span>  info=<span class="stringliteral">"Pointer to TypeA or TypeG"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"id0"</span>       type=<span class="stringliteral">"uint8_t"</span>  size=<span class="stringliteral">"2"</span> offset=<span class="stringliteral">"4"</span>  info=<span class="stringliteral">"Type ID"</span> /&gt;</div>
+<div class="line">      &lt;member name=<span class="stringliteral">"id1"</span>       type=<span class="stringliteral">"uint8_t"</span>           offset=<span class="stringliteral">"5"</span>  info=<span class="stringliteral">"Type ID"</span> /&gt;  </div>
+<div class="line">      &lt;member name=<span class="stringliteral">"attr"</span>      type=<span class="stringliteral">"uint8_t"</span>           offset=<span class="stringliteral">"6"</span>  info=<span class="stringliteral">"Type Attribute"</span>/&gt;</div>
+<div class="line">      &lt;var    name=<span class="stringliteral">"idx"</span>       type=<span class="stringliteral">"uint32_t"</span>                      info=<span class="stringliteral">"calculated index in TypeX array"</span> /&gt;</div>
+<div class="line">    &lt;/<span class="keyword">typedef</span>&gt;</div>
+<div class="line">  &lt;/typedefs&gt;</div>
+<div class="line"> </div>
+<div class="line">  &lt;objects&gt;</div>
+<div class="line">    &lt;<span class="keywordtype">object</span> name=<span class="stringliteral">"ListOfArrayTypes"</span>&gt;</div>
+<div class="line">      &lt;var name=<span class="stringliteral">"i"</span> type=<span class="stringliteral">"int32_t"</span> value=<span class="stringliteral">"0"</span> /&gt;               &lt;!-- variable <span class="keywordflow">for</span> loops --&gt;</div>
+<div class="line">      &lt;var name=<span class="stringliteral">"j"</span> type=<span class="stringliteral">"int32_t"</span> value=<span class="stringliteral">"0"</span> /&gt;               &lt;!-- variable <span class="keywordflow">for</span> loops --&gt;</div>
+<div class="line">  </div>
+<div class="line">      &lt;readlist name=<span class="stringliteral">"TypeA"</span>  type=<span class="stringliteral">"XML_TypeA"</span> /&gt;</div>
+<div class="line">      &lt;readlist name=<span class="stringliteral">"TypeG"</span>  type=<span class="stringliteral">"XML_TypeG"</span> /&gt;  </div>
+<div class="line">      &lt;readlist name=<span class="stringliteral">"TArray"</span> type=<span class="stringliteral">"XML_TypeArray"</span> symbol=<span class="stringliteral">"type_array"</span> count=<span class="stringliteral">"5"</span> /&gt;</div>
+<div class="line"> </div>
+<div class="line">      &lt;list name=<span class="stringliteral">"i"</span> start=<span class="stringliteral">"0"</span> limit=<span class="stringliteral">"TArray._count"</span>&gt;         &lt;!-- <span class="keywordflow">for</span>(i=0;i&lt;TArray._count;i++)  --&gt;</div>
+<div class="line">        &lt;calc cond=<span class="stringliteral">"TArray[i].attr==1"</span>&gt;   </div>
+<div class="line">            TArray[i].idx=TypeA._count;                       </div>
+<div class="line">        &lt;/calc&gt;</div>
+<div class="line">        &lt;readlist cond=<span class="stringliteral">"TArray[i].attr==1"</span>  name=<span class="stringliteral">"TypeA"</span>   type=<span class="stringliteral">"XML_TypeA"</span>  offset=<span class="stringliteral">"TArray[i].type_ref"</span> /&gt;</div>
+<div class="line">        </div>
+<div class="line">        &lt;calc cond=<span class="stringliteral">"TArray[i].attr==2"</span>&gt;   </div>
+<div class="line">           TArray[i].idx=TypeG._count;   </div>
+<div class="line">        &lt;/calc&gt;</div>
+<div class="line">        &lt;readlist cond=<span class="stringliteral">"TArray[i].attr==2"</span>  name=<span class="stringliteral">"TypeG"</span>   type=<span class="stringliteral">"XML_TypeG"</span>  offset=<span class="stringliteral">"TArray[i].type_ref"</span> /&gt;</div>
+<div class="line">      &lt;/list&gt;</div>
+<div class="line">           </div>
+<div class="line">      &lt;list name=<span class="stringliteral">"i"</span> start=<span class="stringliteral">"0"</span> limit=<span class="stringliteral">"TypeG._count"</span>&gt;          &lt;!-- <span class="keywordflow">for</span>(;;)  --&gt;</div>
+<div class="line">        &lt;calc&gt;   </div>
+<div class="line">           TypeG[i].TotalSize = TypeG[i].Cluster * TypeG[i].ClusterSize;   </div>
+<div class="line">        &lt;/calc&gt;</div>
+<div class="line">            &lt;calc&gt;</div>
+<div class="line">                j=TArray._count;</div>
+<div class="line">            &lt;/calc&gt;</div>
+<div class="line">      &lt;/list&gt;</div>
+<div class="line">           </div>
+<div class="line">      &lt;out name=<span class="stringliteral">"Array and Structure Types"</span>&gt;                    &lt;!-- name of window and menu entry --&gt;</div>
+<div class="line">        &lt;!-- create output with two hierarchies --&gt;</div>
+<div class="line">        &lt;item <span class="keyword">property</span>=<span class="stringliteral">"Array Identifiers"</span>&gt;                     &lt;!-- the <span class="stringliteral">'header'</span> with sub entries --&gt;</div>
+<div class="line">           &lt;list name=<span class="stringliteral">"i"</span> start=<span class="stringliteral">"0"</span> limit=<span class="stringliteral">"TArray._count"</span>&gt;      &lt;!-- <span class="keywordflow">for</span>(;;) --&gt;</div>
+<div class="line">             &lt;item property=<span class="stringliteral">"Data in TArray[%d[i]].id is:"</span> value=<span class="stringliteral">"%t[TArray[i].id0]"</span> /&gt;</div>
+<div class="line">           &lt;/list&gt;</div>
+<div class="line">        &lt;/item&gt;</div>
+<div class="line"> </div>
+<div class="line">        &lt;item property=<span class="stringliteral">""</span> value=<span class="stringliteral">""</span> /&gt;                            &lt;!-- output empty line --&gt;</div>
+<div class="line"> </div>
+<div class="line">        &lt;!-- create output with two and three hierarchies --&gt;</div>
+<div class="line">        &lt;list name=<span class="stringliteral">"i"</span> start=<span class="stringliteral">"0"</span> limit=<span class="stringliteral">"TArray._count"</span>&gt;          &lt;!-- <span class="keywordflow">for</span>(;;)  --&gt;</div>
+<div class="line">           &lt;!-- two hierarchies <span class="keywordflow">for</span> TypeA structure --&gt;</div>
+<div class="line">           &lt;item cond=<span class="stringliteral">"TArray[i].attr==1"</span> property=<span class="stringliteral">"Type A%d[TArray[i].id1-0x30]:"</span> value=<span class="stringliteral">"Memory address (type_ref) = %x[TArray[i].type_ref]        idx=%d[TArray[i].idx]"</span> &gt; </div>
+<div class="line">             &lt;item property=<span class="stringliteral">"Type A, size=%d[TypeA[TArray[i].idx].Size]"</span> value=<span class="stringliteral">"Num=%x[TypeA[TArray[i].idx].Nummer]      Status=%x[TypeA[TArray[i].idx].Status]"</span> /&gt;</div>
+<div class="line">           &lt;/item&gt;</div>
+<div class="line">           </div>
+<div class="line">           &lt;!-- three hierarchies <span class="keywordflow">for</span> TypeG structure --&gt;</div>
+<div class="line">           &lt;item cond=<span class="stringliteral">"TArray[i].attr==2"</span> property=<span class="stringliteral">"Type G%d[TArray[i].id1-0x30]:"</span> value=<span class="stringliteral">"Memory address (type_ref) = %x[TArray[i].type_ref]        idx=%d[TArray[i].idx]"</span> &gt; </div>
+<div class="line">             &lt;item property=<span class="stringliteral">"Type G, Total size=%d[TypeG[TArray[i].idx].TotalSize]"</span> value=<span class="stringliteral">"Num=%x[TypeG[TArray[i].idx].Nummer]      Status=%x[TypeG[TArray[i].idx].Status]"</span> &gt;</div>
+<div class="line">               &lt;item property=<span class="stringliteral">"Cluster"</span> value=<span class="stringliteral">"n=%x[TypeG[TArray[i].idx].Cluster]             Size=%x[TypeG[TArray[i].idx].ClusterSize]"</span> /&gt;</div>
+<div class="line">             &lt;/item&gt;</div>
+<div class="line">           &lt;/item&gt;</div>
+<div class="line">        &lt;/list&gt;</div>
+<div class="line">  </div>
+<div class="line">        &lt;item property=<span class="stringliteral">""</span> value=<span class="stringliteral">"------ Types ------"</span> /&gt;         &lt;!-- output line with empty property but text in <span class="stringliteral">'Value'</span> column --&gt;</div>
+<div class="line">                 </div>
+<div class="line">        &lt;list name=<span class="stringliteral">"i"</span> start=<span class="stringliteral">"0"</span> limit=<span class="stringliteral">"TypeA._count"</span>&gt;         &lt;!-- <span class="keywordflow">for</span>(i=0;i&lt;_count;i++)  --&gt;</div>
+<div class="line">          &lt;item property=<span class="stringliteral">"Type A%d[i]"</span> value=<span class="stringliteral">"Num=%x[TypeA[i].Nummer], Size=%x[TypeA[i].Size]"</span> /&gt;</div>
+<div class="line">        &lt;/list&gt;</div>
+<div class="line">  </div>
+<div class="line">        &lt;list name=<span class="stringliteral">"i"</span> start=<span class="stringliteral">"0"</span> limit=<span class="stringliteral">"TypeG._count"</span>&gt;  </div>
+<div class="line">          &lt;item property=<span class="stringliteral">"Type G%d[i]"</span> value=<span class="stringliteral">"Num=%x[TypeG[i].Nummer], Total size=%x[TypeG[i].TotalSize]"</span> /&gt;</div>
+<div class="line">        &lt;/list&gt;</div>
+<div class="line">  </div>
+<div class="line">      &lt;/out&gt;</div>
+<div class="line">    &lt;/<span class="keywordtype">object</span>&gt;</div>
+<div class="line">  &lt;/objects&gt;</div>
+<div class="line">&lt;/component_viewer&gt;</div>
+</div><!-- fragment --><p><b>Build and run</b></p>
+<ol type="1">
+<li>Open the project "Complex SCVD Example" from Pack Installer (search for <em>uVision</em> <em>Simulator</em> in the <b>Boards</b> tab).</li>
+<li>Compile and run the application</li>
+<li>Open the window <b>View - Watch Windows - Array and Structure Types</b> and verify the output</li>
+</ol>
+<div class="image">
+<img src="./SCVD Complex Example_files/My2ndViewer.png" alt="My2ndViewer.png">
+<div class="caption">
+Array and Structure Types</div></div>
+ </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/index.html">index</a></li><li class="navelem"><a class="el" href="https://www.keil.com/pack/doc/compiler/EventRecorder/html/ExampleProjects.html">Examples</a></li>
+    <li class="footer">Generated on Tue Jan 14 2020 16:40:42 for Event Recorder and Component Viewer by ARM Ltd. All rights reserved.
+	<!--
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 
+	-->
+	</li>
+  </ul>
+</div>
+
+
+</body></html>

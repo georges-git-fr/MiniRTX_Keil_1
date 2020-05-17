@@ -1,0 +1,892 @@
+﻿#vendor-list {
+padding-top:10px;
+padding-bottom:10px;
+clear:left;
+}
+
+div.list-description {
+float:left;
+clear:left;
+width:70%;
+}
+
+div.link-box {
+float:right;
+width:25%;
+border-radius: 4px;
+border:1px solid #e1e1e8;
+background-color:#f7f7f9;
+padding:10px;
+}
+
+div.link-box ul {
+color:#999;
+}
+
+div.link-box span.ss-link {
+color:#999;
+font-size:14pt;
+}
+
+div.device-link-box {
+border-radius:4px;
+border:1px solid #e1e1e8;
+background-color:#f7f7f9;
+margin-bottom:10px;
+padding:10px;
+}
+
+div.device-link-box span.ss-link {
+color:#999;
+font-size:13pt;
+}
+
+.vendor-section {
+padding-left:10px;
+padding-right:5px;
+padding-top:5px;
+margin-bottom:5px;
+background-color:#FFF;
+}
+
+.vendor-section > header {
+margin-bottom:5px;
+padding:3px 5px 3px 0 !important;
+}
+
+.vendor-section > header > a.vendor-expand {
+line-height:26px;
+}
+
+.vendor-section > header > span:first-of-type {
+font-size:20px!important;
+margin-left:10px;
+display:inline-block;
+}
+
+section.vendor-section > ul > li:hover a {
+color:#FFF!important;
+}
+
+.vendor-family {
+padding-left:20px;
+padding-bottom:5px;
+overflow:hidden;
+}
+
+.vendor-family > header {
+margin-bottom:10px;
+margin-top:1px;
+height:14px;
+padding:3px 5px!important;
+}
+
+.vendor-family > header > span:first-of-type {
+font-size:14px!important;
+margin-left:5px;
+}
+
+.vendor-family > header > div.vendor-chip-type {
+margin-left:10px;
+display:inline-block;
+float:right;
+line-height:22px;
+}
+
+.vendor-subfamily {
+padding-left:18pt;
+overflow:hidden;
+}
+
+.column-25 {
+width:25%;
+}
+
+.column-32 {
+width:33.3%;
+}
+
+.vendor-subfamily > header {
+margin-bottom:5px;
+padding:3px 5px!important;
+}
+
+.vendor-subfamily > header > span:first-of-type {
+font-size:14px!important;
+margin-left:5px;
+display:inline-block;
+}
+
+.vendor-expand > a:hover,a:visited,a:link,a:active {
+text-decoration:none;
+}
+
+section header > div.vendor-device-count > span.badge {
+margin-left:4px;
+}
+
+section header > div.vendor-device-count {
+margin-left:12px;
+float:right;
+height:24px;
+}
+
+.badge {
+display:inline-block;
+min-width:10px;
+font-size:8pt;
+font-weight:700;
+line-height:1;
+color:#fff;
+text-align:center;
+white-space:nowrap;
+vertical-align:baseline;
+background-color:#999;
+border-radius:10px;
+padding:2px 6px 2px 5px;
+margin-top:-1px;
+}
+
+.label-info {
+background-color:#5bc0de;
+}
+
+.label {
+display:inline;
+font-size:75%;
+font-weight:500;
+line-height:1;
+color:#fff;
+text-align:center;
+white-space:nowrap;
+vertical-align:baseline;
+border-radius:.25em;
+margin-left:4px;
+padding:.25em .6em;
+}
+
+.highlight {
+font-size:8pt;
+white-space:nowrap;
+background-color:#FFF;
+border-radius:4px;
+border-color:#e1e1e8;
+border-style:solid;
+border-width:1px;
+padding:5px;
+}
+
+.inverse-highlight {
+font-size:8pt;
+white-space:nowrap;
+background-color:#ddd;
+border-radius:4px;
+border-color:#999;
+border-style:solid;
+border-width:1px;
+padding:4px 5px;
+}
+
+#device-section > article div.device-description-body {
+float:left;
+clear:left;
+width:60%;
+min-height:300px;
+line-height:normal;
+margin-bottom:15px;
+}
+
+#device-section > article div.device-description-body > ul {
+margin-top:0;
+margin-bottom:0;
+}
+
+#device-section > article div.device-description-body p {
+line-height:1.6em;
+margin-bottom:5px;
+margin-left:5px;
+}
+
+#device-section > article div.device-description-image {
+margin-right:19px;
+margin-bottom:10px;
+border-bottom:3px solid #e1e1e8;
+padding-bottom:20px;
+}
+
+#device-section > article div.device-description-body > div.device-description-image > p {
+line-height:1.6em;
+margin-bottom:5px;
+margin-left:0;
+margin-top:15px;
+}
+
+#device-section > article div.device-description-image > div.image-box {
+display:inline-block;
+width:180px;
+height:180px;
+text-align:center;
+vertical-align:top;
+border:1px solid #ccc;
+}
+
+#device-section > article div.device-description-image > div.image-box > a > img {
+max-width:170px;
+max-height:170px;
+vertical-align:middle;
+margin-top:3px;
+margin-bottom:3px;
+}
+
+#device-image {
+    line-height: 170px;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices {
+display:inline-block;
+width:220px;
+overflow:hidden;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices > span:first-of-type {
+margin-top:5px;
+margin-left:5px;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices div {
+padding:5px;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices > div:first-of-type {
+padding-top:0;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices div > span:first-of-type {
+margin-left:5px;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices div > div > span:first-of-type {
+margin-left:0;
+margin-right:4px;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices div > div > span:not(:first-of-type) {
+margin-left:0;
+margin-top:4px;
+margin-right:4px;
+}
+
+#device-section > article div.device-description-image > div.highlight-devices div span {
+line-height:1.3;
+word-wrap:normal;
+display:inline-block;
+}
+
+#device-section > article div.device-description-body > section.device-features {
+margin-top:25px;
+}
+
+#device-section > article div.device-description-body > section.device-features article {
+clear:both;
+display:inline-block;
+margin-bottom:5px;
+}
+
+#device-section > article div.device-description-body > section.device-features article header {
+clear:both;
+}
+
+#device-section > article div.device-description-body > section.device-features article ul {
+clear:both;
+margin-left:40px;
+list-style:none;
+margin-bottom:0;
+}
+
+#device-section > article div.device-description-body > section.device-features article ul li {
+font-weight:500;
+}
+
+#device-section > article div.device-description-body > section.device-features article ul li span:first-of-type {
+margin-left:5px;
+color:#036;
+}
+
+#device-section > article div.device-description-body > section.device-features article ul li span:last-child {
+margin-left:15px;
+font-size:13px;
+}
+
+#device-section > article div.device-description-body > section.device-features article ul li:before {
+font-family:SS-Standard;
+content:'●';
+color:#0084ab;
+margin:0 5px 0 -15px;
+}
+
+#device-section > article div.device-description-body > section.device-features article header > a {
+float:left;
+line-height:2;
+}
+
+#device-section > article div.device-description-body > section.device-features article header > div {
+max-width:400px;
+float:left;
+margin-left:10px;
+width:400px;
+padding-bottom:3px;
+}
+
+.device-feature-highlight {
+border-bottom:3px solid rgba(240,247,253,0.95);
+}
+
+#device-section > article div.device-description-body > section.device-features article header > div > a.feature-name {
+font-weight:700;
+margin-left:10px;
+margin-right:10px;
+margin-bottom:0;
+color:#036;
+font-size:14px;
+line-height:1.6;
+}
+
+#device-section > article div.device-description-body > section.device-features article header > div > span.feature-headline {
+max-width:300px;
+word-break:break-word;
+line-height:25px;
+height:20px;
+overflow:hidden;
+text-overflow:ellipsis;
+margin-bottom:0;
+}
+
+#device-section article aside > div.device-box {
+background-color:#f7f7f9;
+border-radius:0 0 4px 4px;
+margin-top:0;
+margin-bottom:10px;
+display:inline-block;
+border-color:#e1e1e8;
+border-style:solid;
+border-width:1px;
+padding:10px;
+}
+
+#device-section article aside > div.device-box-alt {
+background-color:#f7f7f9;
+margin-top:0;
+display:inline-block;
+border-color:#e1e1e8;
+border-style:solid;
+border-width:1px;
+padding:10px;
+}
+
+#device-section article aside > div.related-devices {
+background-color:#FFF;
+border-radius:0 0 4px 4px;
+margin-top:0;
+margin-bottom:10px;
+border-color:#e1e1e8;
+border-style:solid;
+border-width:0 1px 1px;
+padding:10px;
+}
+
+#device-section article aside {
+overflow:auto;
+}
+
+div.device-box ul {
+list-style:none;
+}
+
+div.device-box > ul > li > a {
+display:inline-block;
+}
+
+.device-box-header {
+font-size:13pt;
+font-weight:700;
+color:#036;
+}
+
+.device-links-container {
+float:left;
+clear:left;
+max-width:135px;
+}
+
+.device-links-image {
+float:right;
+width:100px;
+}
+
+div.device-links > div.device-links-image > img {
+max-height:100%;
+max-width:100%;
+margin-top:10px;
+}
+
+#device-section article aside em {
+margin-top:10px;
+display:inherit;
+margin-left:10px;
+}
+
+div.device-box > span.label-success {
+float:right;
+line-height:15px;
+}
+
+div.device-box > p.device-box-text {
+margin-left:10px;
+margin-top:5px;
+}
+
+#device-section article div.device-links {
+border-bottom-right-radius:0;
+border-bottom-left-radius:0;
+border-top-right-radius:4px;
+border-top-left-radius:4px;
+background-color:#fff;
+line-height:25px;
+overflow:auto;
+word-wrap:normal;
+border-color:#e1e1e8;
+border-style:solid;
+border-width:1px 1px 0;
+padding:10px;
+}
+
+#device-section article div.device-links > span {
+font-weight:700;
+}
+
+#device-section article div ul li a {
+overflow:visible;
+}
+
+#device-table tr td:first-child {
+width:100px;
+}
+
+#device-table tr td {
+border-left:1px solid silver;
+border-bottom:1px solid silver;
+border-right:1px solid silver;
+font-size:14px;
+line-height:21px;
+vertical-align:top;
+padding:22px 10px 10px;
+}
+
+#device-section > article div.device-description {
+background-color:#f0f7fd;
+border-left:5px solid #d0e3f0;
+margin-bottom:10px;
+width:56%;
+display:inline-block;
+float:left;
+margin-right:30px;
+padding:10px 0 10px 5px;
+}
+
+#device-section > article div.device-description > p {
+margin-bottom:0;
+padding-right:5px;
+}
+
+.header {
+border-top:1px solid silver;
+}
+
+.label-success {
+background-color:#5cb85c;
+line-height:24px;
+vertical-align:top;
+}
+
+.label-deprecated {
+background-color:#ff7900;
+line-height:24px;
+vertical-align:top;
+}
+
+.label-new {
+background-color:#ffdd00;
+line-height:24px;
+vertical-align:top;
+color: #000;
+}
+
+.dd-vendor-section article {
+padding-bottom:10px;
+}
+
+.dd-vendor-section header {
+border:1px solid gray;
+border-radius:4px;
+height:34px;
+background-color:#f5f5f5;
+border-color:#ddd;
+padding:5px;
+}
+
+.dd-vendor-section header a.pack-expand {
+float:left;
+line-height:25px;
+max-width:435px;
+height:20px;
+overflow:hidden;
+text-overflow:ellipsis;
+-ms-text-overflow:ellipsis;
+margin-bottom:0;
+margin-left:5px;
+}
+
+.dd-vendor-section header a.pack-arrow {
+line-height:28px;
+}
+
+.dd-vendor-section > article > header > div > span a:visited,a:active,a:link,a:hover,a:focus {
+color:#036;
+text-decoration:none;
+}
+
+.dd-vendor-section header div.pack-name-wrapper {
+white-space:nowrap;
+padding-left:18px;
+padding-right:105px;
+}
+
+.dd-vendor-section header span.pack-name a {
+line-height:25px;
+width:400px;
+overflow:hidden;
+text-overflow:ellipsis;
+-ms-text-overflow:ellipsis;
+float:left;
+display:block;
+}
+
+.dd-vendor-section header a.pack-download {
+padding:2px!important;
+}
+
+div.pack-group {
+position:absolute;
+right:4px;
+}
+
+.dd-vendor-section header a span {
+float:left;
+color:#fff;
+}
+
+/*.dd-vendor-section header > div > a span:last-of-type {
+float:left;
+color:#fff;
+}*/
+
+.dd-vendor-section header > div.pack-group > span.pack-version {
+vertical-align:top;
+line-height:24px;
+margin-right:3px;
+}
+
+.dd-vendor-section article div.pack-section {
+border-left:1px solid #ddd;
+border-right:1px solid #ddd;
+margin-bottom:0;
+font-size:10pt;
+padding:5px;
+}
+
+.dd-vendor-section footer {
+border-left:1px solid #ddd;
+border-right:1px solid #ddd;
+border-bottom:1px solid #ddd;
+border-bottom-left-radius:4px;
+border-bottom-right-radius:4px;
+overflow:hidden;
+padding:5px;
+}
+
+table.Main td.Bdy {
+max-width:710px;
+}
+
+.pack-expand-uncurve {
+border-bottom-left-radius:0!important;
+border-bottom-right-radius:0!important;
+}
+
+div.pack-section p {
+margin-bottom:0;
+margin-left:5px;
+}
+
+div.pack-section ul {
+margin-bottom:5px;
+margin-top:0;
+}
+
+div.pack-header > span.pack-description-version {
+margin-top:8px;
+font-size:12pt;
+font-weight:700;
+display:inline;
+margin-left:5px;
+}
+
+div.pack-header > em.pack-description-title {
+margin-left:20px;
+font-weight:700;
+}
+
+div.pack-header > em.pack-description-releasedate {
+margin-left:20px;
+font-weight:700;
+font-style: normal;
+}
+
+div.pack-header {
+margin-top:10px;
+margin-right:5px;
+margin-bottom:5px;
+}
+
+div#eula-container {
+display:none;
+}
+
+div#eula-container > iframe {
+margin-top:10px;
+height:400px;
+width:99%;
+overflow-y:scroll;
+font-size:10pt;
+border:1px solid #ddd;
+resize:none;
+margin-bottom:10px;
+}
+
+div#eula-container > span {
+font-size:10pt;
+}
+
+div#eula-container > button.button {
+float:right;
+margin-right:5px;
+}
+
+button.button,button.button:visited {
+border:1px solid #af7309;
+border-radius:3px;
+box-shadow:inset 0 1px 0 0 #e7b864;
+color:#FFF;
+display:inline-block;
+font-weight:700;
+background-color:#e79c18;
+background-image:linear-gradient(#e79c18,#bd7c0a);
+text-decoration:none;
+text-shadow:0 1px 0 #a06703;
+background-clip:padding-box;
+font-size:13px;
+padding:5px;
+}
+
+button.button:hover:not(:disabled),button.button:visited:hover:not(:disabled) {
+box-shadow:inset 0 1px 0 0 #e1a437;
+cursor:pointer;
+background-color:#cb8b1a;
+background-image:linear-gradient(#cb8b1a,#ae720a);
+}
+
+button.button:active:not(:disabled),button.button:visited:active:not(:disabled) {
+border:1px solid #af7309;
+box-shadow:inset 0 0 8px 4px #9e690a, inset 0 0 8px 4px #9e690a, 0 1px 1px 0 #eee;
+}
+
+button.button.eula {
+border:1px solid #10576c;
+border-radius:3px;
+box-shadow:inset 0 1px 0 0 #44adcc;
+color:#FFF;
+display:inline-block;
+font-weight:700;
+background-color:#2284a1;
+background-image:linear-gradient(#2284a1,#126179);
+text-decoration:none;
+text-shadow:0 1px 0 #0a4a5d;
+background-clip:padding-box;
+font-size:13px;
+padding:5px;
+}
+
+button.button.eula:hover:not(:disabled) {
+box-shadow:inset 0 1px 0 0 #2e91ae;
+cursor:pointer;
+background-color:#217189;
+background-image:linear-gradient(#217189,#11566b);
+}
+
+button.button.eula:active:not(:disabled) {
+border:1px solid #10576c;
+box-shadow:inset 0 0 8px 4px #0f4b5d, inset 0 0 8px 4px #0f4b5d, 0 1px 1px 0 #eee;
+}
+
+div.Bdy a.button.rfq {
+padding-top:2px;
+padding-bottom:1px;
+}
+
+h1 span.mdk-title,header > a > span,header > a:first-of-type > span {
+color:#0084ab;
+}
+
+div.link-box a,div.device-link-box a {
+display:block;
+line-height:1.6em;
+}
+
+div.device-link-box > .device-box-header,div.link-box > .device-box-header {
+margin-left:8px;
+vertical-align:text-bottom;
+}
+
+div.third-party-information {
+border-radius:4px;
+border:1px solid #e1e1e8;
+background-color:#ffe8b2;
+margin-bottom:10px;
+padding:10px;
+}
+
+div.third-party-information p {
+margin-bottom: 0;
+margin-top: 6px;
+}
+
+.vendor-section > header > span:first-of-type > a,.vendor-section > header > span > a:visited,a:active,a:link,a:hover,a:focus,.vendor-family > header > span > a:visited,a:active,a:link,a:hover,a:focus,.vendor-family > ul > li > a:visited,a:active,a:link,a:hover,a:focus,.vendor-subfamily > header > span > a:visited,a:active,a:link,a:hover,a:focus,.dd-vendor-section h2 {
+color:#036;
+}
+
+
+
+section.vendor-section > section.vendor-family > ul > li:hover a,section.vendor-section > section.vendor-family > article.vendor-subfamily > ul > li:hover a,
+#device-section > article div.device-description-image > div.highlight-devices div > div > span > a,#device-section > article ul.device-example-list > li > span > a,
+section.vendor-sub-subfamily > ul > li:hover a ,
+section.vendor-sub-subfamily > ul > li:hover a:visited{
+color:#FFF;
+}
+
+
+section.vendor-section > ul,section.vendor-family > ul,article.vendor-subfamily > ul, section.vendor-sub-subfamily > ul {
+overflow:hidden;
+border:1px solid #ddd;
+/*border-radius: 4px;*/
+/*background-color:#f5f5f5;*/
+background-color: rgba(245,245,245,0.3);
+list-style-type:none;
+margin:0 0 0 24px;
+padding:0;
+}
+
+.vendor-section > ul > li,.vendor-family > ul > li,.vendor-subfamily > ul > li, section.vendor-sub-subfamily > ul > li {
+line-height:1.5em;
+float:left;
+overflow:hidden;
+-webkit-transition: all .10s ease-out;
+-moz-transition: all .10s ease-out;
+-o-transition: all .10s ease-out;
+transition: all .10s ease-out;
+}
+
+.vendor-section > ul > li:hover,.vendor-family > ul > li:hover,article.vendor-subfamily > ul > li:hover , .vendor-sub-subfamily > ul > li:hover{
+background-color:#999
+}
+
+.vendor-section > ul > li > a,.vendor-family > ul > li > a,article.vendor-subfamily > ul > li > a, section.vendor-sub-subfamily > ul > li > a{
+color:#036;
+font-size:10pt;
+margin-left:20px;
+display:block;
+padding:3px;
+}
+
+.vendor-expand,.vendor-name,.device-links span {
+float:left;
+}
+
+/*#device-section > article div.device-description-image > div.highlight-devices div > div > span > a:hover,#device-section > article ul.device-example-list > li > span > a:hover {
+text-decoration:underline;
+}*/
+
+.device-example-list > li span:not(:first-of-type),div.device-box a.button,.dd-vendor-section footer a:last-child,div.pack-header > a.button {
+float:right;
+}
+#device-section > article div.device-description-image > div.highlight-devices div > div > span > a:hover, #device-section > article ul.device-example-list > li > span > a[href^="/"]:hover {
+    text-decoration: underline;
+}
+
+#device-section article div ul li,#device-table {
+width:100%;
+}
+
+#device-section article div hr,#device-section article hr,section#pack-list {
+clear:left;
+}
+
+.url-pi.ss-globe {    
+    color: #999;
+    font-size: 14pt;
+    left: 4px;
+    position: relative;
+    top: 3px;
+}
+a.url-pi {
+    margin-left: 5px;
+}
+
+.devices-section > header > span:first-of-type, .vendor-sub-subfamily > header > span:first-of-type
+ {
+font-size: 14px!important;
+margin-left: 5px;
+}
+
+.device-variant{
+    margin-left:60px!important;
+    
+}
+.device-variant-header{
+    padding-left: 36pt;  
+    overflow: hidden; 
+    margin:5px
+}
+.device-section-header{
+    padding-left: 18pt;  
+    overflow: hidden;
+     margin:5px
+}
+.pack-description-double-indent {
+    margin-left: 23px;
+}
+.clearbothfloat {
+    clear: both;
+}
+
+#third-party-download-dialog {
+    display: none;
+}
+
+#third-party-download-dialog h3, #third-party-download-dialog p, #third-party-download-dialog button {
+    text-align: center;
+}
+
+#third-party-download-dialog h3 {
+    text-align: center;
+    margin: 10px 0;
+}

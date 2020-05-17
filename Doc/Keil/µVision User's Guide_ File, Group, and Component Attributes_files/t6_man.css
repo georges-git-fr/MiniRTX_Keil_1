@@ -1,0 +1,193 @@
+/*-----------------------------------------------------------
+Keil Software User-Guide Style Sheet
+-----------------------------------------------------------*/
+div.Bdy h1                      { font: bold 28px "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif; clear: both; padding-top: 6px; margin-top: 0; }
+div.Bdy h2                      { font: bold 1.6875em "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif; clear: both; padding-top: 15px; }
+div.Bdy h3                      { font: bold 13pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h4                      { font: bold 12pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h5                      { font: bold 10pt verdana; clear: both; padding-top: 15px; }
+div.Bdy h6                      { font: bold 10pt verdana; clear: both; padding-top: 15px; }
+
+div.Bdy p                       { font-size: 14px; padding: 0; margin: 16px 0; }
+div.Bdy p small                 { font-size: 8pt; }
+div.Bdy b                       {  }
+div.Bdy i                       {  }
+div.Bdy blockquote              { font: normal 10pt verdana; }
+div.Bdy ul                      { font-size: 10pt; }
+div.Bdy ol                      { font-size: 10pt; }
+div.Bdy li small                { font-size: 8pt; }
+
+div.Bdy hr                      { margin: 16px 0; }
+
+div.Bdy table tr th             { font: 10pt Verdana; }
+div.Bdy table tr td             { font: 10pt Verdana; }
+
+div.Bdy ul                      { margin: 4px 0 4px 18px; padding: 0; list-style-type: square; }
+div.Bdy ul li                   { margin: 4px 0; clear: both; }
+div.Bdy ul li ul                { margin: 4px 0 4px 15px; padding: 0; list-style-type: square; }
+div.Bdy ul li ul li             { margin: 3px 0; clear: both; }
+
+div.Bdy ol                      { margin-top: 4px; margin-bottom: 4px; }
+div.Bdy ol li                   { margin-top: 6px; margin-bottom: 6px; clear: both; }
+div.Bdy ol li ul                { margin: 9px 0 9px 12px; list-style-type: square; }
+div.Bdy ol li ul li             { margin: 3px 0; clear: both; }
+
+div.Bdy pre                     { font: normal 9pt/150% Courier New, Courier; color: #000; background: #E0E0E0; }
+div.Bdy i.pre                   { font: italic 9pt/150% Courier New, Courier; }
+div.Bdy b.pre                   { font: bold 9pt/150% Courier New, Courier; }
+div.Bdy p.pre                   { font: normal 9pt/150% Courier New, Courier; }
+
+div.Bdy pre i                   { font: italic 9pt/150% Courier New, Courier; }
+div.Bdy pre b                   { font: bold 9pt/150% Courier New, Courier; }
+div.Bdy pre strong              { font-weight: normal; color: red; }
+
+div.Bdy .pre                    { font: normal 9pt/150% Courier New, Courier; }
+
+div.Bdy code                    { color: #000; background: #E0E0E0; font: normal 9pt/120% Courier New, Courier; }
+
+/*-----------------------------------------------------------
+Breadcrumbs
+-----------------------------------------------------------*/
+div.Bdy h1.mptitle              { padding-bottom: 0; margin-bottom: 0; }
+div.Bdy p.navbc                 { font-size: 12px; padding: 0; margin: 0 0 18px 0; color: #999; background: #FFF; }
+div.Bdy p.navbc a               { font-size: 12px; }
+
+/*-----------------------------------------------------------
+Procedure
+-----------------------------------------------------------*/
+div.Bdy p.proc                  { font-weight: bold; clear: both; }
+
+/*-----------------------------------------------------------
+Image Tags
+-----------------------------------------------------------*/
+div.Bdy img                     { margin: 0; padding: 0; }
+div.Bdy img.part	        { border: 1px dotted #000; }
+div.Bdy img.left                { margin-right: 10px; float: left; }
+div.Bdy img.right               { margin-left: 10px; float: right; }
+div.Bdy img.uvbutton            { border: none; margin-top: 2pt; margin-bottom: 2pt; vertical-align: middle; }
+div.Bdy img.uvtoolbar           { border: none; margin-top: 2pt; margin-bottom: 2pt; vertical-align: middle; }
+div.Bdy img.uvicon              { border: 1px solid #000; margin-top: 2pt; margin-bottom: 2pt; vertical-align: middle; }
+div.Bdy img.uvbuttonl           { border: none; margin-right: 10px; margin-bottom: 10px; clear: left; }
+div.Bdy img.uvbuttonr           { border: none; margin-left: 10px; margin-bottom: 10px; clear: right; }
+
+/*-----------------------------------------------------------
+Notes
+-----------------------------------------------------------*/
+div.Bdy p.note                  { font-weight: bold; clear: both; padding-top: 6px; margin-bottom: 3px; }
+div.Bdy p.res                   { font-weight: bold; clear: both; padding-top: 6px; margin-bottom: 3px; }
+
+/*-----------------------------------------------------------
+Knowledgebase Article Links
+-----------------------------------------------------------*/
+div.Bdy div.kbart               { margin-top: 30px; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #000; background: #F0F0F0; }
+div.Bdy div.kbart p.kbart       { font-weight: bold; clear: both; margin: 3px 0; }
+div.Bdy div.kbart ul            { font-size: 6pt; }
+div.Bdy div.kbart ul li         { font-size: 14px; }
+
+/*-----------------------------------------------------------
+Tiny Text
+-----------------------------------------------------------*/
+div.Bdy p.tiny		        { font-size: 8pt; }
+
+/*-----------------------------------------------------------
+Expanding/Contracting Divisions
+-----------------------------------------------------------*/
+div.Bdy p.expand                { border: none; cursor: pointer; }
+div.Bdy img.expand              { border: none; }
+div.Bdy div.expand              { margin-top: 0; margin-left: 9pt; display: none; color:#000; background:#FFC; }
+
+/*-----------------------------------------------------------
+Keil Reference Table Tags
+These are used for function and directive references.
+-----------------------------------------------------------*/
+div.Bdy table.rf                { border-spacing: 0; width: 100%; border-width: 0; padding: 0; }
+div.Bdy table.rf td             { text-align: left; vertical-align: top; padding: 0; margin: 0; }
+div.Bdy table.rf td.rfItem      { font-weight: bold; white-space: nowrap; padding-right: 12px; }
+div.Bdy table.rf td.rfDesc      { }
+div.Bdy table.rf td.rfDesc p    { margin: 0 0 12px 0; }
+div.Bdy table.rf td.rfDesc pre  { margin: 4px 0 12px 0; }
+
+/*-----------------------------------------------------------
+Full-Width Table Tags
+-----------------------------------------------------------*/
+div.Bdy table.kt                { border-spacing: 0; width: 100%; border: 1px solid #000; padding: 0; border-collapse: collapse; margin-bottom: 12px; }
+div.Bdy table.kt th             { text-align: left; color: #FFF; background: #000080; vertical-align: bottom; padding: 4px 6px; white-space: nowrap; border-bottom: 1px solid #000; }
+div.Bdy table.kt th.ktC         { text-align: center; }
+div.Bdy table.kt th.ktR         { text-align: right; }
+div.Bdy table.kt td             { text-align: left; color: #000; background: #E0E0E0; vertical-align: top; padding: 2px 6px; border-top: 1px solid #A0A0A0; }
+div.Bdy table.kt td.ktC         { text-align: center; }
+div.Bdy table.kt td.ktR         { text-align: right; }
+
+/*-----------------------------------------------------------
+Matched-Width Table Tags
+-----------------------------------------------------------*/
+div.Bdy table.kt_nowidth        { border-spacing: 0; border: 1px solid #000000; padding: 0; border-collapse: collapse; margin-bottom: 12px; }
+div.Bdy table.kt_nowidth th     { text-align: left; color: #FFF; background: #000080; vertical-align: bottom; padding: 4px 6px; white-space: nowrap; border-bottom: 1px solid #000; }
+div.Bdy table.kt_nowidth th.ktC { text-align: center; }
+div.Bdy table.kt_nowidth th.ktR { text-align: right; }
+div.Bdy table.kt_nowidth td     { text-align: left; color: #000; background: #E0E0E0; vertical-align: top; padding: 2px 6px; border-top: 1px solid #A0A0A0; }
+div.Bdy table.kt_nowidth td.ktC { text-align: center; }
+div.Bdy table.kt_nowidth td.ktR { text-align: right; }
+
+/*-----------------------------------------------------------
+Keil Reference Pre Tags
+-----------------------------------------------------------*/
+div.Bdy pre.rf                  { font: normal 9pt/120% Courier New, Courier; color: #000; background: #E0E0E0; margin-bottom: 12px; }
+
+div.Bdy pre.def                 { font: normal 9pt/120% Courier New, Courier; color: #000; background: #E0E0E0; margin-bottom: 12px; padding: 3px; border: 1px solid #808080; }
+div.Bdy pre.def b               { font: bold 9pt/120% Courier New, Courier; }
+div.Bdy pre.def i               { font: italic 9pt/120% Courier New, Courier; }
+
+/*-----------------------------------------------------------
+Where List Tags
+These are used to create a where item and the list.
+-----------------------------------------------------------*/
+div.Bdy p.wh                    { font-weight: bold; clear: both; margin-top: 6px; margin-bottom: 3px; }
+div.Bdy table.wh                { border-width: 0; padding: 0; margin-bottom: 12px; }
+
+div.Bdy table.wh td             { text-align: left; vertical-align: top; padding-bottom: 12px; }
+div.Bdy table.wh td p           { margin: 0 12px 12px 0; }
+
+div.Bdy table.wh td.wh          { white-space: nowrap; padding: 0 9px 12px 0; font-size: 10pt; }
+div.Bdy table.wh td.whI         { white-space: nowrap; padding: 0 9px 12px 0; font-size: 10pt; font-style: italic; }
+div.Bdy table.wh td.whB         { white-space: nowrap; padding: 0 9px 12px 0; font-size: 10pt; font-weight: bold; }
+div.Bdy table.wh td.whP         { white-space: nowrap; padding: 0 9px 12px 0; font: normal 9pt Courier New, Courier; }
+div.Bdy table.wh td.whPi        { white-space: nowrap; padding: 0 9px 12px 0; font: italic 9pt Courier New, Courier; }
+div.Bdy table.wh td.whPb        { white-space: nowrap; padding: 0 9px 12px 0; font: bold 9pt Courier New, Courier; }
+div.Bdy table.wh td.whP i       { white-space: nowrap; font: italic 9pt Courier New, Courier; }
+div.Bdy table.wh td.whP b       { white-space: nowrap; font: bold 9pt Courier New, Courier; }
+
+/*-----------------------------------------------------------
+Keil Definition Lists
+These are used for the Dialog Help pages of uVision
+-----------------------------------------------------------*/
+div.Bdy dl dt.kd                { margin: 12px 0 3px 24px; font: bold 14px "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif; }
+div.Bdy dl dd.kd                { margin: 3px 0 12px 36px; font: normal 14px "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif; }
+div.Bdy dl dd pre               { color: #000; background: #FFF; font: normal 120%/9pt Courier New, Courier; margin-top: 3px; }
+
+/*-----------------------------------------------------------
+Assembler Instruction Set
+-----------------------------------------------------------*/
+div.Bdy table.psw               { border: 1px solid #000; border-collapse: collapse; }
+div.Bdy table.psw td.used       { border-right: 1px solid #000; color: #000; background: #FFF; font-weight: bold; width: 32px; height: 28px; text-align: center; }
+div.Bdy table.psw td.unused     { border-right: 1px solid #000; color: #d3d3d3; background: #FFF; font-weight: bold; width: 32px; height: 28px; text-align: center; }
+
+div.Bdy td.ins_encode           { border: 1px solid black; text-align: center; font-family: Courier New; font-size: 9pt; padding: 0; margin: 0; width: 135px; height: 25px; }
+
+div.Bdy pre.ins_pseudo          { color: #000; background: #FFF; font: normal 9pt/120% Courier New, Courier; margin-bottom: 0; }
+
+/*-----------------------------------------------------------
+Revision History
+-----------------------------------------------------------*/
+div.Bdy div.revhist             { margin: 24px 0; border-top: 2px solid #999; border-bottom: 2px solid #999; }
+div.Bdy div.revhist p           { margin: 12px 0; padding: 0; }
+div.Bdy div.revhist ul          { margin-top: 12px; margin-bottom: 12px; }
+div.Bdy div.revhist li          { font-size: 8pt; }
+
+/*-----------------------------------------------------------
+Keil Search Form
+-----------------------------------------------------------*/
+form#keilsrchfm                 { margin: 0; padding: 0; }
+
+/*-----------------------------------------------------------
+-----------------------------------------------------------*/

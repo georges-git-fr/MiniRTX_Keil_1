@@ -1,0 +1,16 @@
+/*-------------------------------------------------------------------------------------------------
+Keil Software Support Site Style Sheet
+Copyright (c) Keil Software - All Rights Reserved.
+-------------------------------------------------------------------------------------------------*/
+div.Bdy pre             { color: #000; background: #F0E0A0; font: normal 10pt/120% Courier; padding: 5px; }
+div.Bdy li pre          { margin: 3px 0; }
+div.Bdy form table.Form { width: 250px; margin: 12px auto; }
+div.Bdy img.part	        { border: 1px dotted #000; }
+div.Bdy img.uvbutton            { border: none; margin-top: 2pt; margin-bottom: 2pt; vertical-align: middle; }
+div.Bdy img.uvtoolbar           { border: none; margin-top: 2pt; margin-bottom: 2pt; vertical-align: middle; }
+div.Bdy img.uvicon              { border: 1px solid #000; margin-top: 2pt; margin-bottom: 2pt; vertical-align: middle; }
+div.Bdy img.uvbuttonl           { border: none; margin-right: 10px; margin-bottom: 10px; clear: left; }
+div.Bdy img.uvbuttonr           { border: none; margin-left: 10px; margin-bottom: 10px; clear: right; }
+
+/*-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------*/

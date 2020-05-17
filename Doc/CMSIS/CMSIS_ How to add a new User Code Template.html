@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0041)http://www.keil.com/support/docs/3933.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<title>CMSIS: How to add a new User Code Template</title>
+<meta http-equiv="Description" content="QUESTION: When adding new item (source code etc.) to my existing project in µVision, I can select some pre-defined User Code Templates from a CMSIS Software packs like CMSIS-RTOS or Middleware, as shown in this screenshot: Is it possible to define and add my own User Code Templates to be us...">
+<meta name="Description" content="QUESTION: When adding new item (source code etc.) to my existing project in µVision, I can select some pre-defined User Code Templates from a CMSIS Software packs like CMSIS-RTOS or Middleware, as shown in this screenshot: Is it possible to define and add my own User Code Templates to be us...">
+<meta name="KeilToolSet" content="ARM">
+<meta name="Keywords" content="CMSIS: How to add a new User Code Template">
+
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="Author" content="ARM Ltd and ARM Germany GmbH">
+<meta name="Copyright" content="Copyright (c) 2020, ARM Ltd and ARM Germany GmbH.  All rights reserved.">
+<link rel="meta" href="http://www.keil.com/labels.xml" type="application/rdf+xml" title="ICRA labels">
+
+<!--[if IE]>
+
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/t6_ncm.min.css">
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/t6_cmn.min.css">
+<!--[if lt IE 7]>
+<script src="/_js/t6_supersleight.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/popups.min.css">
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/ss-standard.css">
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/refresh.min.css">
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/bootstrap.min.css">
+<script type="text/javascript" async="" src="./CMSIS_ How to add a new User Code Template_files/munchkin.js.téléchargement"></script><script type="text/javascript" async="" src="./CMSIS_ How to add a new User Code Template_files/ga.js.téléchargement"></script><script async="" charset="utf-8" src="./CMSIS_ How to add a new User Code Template_files/saved_resource" type="text/javascript"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/jquery-1.11.0.min.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/jquery-migrate-1.2.1.min.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/selectivizr-min.js.téléchargement"></script><script src="./CMSIS_ How to add a new User Code Template_files/jquery.placeholderpatch.js.téléchargement" type="text/javascript"></script><script type="text/javascript">var NREUMQ = NREUMQ || []; NREUMQ.push(["mark", "firstbyte", new Date().getTime()]);</script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/jquery.keil.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/angular.min.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/angular-sanitize.min.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/ui-bootstrap-tpls-0.13.0.min.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/angularGrid.min.js.téléchargement"></script><script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/app.js.téléchargement"></script>
+<link rel="stylesheet" type="text/css" href="./CMSIS_ How to add a new User Code Template_files/t6_kb.css">
+<script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/w"></script><style media="print" class="jx_ui_StyleSheet" __jx__id="___$_2" type="text/css">.zopim { display: none !important }</style></head>
+
+<body><div class="zopim" __jx__id="___$_11 ___$_11" data-test-id="ChatWidgetButton" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; padding: 0px; border: 0px; background: transparent; overflow: hidden; position: fixed; z-index: 16000002; width: 180px; height: 30px; right: 10px; bottom: 0px;"><iframe frameborder="0" style="background-color: transparent; vertical-align: text-bottom; position: relative; width: 100%; height: 100%; min-width: 100%; min-height: 100%; max-width: 100%; max-height: 100%; margin: 0px; overflow: hidden; display: block;" src="./CMSIS_ How to add a new User Code Template_files/saved_resource.html" data-test-id="ChatWidgetButton-iframe" title="Zendesk Chat widget button"></iframe></div><div class="zopim" __jx__id="___$_4 ___$_4" data-test-id="ChatWidgetWindow" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; padding: 0px; border: 0px; background: transparent; overflow: hidden; position: fixed; z-index: 16000001; right: 10px; bottom: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; display: none; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 2px;"><iframe frameborder="0" style="background-color: transparent; vertical-align: text-bottom; position: relative; width: 100%; height: 100%; min-width: 100%; min-height: 100%; max-width: 100%; max-height: 100%; margin: 0px; overflow: hidden; display: block;" src="./CMSIS_ How to add a new User Code Template_files/saved_resource(1).html" data-test-id="ChatWidgetWindow-iframe" title="Zendesk Chat widget window"></iframe></div>
+
+
+<table class="Main" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td class="Top" colspan="2">
+			<table style="border-collapse: collapse">
+
+				<tbody><tr><!-- header -->
+					<td colspan="2" style="padding: 0;">
+						<table class="header">
+							<tbody><tr>
+                                <td>
+                                    <a href="http://www.keil.com/">
+                                        <img alt="Keil Logo" src="./CMSIS_ How to add a new User Code Template_files/Arm_KEIL_horizontal_white_LG.png" style="height:45px"></a>
+                                </td>
+							</tr>
+						</tbody></table>
+					</td>
+                    </tr>
+                    <!-- end of .header -->
+
+
+        <tr class="Menu">
+          <td class="LMenu" style="vertical-align:top; width:50%">
+<a title="Visit the Keil Home Page" href="http://www.keil.com/" class="current ss-home"></a><a title="Get Information About Keil Products" href="http://www.keil.com/product/">Products</a>
+<a title="Download Keil products and files" href="http://www.keil.com/download/">Download</a>
+<a title="Upcoming Trade Shows, Workshops, and Seminars" href="http://www.keil.com/events/">Events</a>
+<a title="Get Technical Support for Keil Products" href="http://www.keil.com/support/">Support</a>
+<a title="Videos" href="http://www2.keil.com/video">Videos</a>
+
+          </td>
+          <td class="RMenu" style="vertical-align:top; width:50%">
+<form name="keilsrchfm" id="keilsrchfm" method="get" action="javascript:redirect();" data-ng-app="keilapp" data-ng-controller="AdvancedSearchFormController" class="ng-pristine ng-valid ng-scope">    <div class="col-sm-12" style="margin-top:5px;margin-bottom:0px;padding-right:0px;">        <div class="col-sm-10" align="right" style="padding-right:0px;">            <label class="ss-search search-icon" for="search">&nbsp;</label>            <input type="text" id="search" placeholder="Search Keil..." style="color:#999;width:300px;" data-ng-model="searchTerm" class="placeholder ng-pristine ng-untouched ng-valid ng-empty">            <input type="hidden" name="searchTerm" value="">            <input type="hidden" name="productFamily" value="">            <input type="hidden" name="modifiedDays" value="">            <input type="hidden" name="site" value="keilsupportdocs">        </div>        <div class="col-sm-2">            <input type="button" data-ng-click="toggleAdvancedOptions()" value="+" class="button" style="width:32px;">            <input type="Submit" value="Go" class="button" style="width:32px;">        </div>    </div>    <div data-ng-show="advancedOptions" class="col-sm-12 ng-hide" style="margin-top:0px;margin-bottom:0px;padding-right:0px;">        <div class="col-sm-10" align="right" style="margin-top:3px;margin-bottom:0px;padding-right:0px;">            <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="productFamily" data-ng-model="productFamily" style="font-size:14px;border:none;height:20px;width:300px;padding-top:2px;padding-right:2px;padding-bottom:2px;padding-left:20px;">                <option selected="" value="">All Product Families</option>                <option value="ARM7">ARM7, ARM9, and Cortex-M3 Products</option>                <option value="166">C16x, XC16x, and ST10 Products</option>                <option value="251">C251 and 80C251 Products</option>                <option value="8051">Cx51 and 8051 Products</option>            </select>        </div>        <div class="col-sm-10" align="right" style="margin-top:5px;margin-bottom:5px;padding-right:0px;">            <select class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="modifiedDays" data-ng-model="modifiedDays" style="font-size:14px;border:none;height:20px;width:300px;padding-top:2px;padding-right:2px;padding-bottom:2px;padding-left:20px;">                <option selected="" value="">Modified Anytime</option>                <option value="7">In the Last 7 Days</option>                <option value="14">In the Last 14 Days</option>                <option value="30">In the Last 30 Days</option>                <option value="90">In the Last 90 Days</option>                <option value="180">In the Last 6 Months</option>            </select>        </div>    </div></form><script src="./CMSIS_ How to add a new User Code Template_files/AdvancedSearchFormController.js.téléchargement"></script><script type="text/javascript">    function redirect() {        var newUrl = decodeURI(window.location.href.split('/').pop());        window.history.pushState('object or string', 'Title', newUrl);        var srcTerm = $('#search').val();        if (srcTerm.trim()) {            window.location.replace('https://developer.arm.com/keil-search#q=' + srcTerm);        }    }</script>
+
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+
+  <tr>
+
+    <td class="Bar">
+      <div id="vm">
+<p>Technical Support</p>
+<ul>
+<li><a href="http://www.keil.com/support/">Overview</a></li>
+<li><a href="http://www.keil.com/home/searchhelp">Search</a></li>
+<li><a href="http://www.keil.com/support/contact.asp">Contact</a></li>
+<li><a href="http://www.keil.com/support/request.asp">Assistance Request</a></li>
+<li><a href="http://www.keil.com/support/feedback.asp">Feedback</a></li>
+</ul>
+<p>Support Resources</p>
+<ul>
+<li><a href="http://www.keil.com/support/knowledgebase.asp">Support Knowledgebase</a><ul>
+<li><a href="http://www.keil.com/support/topics.asp">Article Index</a></li>
+<li><a href="http://www.keil.com/support/topten.asp">Top 10 Articles</a></li>
+</ul>
+</li>
+<li><a href="http://www.keil.com/support/man/">Product Manuals</a></li>
+<li><a href="http://www.keil.com/appnotes/">Application Notes</a></li>
+<li><a href="http://www.keil.com/download/">Downloads</a></li>
+<li><a href="http://www.keil.com/update/">Product Updates</a></li>
+<li><a href="http://www.keil.com/forum/">Discussion Forum</a></li>
+<li><a href="http://www.keil.com/books/">Books</a></li>
+</ul>
+<p>Product Information</p>
+<ul>
+<li><a href="http://www.keil.com/product/">Software &amp; Hardware Products</a><ul>
+<li><a href="http://www.keil.com/arm/">Arm Development Tools</a></li><li><a href="http://www.keil.com/c166/">C166 Development Tools</a></li><li><a href="http://www.keil.com/c51/">C51 Development Tools</a></li><li><a href="http://www.keil.com/c251/">C251 Development Tools</a></li><li><a href="http://www.keil.com/ulink/">Debug Adapters</a></li><li><a href="http://www.keil.com/boards2/">Evaluation Boards</a></li></ul>
+</li>
+<li><a href="http://www.keil.com/product/brochures.asp">Product Brochures</a></li>
+<li><a href="http://www.keil.com/product/newsletters.asp">Newsletters</a></li>
+</ul>
+
+      </div>
+    </td>
+
+    <td class="Bdy">
+      <div class="Bdy">
+      <div class="breadcrumb"><a href="http://www.keil.com/">Home</a>&nbsp;&nbsp;/&nbsp;&nbsp;Technical Support</div>
+
+
+
+<h1>CMSIS: How to add a new User Code Template</h1>
+
+<hr>
+
+<p>
+Information in this knowledgebase article applies to:</p>
+
+<ul>
+  <li>MDK-ARM v5.x</li>
+  <li>CMSIS-Pack</li>
+</ul>
+
+<hr>
+
+
+<h3>QUESTION</h3>
+
+<p>
+When adding new item (source code etc.) to my existing project in
+µVision, I can select some pre-defined User Code Templates from a
+CMSIS Software packs like CMSIS-RTOS or Middleware, as shown in this
+screenshot:<img src="./CMSIS_ How to add a new User Code Template_files/3933_template.png" style="font-size: 10pt;" alt="" align="" border="0px"></p>
+
+<p>
+Is it possible to define and add my own User Code Templates to be
+used in µVision?</p>
+
+
+<h3>ANSWER</h3>
+
+<p>
+Basically you have two options to define and add your own User
+Code Templates to be selected in µVision.</p>
+
+
+<h4><b>Add a User Code Template to an Existing CMSIS Software
+Pack</b></h4>
+
+<p>
+If you want to define and add a new User Code Template into an
+existing CMSIS-RTOS Software Pack:</p>
+
+<ol>
+  <li>
+  Open the directory of your CMSIS pack in your PC
+  C:\Keil_V5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\RTOS\RTX\UserCodeTemplates\.
+  Inside this directory you can find all existing User Code
+  Templates.&nbsp;
+  </li>
+
+  <li>
+  Create a new User Code Template file "TEST.c" here in the same
+  directory.&nbsp;
+  </li>
+
+  <li>
+  Go back to the directory C:\Keil_V5\ARM\PACK\ARM\CMSIS\5.0.1\ ,
+  remove the "read-only" attribute of the "ARM.CMSIS.pdsc" file, use
+  any text editor to open it.
+  </li>
+
+  <li>
+  Add the following line:&nbsp;
+    <pre>  ‹file category="source" attr="template" name="CMSIS/RTOS/RTX/UserCodeTemplates/TEST.c" select="For testing user-defined code template"›
+
+</pre>to the section: ‹!––RTX templates
+––› .&nbsp;
+
+  </li>
+
+  <li>
+  Restart µVision. You will see "TEST.c" template in "User Code
+  Template - CMSIS"
+  </li>
+</ol>
+
+<p>
+You can use the same way to add your own&nbsp;User Code Template
+into other existing CMSIS Software Pack.&nbsp;The important thing
+here is that the corresponding *.pdsc file inside such a Software
+Pack is modified properly.</p>
+
+
+<h4><b>Add a User Code Template to a New CMSIS Software Pack</b></h4>
+
+<p>
+Follow this web page <a href="http://www.keil.com/appnotes/docs/apnt_251.asp">http://www.keil.com/appnotes/docs/apnt_251.asp</a>&nbsp;to
+create your own CMSIS Software Pack, where you can define your
+own&nbsp;User Code Templates to be part of your CMSIS Pack, as
+described here&nbsp;<a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/cp_SWComponents.html#cp_CodeTemplates">http://www.keil.com/pack/doc/CMSIS/Pack/html/cp_SWComponents.html#cp_CodeTemplates</a>&nbsp;</p>
+
+<div>
+  In this way you can easily populate and share your&nbsp;User Code
+  Templates to other team members via such a&nbsp;CMSIS
+  Software&nbsp;Pack.
+</div>
+
+<div>
+
+  <h3>MORE INFORMATION</h3>
+
+  <ul>
+    <li>
+    Refer to <b><a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/cp_SWComponents.html">
+    Pack with Software Components</a></b>
+    </li>
+
+    <li>
+    Refer to <b><a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/createPackUtil.html">
+    Utilities for Creating Packs</a></b>
+    </li>
+  </ul>
+</div>
+
+
+
+
+<p class="TabNotes">Last Reviewed: Wednesday, June 28, 2017</p>
+
+
+<hr>
+
+<form action="http://www.keil.com/support/fb_support.asp" method="POST">
+  <table class="Form" style="margin: 12px auto 0 auto;">
+    <tbody><tr><th>Did this article provide the answer you needed?</th></tr>
+    <tr><td>&nbsp;</td></tr>
+
+    <tr>
+      <td>
+        <div style="white-space: nowrap; width: 30%; margin: 0 auto; font: bold 10pt verdana, sans-serif; color: #900;">
+          <input style="vertical-align: middle;" type="radio" value="YES" name="Helped" checked=""> Yes<br>
+          <input style="vertical-align: middle;" type="radio" value="NO" name="Helped"> No<br>
+          <input style="vertical-align: middle;" type="radio" value="UNSURE" name="Helped"> Not Sure
+        </div>
+      </td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr>
+      <td class="BAR">
+        <input type="hidden" name="Title" value="CMSIS: How to add a new User Code Template">
+        <input type="hidden" name="Number" value="3933">
+        <input type="submit" value="Submit">
+      </td>
+    </tr>
+  </tbody></table>
+</form>
+
+
+</div> </td> </tr>
+
+<tr>
+    <td class="Bot" colspan="2">
+        <table>
+    <tbody><tr class="Menu">
+        <td>
+            <h4><a href="http://www.keil.com/product/">Products</a></h4>
+            <h5>Development Tools</h5>
+            <ul>
+                <li><a href="http://www.keil.com/Arm/">Arm</a></li>
+                <li><a href="http://www.keil.com/c166/">C166</a></li>
+                <li><a href="http://www.keil.com/c51/">C51</a></li>
+                <li><a href="http://www.keil.com/c251/">C251</a></li>
+                <li><a href="http://www.keil.com/uvision/">µVision IDE and Debugger</a></li>
+            </ul>
+        </td>
+        <td>
+            <h4><a href="http://www.keil.com/support/docs/3933.htm#">&nbsp;</a></h4>
+            <h5>Hardware &amp; Collateral</h5>
+            <ul>
+                <li><a href="http://www.keil.com/ulink/">ULINK Debug Adaptors</a></li>
+                <li><a href="http://www.keil.com/boards2/">Evaluation Boards</a></li>
+                <li><a href="http://www.keil.com/product/brochures.asp">Product Brochures</a></li>
+                <li><a href="http://www.keil.com/dd2/">Device Database</a></li>
+                <li><a href="http://www.keil.com/distis/">Distributors</a></li>
+            </ul>
+        </td>
+        <td>
+            <h4><a href="http://www.keil.com/download/">Downloads</a></h4>
+            <ul>
+                <li><a href="http://www.keil.com/demo/eval/arm.htm">MDK-Arm</a></li>
+                <li><a href="http://www.keil.com/demo/eval/c51.htm">C51</a></li>
+                <li><a href="http://www.keil.com/demo/eval/c166.htm">C166</a></li>
+                <li><a href="http://www.keil.com/demo/eval/c251.htm">C251</a></li>
+                <li><a href="http://www.keil.com/download/file/">File downloads</a></li>
+            </ul>
+        </td>
+        <td>
+            <h4><a href="http://www.keil.com/support/">Support</a></h4>
+            <ul>
+                <li><a href="http://www.keil.com/support/knowledgebase.asp">Knowledgebase</a></li>
+                <li><a href="http://www.keil.com/forum/">Discussion Forum</a></li>
+                <li><a href="http://www.keil.com/support/man/">Product Manuals</a></li>
+                <li><a href="http://www.keil.com/appnotes/">Application Notes</a></li>
+            </ul>
+        </td>
+        <td>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="http://www.keil.com/distis/">Distributors</a></li>
+                <li><a href="http://www.keil.com/product/prices.asp" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Quotes&#39;, &#39;Page Hit&#39;, &#39;Request a Quote Footer&#39;,1,true]);">Request a Quote</a></li>
+                <li><a href="http://www.keil.com/company/contact/">Sales Contacts</a></li>
+            </ul>
+        </td>
+
+    </tr>
+    <tr class="boilerplate">
+        <td>&nbsp;
+        </td>
+        <td colspan="3">
+            <p class="footerlinks"><a href="http://www.keil.com/company/cookiesettings">Cookie Settings</a> | <a href="http://www.keil.com/company/terms" target="_blank">Terms of Use</a> | <a href="http://www.keil.com/company/privacy" target="_blank">Privacy</a> | <a href="http://www.keil.com/company/accessibility" target="_blank">Accessibility</a> | <a href="https://www.arm.com/company/policies/trademarks">Trademarks</a> | <a href="http://www.keil.com/company/contact/">Contact Us</a> | <a href="http://www.keil.com/support/feedback.asp">Feedback</a></p>
+            <p class="footerlinks"><a href="http://www.keil.com/company/terms" target="_blank">Copyright</a> © 2005-2019 <a href="http://www.keil.com/company">Arm Limited</a> (or its affiliates). All rights reserved.</p>
+        </td>
+        <td style="text-align: right;"><img src="./CMSIS_ How to add a new User Code Template_files/Arm_logo_white_150LG.png" alt="Arm logo" height="32"></td> 
+    </tr>
+
+</tbody></table>
+
+
+        <!--			<script src="/_js/t6_ptg.js" type="text/javascript"></script>
+			<noscript>
+				<div><img src="/_images/ptg.gif?js=0" height=1 width=1 alt="" title="" style="border:none"> </div>
+			</noscript>
+        <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-3800502-2']); _gaq.push(['_setDomainName', 'keil.com']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>-->
+    </td>
+
+</tr>
+</tbody></table>
+<!--Cookie policy html-->
+<div id="cookiemodule">
+    <div class="modouter">
+        <div class="modinner">
+            <h5>Important information</h5>
+            <div class="modcontent">
+                <div class="intro">
+                    <p>This site uses cookies to store information on your computer. By continuing to use our site, you consent to our <a href="http://www.keil.com/company/cookiepolicy" target="_blank">cookies</a>.</p>
+                </div>
+                <button class="accept" id="">Don't show this message again</button>
+                <p>
+                    <a href="http://www.keil.com/company/cookiesettings/" class="change-settings">Change Settings</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="privacymodule">
+    <div class="modouter">
+        <div class="modinner">
+            <h5>Privacy Policy Update</h5>
+            <div class="modcontent">
+                <div class="intro">
+                    <p>Arm’s Privacy Policy has been updated. By continuing to use our site, you consent to Arm’s Privacy Policy. Please review our <a href="http://www.keil.com/company/privacy" target="_blank">Privacy Policy</a> to learn more about our collection, use and transfers <br> of your data.</p>
+                </div>
+                <button class="acceptpolicy" id="">Accept and hide this message</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./CMSIS_ How to add a new User Code Template_files/Zendesk.js.téléchargement"></script>
+
+<script type="text/javascript">
+    if ((read('acceptCookie') == null) || (read('acceptCookie') == '2') || (read('acceptCookie') == '3')) {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3800502-2']);
+        _gaq.push(['_setDomainName', 'keil.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    }
+</script>
+<script type="text/javascript">
+    if ((read('acceptCookie') == null) || (read('acceptCookie') == '3')) {
+        $.getScript('https://munchkin.marketo.net/munchkin.js', function () {
+            mktoMunchkin("312-SAX-488");
+        });
+    }
+</script>
+
+<span id="real-url-span" style="display: none;">/support/docs/3933.asp</span>
+
+
+
+</body></html>
