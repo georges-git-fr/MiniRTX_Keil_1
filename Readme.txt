@@ -12,7 +12,7 @@ Logiciels :
 * Keil µVision V5.28.0.0 + dernier pack en cours
 
 D'après plusieurs documents comparatifs, RTX serait plus performant que FreeRTos bien que celui-ci soit largement plus utilisé dans les systèmes embarqués.
-Pour plus de détails, lire les deux documents suivants (situés sur le root du projet) :
+Pour plus de détails, lire les deux documents suivants :
 * Software vs Hardware Implementations for Real-Time Operating Systems de Nicoleta Cristina GAITAN et Ioan Ungurean
 * Symmetry - Timing Comparison of the Real-Time Operating Systems for Small Microcontrollers.pdf de Ioan Ungurean
 
